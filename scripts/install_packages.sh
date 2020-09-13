@@ -5,7 +5,7 @@ sudo pacman -Syu --noconfirm
 
 
 echo "Installing system packages..."
-sudo pacman -S yay
+sudo pacman -S --noconfirm yay
 # Now that yay has been installed we use it as a package manager
 alias yi='yay -S --needed --noconfirm'
 
@@ -19,7 +19,7 @@ yi gummi zeal-git sublime-text-dev gummi
 yi cmus sox gmusicbrowser alsa-lib dr14_tmeter flaccuraterip
 
 # desktop packages
-yi grync pcmanfm nordic-theme-git pdfslicer
+yi grsync pcmanfm nordic-theme-git pdfslicer
 
 # multimedia
 yi firefox youtube-dl freetube-vue-git
