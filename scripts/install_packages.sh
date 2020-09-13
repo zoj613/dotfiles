@@ -10,7 +10,7 @@ sudo pacman -S --noconfirm yay
 alias yi='yay -S --needed --noconfirm'
 
 # essentiial packages
-yi git vim htop
+yi git vim htop patch
 
 # development packages
 yi gummi zeal-git sublime-text-dev gummi
