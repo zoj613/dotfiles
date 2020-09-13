@@ -7,7 +7,7 @@ sudo pacman -Syu --noconfirm
 echo "Installing system packages..."
 sudo pacman -S yay
 # Now that yay has been installed we use it as a package manager
-# yi is an alias for `yay -S --needed --noconfirm`
+alias yi='yay -S --needed --noconfirm'
 
 # essentiial packages
 yi git vim htop

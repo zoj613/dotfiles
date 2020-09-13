@@ -22,7 +22,7 @@ function create_symlink
     fi
 
     ln -sv ${src} ${dest}
-} 
+}
 
 echo "Creating symbolic links for dotfiles..."
 
