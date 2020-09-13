@@ -11,5 +11,5 @@ git clone ${PYENV_HOST}/pyenv-virtualenv.git ${PYENV_HOME}/plugins/pyenv-virtual
 
 # yi all python build system dependencies
 yay -S --needed --noconfirm base-devel openssl zlib xz bzip2 readline sqlite \
-    curl llvm ncurses xz tk libffi python-pyopenssl ncurses5-compat-libs
+    curl llvm ncurses xz tk libffi python-pyopenssl 
 
