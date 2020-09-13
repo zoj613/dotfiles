@@ -36,9 +36,9 @@ function vdd { pyenv uninstall "$(virtualenv_name)" ; }
 
 
 # sox function for displying spectrogram of a music file
-function spec () { sox "$@" -n spectrogram -t "$@"; }
+function spec { sox "$@" -n spectrogram -t "$@"; }
 # search for command in history using keyword
-function hist () { history | grep "$@"; }
+function hist { history | grep "$@"; }
 
 function fripf {
 	frip "${@}"/*.flac >> "${@}"/flaccuraterip.log
@@ -48,9 +48,12 @@ function writeusb {
 	sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync
 }
 
-# Powerline (Rust version)
-function prompt {
-    PS1="$(powerline-rs --shell bash $?)"
+# Powerline-go setup
+function _update_ps1 {
+    PS1="$($GOPATH/bin/powerline-go -error $?)"
 }
-PROMPT_COMMAND=prompt
+
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
