@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 echo "Updating packages...."
-sudo pacman -Syu --noconfirm
+sudo pacman -Syu --needed --noconfirm
 
 echo "Installing system packages..."
 
-sudo pacman -S --noconfirm yay
+sudo pacman -S --needed --noconfirm yay
 # Now that yay has been installed we use it as a package manager
 alias yi='yay -S --needed --noconfirm --color=auto'
 
