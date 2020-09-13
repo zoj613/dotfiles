@@ -19,7 +19,7 @@ yi gummi zeal-git sublime-text-dev gummi
 yi cmus sox gmusicbrowser alsa-lib dr14_tmeter flaccuraterip
 
 # desktop packages
-yi grsync pcmanfm nordic-theme-git pdfslicer
+yi grsync pcmanfm nordic-theme-git pdfslicer ttf-inconsolata ttf-droid
 
 # multimedia
 yi firefox youtube-dl freetube-vue-git
