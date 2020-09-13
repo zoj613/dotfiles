@@ -18,18 +18,20 @@ alias reload='exec $SHELL'  # restart shell
 alias yay='yay --color=auto'  # default yay settings to avoid repeated commands
 alias yu='yay -Syu --noconfirm'  # update packages
 alias yi='yay -S --needed --noconfirm'
-alias yic='yay -S --needed'
+alias yii='yay -S --needed --useask'  # when conflicts need to be resolved
 alias yc='yay -c --noconfirm'  # Remove unneeded dependencies
 alias ycc='yay -Sc --noconfirm'  # remove old packages from cache directory
 alias yr='yay -R'
 alias ys='yay -Ss'
+alias ysi='yay -Si'
 
 
 # Git
 # ===
 alias gc='git commit -m'
 alias gp='git push'
-alias ga='git add -u'
+alias ga='git add'
+alias gaa='ga -u'
 alias gr='git rm'
 alias gs='git status -s -b'
 alias gl='git log'

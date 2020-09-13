@@ -3,29 +3,29 @@
 echo "Updating packages...."
 sudo pacman -Syu --noconfirm
 
-
 echo "Installing system packages..."
+
 sudo pacman -S --noconfirm yay
 # Now that yay has been installed we use it as a package manager
-alias yi='yay -S --needed --noconfirm'
+alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essentiial packages
-yi git vim htop patch
+yi git
 
 # development packages
-yi gummi zeal-git sublime-text-dev gummi
+yi vim r
 
 # audio packages
-yi cmus sox gmusicbrowser alsa-lib dr14_tmeter flaccuraterip
+yi cmus sox alsa-lib
 
 # desktop packages
-yi grsync pcmanfm nordic-theme-git pdfslicer ttf-inconsolata ttf-droid
+yi pcmanfm ttf-inconsolata ttf-droid
 
 # multimedia
-yi firefox youtube-dl freetube-vue-git
+yi youtube-dl
 
-# extra packages
-yi neofetch
+# misc packages
+yi neofetch htop figlet
 
 echo "Packages installed successfully"
 
