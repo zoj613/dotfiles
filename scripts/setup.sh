@@ -9,10 +9,10 @@ source ./install_vundle.sh
 source ./install_powerline.sh
 source ./install_pyenv.sh
 
-# reload the shell
-exec $SHELL
-
-yc  # deleting uneeded dependencies using the `yc` alias
+yay -c --noconfirm  # deleting uneeded dependencies using the `yc` alias
 
 figlet "Set up compete ! !"
+
+# reload the shell
+exec $SHELL
 
