@@ -1,0 +1,11 @@
+[user]
+	email = 44142765+zoj613@users.noreply.github.com
+	mail = 44142765+zoj613@users.noreply.github.com
+
+[alias]
+	c = "commit -m"
+	st = "status -s -b"
+	brn = "checkout -b"
+
+[core]
+    editor = vim
