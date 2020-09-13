@@ -25,6 +25,17 @@ alias yr='yay -R'
 alias ys='yay -Ss'
 
 
+# Git
+# ===
+alias gc='git commit -m'
+alias gp='git push'
+alias ga='git add -u'
+alias gs='git status -s -b'
+alias gl='git log'
+alias gb='git checkout'
+alias gbn='git checkout -b'
+
+
 # Tools
 # =====
 alias sub='LANG=en_US.UTF-8 subl3'  # sublimetext
