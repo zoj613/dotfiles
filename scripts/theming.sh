@@ -18,6 +18,7 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     xfconf-query -c xsettings -p /Xft/Hinting --set 1
     xfconf-query -c xsettings -p /Xft/HintingStyle --set "hintslight"
     xfconf-query -c xsettings -p /Gtk/FontName --set "Droid Sans 10"
+    # xfconf-query -c xsettings -p /Gtk/CursorThemeName --set "xcursor-breeze"
     xfconf-query -c xsettings -p /Gtk/MonospaceFontName \
         --set "Inconsolata for Powerline Medium 12"
 
