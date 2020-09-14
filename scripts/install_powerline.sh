@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
 # Setup powerline
-yay -S --needed --noconfirm powerline-fonts-git powerline-go
+alias yi='yay -S --needed --noconfirm'
+yi powerline-fonts-git
+yi powerline-go
 
