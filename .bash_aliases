@@ -5,12 +5,14 @@ alias cp='cp -i'  # confirm before overwrite
 alias ls='ls -lt --color=auto --group-directories-first --human-readable'  # list files
 alias lsa='ls -a'  # list hidden files too
 alias dir='dir -Q --color=auto'
+alias ..='cd ..'
 
 
 # OS and shell
 # ============
 alias manjaro='cat /etc/lsb-release'  # manjaro release info
 alias reload='exec $SHELL'  # restart shell
+alias grep='grep --color=auto'
 
 
 # Package management

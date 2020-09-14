@@ -19,7 +19,7 @@ yi vim r
 yi cmus sox alsa-lib
 
 # desktop packages
-yi pcmanfm ttf-inconsolata ttf-droid
+yi pcmanfm ttf-inconsolata ttf-droid noto-fonts
 
 # multimedia
 yi youtube-dl

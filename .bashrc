@@ -50,7 +50,7 @@ function writeusb {
 
 # Powerline-go setup
 function _update_ps1 {
-    PS1="$($GOPATH/bin/powerline-go -error $?)"
+    PS1="$($GOPATH/bin/powerline-go -error $? -hostname-only-if-ssh -cwd-max-depth 3)"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
