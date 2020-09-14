@@ -20,7 +20,7 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
         --set "Inconsolata for Powerline Medium 12"
 
     xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorLVDS1/workspace0/last-image \
-        --set "$(pwd)/img/wallpaperr.jpg"
+        --set "$(pwd)/img/wallpaper.jpg"
 
     xfconf-query -c displays -p /Default/LVDS1/Resolution --set "1920x1080" || \
         xfconf-query -c displays -p /Default/LVDS1/Resolution --set "1366x768"
