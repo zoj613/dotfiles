@@ -27,7 +27,7 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
 
     xfconf-query -c displays -p /Default/ePD1/Resolution --set "1920x1080" || \
         xfconf-query -c displays -p /Default/ePD1/Resolution --set "1366x768"
-
+    # move window buttons to the left in the orde: close|minimize|maximize
     xfconf-query -c xfwm4 -p /general/button_layout --set "CHMO|S"
     xfconf-query -c xfwm4 -p /general/theme --set "vimix-dark-beryl"
     xfconf-query -c xfwm4 -p /general/title_font --set "Droid Sans Bold 10"

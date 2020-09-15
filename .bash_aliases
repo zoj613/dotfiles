@@ -18,7 +18,7 @@ alias grep='grep --color=auto'
 # Package management
 # ==================
 alias yay='yay --color=auto'  # default yay settings to avoid repeated commands
-alias yu='yay -Syu --noconfirm'  # update packages
+alias yu='yay -Syu --noconfirm --needed'  # update packages
 alias yi='yay -S --needed --noconfirm'
 alias yii='yay -S --needed --useask'  # when conflicts need to be resolved
 alias yc='yay -c --noconfirm'  # Remove unneeded dependencies
@@ -39,13 +39,13 @@ alias gs='git status -s -b'
 alias gl='git log'
 alias gb='git checkout'
 alias gbn='git checkout -b'
-
+alias gd='git diff'
 
 # Tools
 # =====
 alias sub='LANG=en_US.UTF-8 subl3'  # sublimetext
 # dr14_tmeter command for calculating dynamic range of music files
 alias dr14='dr14_tmeter -1'
-alias nf='neofetch'
+alias nf='neofetch --memory_unit gib --os_arch off --disable model packages resolution cpu gpu'
 alias frip='flaccuraterip -sv'
 

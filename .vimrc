@@ -33,7 +33,6 @@ Plugin 'pixelneo/vim-python-docstring'
 Plugin 'cespare/vim-toml'
 Plugin 'vim-python/python-syntax'
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
