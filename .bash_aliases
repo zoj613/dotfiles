@@ -4,6 +4,7 @@ alias mkdir='mkdir -p'
 alias cp='cp -i'  # confirm before overwrite
 alias ls='ls -lt --color=auto --group-directories-first --human-readable'  # list files
 alias lsa='ls -a'  # list hidden files too
+alias lsg='ls -a | grep'
 alias dir='dir -Q --color=auto'
 alias ..='cd ..'
 
