@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Updating packages...."
-sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
+sudo pacman-mirrors --fasttrack && sudo pacman -Syyu --noconfirm
 
 echo "Installing system packages..."
 
