@@ -41,11 +41,11 @@ function spec { sox "$@" -n spectrogram -t "$@"; }
 function hist { history | grep "$@"; }
 
 function fripf {
-	frip "${@}"/*.flac >> "${@}"/flaccuraterip.log
+    frip "${@}"/*.flac >> "${@}"/flaccuraterip.log
 }
 
 function writeusb {
-	sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync
+    sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync
 }
 
 # Powerline-go setup
