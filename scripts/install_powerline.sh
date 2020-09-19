@@ -2,5 +2,6 @@
 
 # Setup powerline
 alias yi='yay -S --needed --noconfirm'
-yi powerline-fonts powerline-go
+yay -S --useask powerline-fonts-git
+yay -S --needed --noconfirm powerline-go
 
