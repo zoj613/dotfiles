@@ -8,7 +8,8 @@ yi org-xrandr
 
 function set_resolution
 {
-	xfconf-query -c displays --create -t string -p /Default/eDP1/Resolution --set $@ && xrandr -s $@
+	xfconf-query -c displays --create -t string -p /Default/eDP1/Resolution --set $@
+	xrandr -s $@
 }
 
 # install favourite themes for a given desktop environment
