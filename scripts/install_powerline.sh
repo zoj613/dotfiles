@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 # Setup powerline
-yay -S --needed --noconfirm  powerline-fonts powerline-go-bin
+yay -S --noconfirm powerline-fonts
+yay -S --noconfirm powerline-go-bin
 
