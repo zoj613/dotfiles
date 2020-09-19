@@ -43,7 +43,7 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     set_resolution "1920x1080" || set_resolution "1366x768"
     # move window buttons to the left in the orde: close|minimize|maximize
     xfconf-query -c xfwm4 --create -t string -p /general/button_layout --set "CHMO|S"
-    xfconf-query -c xfwm4 --create -t string -p /general/theme --set "vimix-dark-beryl"
+    xfconf-query -c xfwm4 --create -t string -p /general/theme --set "vimix-dark-laptop"
     xfconf-query -c xfwm4 --create -t string -p /general/title_font --set "Droid Sans Bold 11"
     xfconf-query -c xfwm4 --create -t int -p /general/workspace_count --set 2
 
