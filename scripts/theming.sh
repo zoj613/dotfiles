@@ -3,7 +3,7 @@
 alias yi='yay -S --needed --noconfirm'
 
 # make sure org-xrandr is installed for setting resolution in current session
-yi org-xrandr-git
+yay -S --confirm org-xrandr
 
 
 function set_resolution
