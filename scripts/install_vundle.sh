@@ -3,7 +3,7 @@
 echo "Installing vim plugins..."
 git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 
-vim --noplugin +PluginInstall +qall
+vim +PluginInstall +qall
 
 echo "Successfully installed vim plugins!"
 
