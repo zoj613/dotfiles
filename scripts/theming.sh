@@ -43,6 +43,18 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     xfconf-query -c xfwm4 --create -t int -p /general/workspace_count --set 2
 
     xfconf-query -c xfce4-panel --create -t bool -p /plugins/plugin-3/show-labels --set false
+
+	# set window tiling shortcuts
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>j -s "tile_up_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>k -s "tile_down_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>h -s "tile_left_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>l -s "tile_right_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>u -s "tile_up_left_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>i -s "tile_up_right_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>n -s "tile_down_left_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>m -s "tile_down_right_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Primary>Tab -s "cycle_windows_key"
+	xfconf-query -c xfce4-keyboard-shortcuts --create -t string -p /xfwm4/custom/<Alt>Tab -s "switch_window_key"
 else
     echo "No theming configured for this Desktop environment."
 fi
