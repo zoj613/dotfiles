@@ -5,7 +5,7 @@ sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 
 echo "Installing system packages..."
 
-sudo pacman -S --needed --noconfirm yay-bin
+sudo pacman -S --needed --noconfirm yay
 # Now that yay has been installed we use it as a package manager
 alias yi='yay -S --needed --noconfirm --color=auto'
 
