@@ -2,8 +2,8 @@
 
 alias yi='yay -S --needed --noconfirm'
 
-# make sure org-xrandr is installed for setting resolution in current session
-yay -S --confirm org-xrandr
+# make sure xorg-xrandr is installed for setting resolution in current session
+yi xorg-xrandr
 
 
 function set_resolution
