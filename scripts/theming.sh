@@ -27,10 +27,10 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     xfconf-query -c xsettings --create -t int -p /Xft/Antialias --set 1
     xfconf-query -c xsettings --create -t int -p /Xft/Hinting --set 1
     xfconf-query -c xsettings --create -t string -p /Xft/HintingStyle --set "hintslight"
-    xfconf-query -c xsettings --create -t string -p /Gtk/FontName --set "Droid Sans 10"
+    xfconf-query -c xsettings --create -t string -p /Gtk/FontName --set "Droid Sans 11"
     # xfconf-query -c xsettings -p /Gtk/CursorThemeName --set "xcursor-breeze"
     xfconf-query -c xsettings --create -t string -p /Gtk/MonospaceFontName \
-        --set "Inconsolata for Powerline Medium 12"
+        --set "Inconsolata Bold 12.5"
 
     xfconf-query -c xfce4-desktop --create -t string -p /backdrop/screen0/monitoreDP1/workspace0/last-image \
         --set "$(pwd)/img/wallpaper.jpg"
@@ -39,7 +39,7 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     # move window buttons to the left in the orde: close|minimize|maximize
     xfconf-query -c xfwm4 --create -t string -p /general/button_layout --set "CHMO|S"
     xfconf-query -c xfwm4 --create -t string -p /general/theme --set "vimix-dark-beryl"
-    xfconf-query -c xfwm4 --create -t string -p /general/title_font --set "Droid Sans Bold 10"
+    xfconf-query -c xfwm4 --create -t string -p /general/title_font --set "Droid Sans Bold 11"
     xfconf-query -c xfwm4 --create -t int -p /general/workspace_count --set 2
 
     xfconf-query -c xfce4-panel --create -t bool -p /plugins/plugin-3/show-labels --set false
