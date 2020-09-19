@@ -64,3 +64,4 @@ else
     echo "No theming configured for this Desktop environment."
 fi
 
+figlet "THEMING COMPLETED ! !"

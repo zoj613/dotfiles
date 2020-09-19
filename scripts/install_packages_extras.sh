@@ -22,3 +22,7 @@ yi grsync pdfslicer
 # multimedia
 yi firefox vlc freetube-vue-git
 
+figlet "extras installed succesfully !"
+
+echo "Please visit https://wiki.manjaro.org/index.php?title=Configure_NVIDIA_(non-free)_settings_and_load_them_on_Startup \
+	for details on how to install NVIDIA non-free drivers"
