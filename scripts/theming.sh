@@ -22,11 +22,11 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     xfconf-query -c xsettings --create -t string -p /Gtk/MonospaceFontName \
         --set "Inconsolata for Powerline Medium 12"
 
-    xfconf-query -c xfce4-desktop --create -t string -p /backdrop/screen0/monitorePD1/workspace0/last-image \
+    xfconf-query -c xfce4-desktop --create -t string -p /backdrop/screen0/monitoreDP1/workspace0/last-image \
         --set "$(pwd)/img/wallpaper.jpg"
 
-    xfconf-query -c displays --create -t string -p /Default/ePD1/Resolution --set "1920x1080" || \
-        xfconf-query -c displays --create -t string -p /Default/ePD1/Resolution --set "1366x768"
+    xfconf-query -c displays --create -t string -p /Default/eDP1/Resolution --set "1920x1080" || \
+        xfconf-query -c displays --create -t string -p /Default/eDP1/Resolution --set "1366x768"
     # move window buttons to the left in the orde: close|minimize|maximize
     xfconf-query -c xfwm4 --create -t string -p /general/button_layout --set "CHMO|S"
     xfconf-query -c xfwm4 --create -t string -p /general/theme --set "vimix-dark-beryl"
