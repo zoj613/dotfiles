@@ -5,12 +5,12 @@ sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 
 echo "Installing system packages..."
 
-sudo pacman -S --needed --noconfirm yay
+sudo pacman -S --needed --noconfirm yay-bin
 # Now that yay has been installed we use it as a package manager
 alias yi='yay -S --needed --noconfirm --color=auto'
 
-# essentiial packages
-yi git xorg-xrandr curl wget
+# essential packages
+yi git xorg-xrandr curl wget base-devel
 
 # development packages
 yi vim r

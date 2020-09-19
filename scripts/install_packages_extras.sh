@@ -7,12 +7,12 @@
 yi gparted
 
 # development
-yi zeal-git sublime-text-dev gummi cblas
+yi zeal-git sublime-text-3 gummi cblas
 yii openblas
 
 
 # audio
-yi gstreamer gmusicbrowser flaccuraterip dr14_tmeter easytag ffmpeg flac
+yi gstreamer gmusicbrowser dr14_tmeter mediainfo easytag ffmpeg flac
 
 
 # desktop packages

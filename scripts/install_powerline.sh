@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-alias yi='yay -S --noconfirm'
 # Setup powerline
-yi go otf-inconsolata-powerline-git
-# afterward install poerline-go on its own
-yi powerline-go
+yay -S --needed --noconfirm otf-inconsolata-powerline-git powerline-go-bin
 
