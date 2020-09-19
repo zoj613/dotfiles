@@ -4,7 +4,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle
 
 echo "Installing vim plugins..."
 
-vim -s +PluginInstall +qall
+vim +PluginInstall +qall
 
 echo "Successfully installed vim plugins!"
 
