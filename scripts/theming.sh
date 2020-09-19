@@ -2,6 +2,15 @@
 
 alias yi='yay -S --needed --noconfirm'
 
+# make sure org-xrandr is installed for setting resolution in current session
+yi org-xrandr
+
+
+function set_resolution
+{
+	xfconf-query -c displays --create -t string -p /Default/eDP1/Resolution --set $@ && xrandr -s $@
+}
+
 # install favourite themes for a given desktop environment
 if [ "KDE" == "${XDG_CURRENT_DESKTOP}" ]; then
     yi plasma5-themes-maia konsole-gruvbox vimix-theme-kde-git
@@ -25,8 +34,7 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     xfconf-query -c xfce4-desktop --create -t string -p /backdrop/screen0/monitoreDP1/workspace0/last-image \
         --set "$(pwd)/img/wallpaper.jpg"
 
-    xfconf-query -c displays --create -t string -p /Default/eDP1/Resolution --set "1920x1080" || \
-        xfconf-query -c displays --create -t string -p /Default/eDP1/Resolution --set "1366x768"
+    [ set_resolution "1920x1080" ] || [ set_resolution "1366x768" ]
     # move window buttons to the left in the orde: close|minimize|maximize
     xfconf-query -c xfwm4 --create -t string -p /general/button_layout --set "CHMO|S"
     xfconf-query -c xfwm4 --create -t string -p /general/theme --set "vimix-dark-beryl"
