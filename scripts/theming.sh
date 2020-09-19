@@ -35,7 +35,7 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     xfconf-query -c xfce4-desktop --create -t string -p /backdrop/screen0/monitoreDP1/workspace0/last-image \
         --set "$(pwd)/img/wallpaper.jpg"
 
-    [ set_resolution "1920x1080" ] || [ set_resolution "1366x768" ]
+    set_resolution "1920x1080" || set_resolution "1366x768"
     # move window buttons to the left in the orde: close|minimize|maximize
     xfconf-query -c xfwm4 --create -t string -p /general/button_layout --set "CHMO|S"
     xfconf-query -c xfwm4 --create -t string -p /general/theme --set "vimix-dark-beryl"
