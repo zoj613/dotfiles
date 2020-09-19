@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+alias yi='yay -S --noconfirm'
 # Setup powerline
-yay -S --noconfirm powerline-fonts
-yay -S --noconfirm powerline-go-bin
+yi ttf-inconsolata otf-inconsolata-powerline-git
+# afterward install poerline-go on its own
+yi powerline-go-bin
 
