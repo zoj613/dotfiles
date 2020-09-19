@@ -26,9 +26,9 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     # xfconf-query -c xsettings -p /Xft/DPI --set 96
     xfconf-query -c xsettings --create -t int -p /Xft/Antialias --set 1
     xfconf-query -c xsettings --create -t int -p /Xft/Hinting --set 1
-    xfconf-query -c xsettings --create -t string -p /Xft/HintStyle --set "hintfull"
+    xfconf-query -c xsettings --create -t string -p /Xft/HintStyle --set "hintmedium"
     xfconf-query -c xsettings --create -t string -p /Gtk/FontName --set "Droid Sans 11"
-    # xfconf-query -c xsettings -p /Gtk/CursorThemeName --set "xcursor-breeze"
+    xfconf-query -c xsettings -p /Gtk/CursorThemeSize --set 1
     xfconf-query -c xsettings --create -t string -p /Gtk/MonospaceFontName \
         --set "Inconsolata Bold 12.5"
 
