@@ -24,7 +24,10 @@ alias yi='yay -S --needed --noconfirm'
 alias yii='yay -S --needed --useask'  # when conflicts need to be resolved
 alias yc='yay -c --noconfirm'  # Remove unneeded dependencies
 alias ycc='yay -Sc --noconfirm'  # remove old packages from cache directory
-alias yr='yay -R'
+alias yr='yay -Rs'  # remove packages including deps
+alias yrr='yay -Rns'  # remove package including config files and deps
+alias yo='yay -Rns $(yay -Qtdq)'
+alias yoo='yay -Rns $(yay -Qttdq)'
 alias ys='yay -Ss'
 alias ysi='yay -Si'
 
@@ -41,6 +44,7 @@ alias gl='git log'
 alias gb='git checkout'
 alias gbn='git checkout -b'
 alias gd='git diff'
+
 
 # Tools
 # =====
