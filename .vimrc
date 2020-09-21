@@ -18,48 +18,69 @@ Plugin 'gmarik/Vundle.vim'
 " ...
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-"Bundle 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
+Plugin 'lifepillar/vim-gruvbox8'
+" ctrlp allows for file search anywhere using CTRL+P
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ivanov/vim-ipython'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'davidhalter/jedi-vim'
 Plugin 'pixelneo/vim-python-docstring'
-Plugin 'cespare/vim-toml'
 Plugin 'vim-python/python-syntax'
-
+" Plugin 'davidhalter/jedi-vim'
+"Bundle 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+
+" turn on syntax highlighting in vi
+syntax on
+
+
+" Enable 256 colour support
+set t_Co=256
+
+
+" set GUI-like colours
+set termguicolors
+
+" Turn line numbers on
+set number
+
+
+" Allow OS clipboard to work in vim and viceversa
+set clipboard^=unnamed,unnamedplus
+
+
+" Split config
+" specify different areas of the screen where the splits should occur
 set splitbelow
 set splitright
-
-"split navigations
+" split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
-
-" Enable folding with the spacebar
+" Fold with spacebar
 nnoremap <space> za
 
+
+" Configure file Indentation by extension
 au BufNewFile,BufRead *
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-	\ set expandtab |
-	\ set autoindent |
-	\ set fileformat=unix
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
 
 au BufNewFile,BufRead *.py
     \ set textwidth=79 |
@@ -71,56 +92,44 @@ au BufNewFile,BufRead *.c
     \ set textwidth=79 |
 
 
-" DVC syntax highlighting
-autocmd! BufNewFile,BufRead Dvcfile,*.dvc
-	\ setfiletype yaml
-
-
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-
-let python_highlight_all=1
-syntax on
-
-set background=dark
-
-let g:gruvbox_termcolors='256'
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_bold=1
-colorscheme gruvbox
-
-
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
-set nu
-
-set clipboard=unnamed
-
-set t_Co=256
-
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-set termguicolors
-let g:airline_powerline_fonts=1
-let g:airline_theme='wombat'
+" set powerline python command
 let g:powerline_pycmd="py3"
 
-"let g:jedi#use_tabs_not_buffers = 1
-"let g:jedi#use_splits_not_buffers = "left"
-"let g:jedi#popup_select_first = 0
-" Jedi automatically starts the completion, if you type a dot, e.g. str., if you don't want this:
-" let g:jedi#popup_on_dot = 0
 
-" backspace normal behaviour
-" set backspace=indent,eol,start
+" python-syntax
+" =============
+let python_highlight_all=1
 
-" python-docstring variables
-let g:python_style = "numpy"
 
-" python syntax
-let g:python_highlight_all = 1
+" Gruvbox color scheme
+" ====================
+set background=dark
+let g:gruvbox_filetype_hi_groups=1
+colorscheme gruvbox8_hard
+
+
+" SimpylFold
+" ==========
+" allow review of docstrings in folded python blocks
+let g:SimpylFold_docstring_preview=1
+
+
+" NerdTree
+" ========
+" map nerdtree window toggling to CTRL+ALT+n
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+" close vim if nerdtree is the only window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" Vim airline
+" ===========
+let g:airline_powerline_fonts=1
+let g:airline_theme='wombat'
+
+
+" vim-python-docstring
+" ====================
+let g:python_style="numpy"
+
