@@ -14,10 +14,6 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 
 
-# setup script for gruvbox color scheme on vim
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
-
-
 # Pyenv config
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
