@@ -10,7 +10,7 @@ sudo pacman -S --needed --noconfirm yay
 alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essential packages
-yi git xorg-xrandr curl wget base-devel
+yi git xorg-xrandr curl wget base-devel trash-cli
 
 # development packages
 yi vim r
