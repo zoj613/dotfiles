@@ -2,7 +2,7 @@
 
 BASEDIR="$(cd .. && pwd)"
 
-dotarray=(.config .bash_aliases .bash_profile .bashrc .gitconfig .vimrc)
+dotarray=(.config .bash_aliases .bash_profile .bashrc .gitconfig .vimrc .inputrc)
 
 
 # modified from: https://github.com/tomnomnom/dotfiles/blob/master/setup.sh
