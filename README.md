@@ -12,6 +12,7 @@ Dotfiles for my Manjaro XFCE setup. It may partially work with KDE Plasma as wel
 - `install_vundle.sh`: Installs Vundle and sets up all my vim plugins.
 - `theming.sh`: Installs themes and fonts plus automates some window manager & desktop settings to my preference.
 - `setup.sh`: Runs the other scripts except for `theming.sh` and `install_packages_extras.sh`. Those are ran manually
+- `cmus_gruvbox_theme.sh`: Download the cmus music player gruvbox theme.
 after the initial setup is finished. This is done to save time because many of the extra packages take long to build/install.
 
 
