@@ -45,8 +45,9 @@ function writeusb {
 }
 
 # Powerline-go setup
+export GOPATH="$HOME/.local"
 function _update_ps1 {
-    PS1="$($GOPATH/bin/powerline-go -error $? -hostname-only-if-ssh -newline)"
+    PS1="$($GOPATH/bin/powerline-go -error $? -hostname-only-if-ssh -newline -theme "gruvbox")"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then

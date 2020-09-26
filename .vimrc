@@ -29,6 +29,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'pixelneo/vim-python-docstring'
 Plugin 'vim-python/python-syntax'
+Plugin 'cespare/vim-toml'
 " Plugin 'davidhalter/jedi-vim'
 "Bundle 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
