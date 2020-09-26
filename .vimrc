@@ -30,11 +30,16 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'pixelneo/vim-python-docstring'
 Plugin 'vim-python/python-syntax'
 Plugin 'cespare/vim-toml'
+Plugin 'szw/vim-tags'
 " Plugin 'davidhalter/jedi-vim'
 "Bundle 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+" highlight all matches for a pattern search
+set hlsearch
 
 
 " turn on syntax highlighting in vi
