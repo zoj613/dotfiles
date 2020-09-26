@@ -2,6 +2,11 @@
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
+
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
 # set posgresql path
