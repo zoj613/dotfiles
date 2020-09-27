@@ -50,14 +50,14 @@ elif [ "XFCE" == "${XDG_CURRENT_DESKTOP}" ]; then
     xfconf-query -c xfce4-panel --create -t bool -p /plugins/plugin-3/show-labels --set false
 
     # set window tiling shortcuts
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>j "tile_up_key"
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>k "tile_down_key"
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>h "tile_left_key"
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>l "tile_right_key"
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>u "tile_up_left_key"
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>i "tile_up_right_key"
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>n "tile_down_left_key"
-    set_keyboard_shortcut /xfwm4/custom/\<Primary\>m "tile_down_right_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>j "tile_up_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>k "tile_down_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>h "tile_left_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>l "tile_right_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>u "tile_up_left_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>i "tile_up_right_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>n "tile_down_left_key"
+    set_keyboard_shortcut /xfwm4/custom/\<Alt\>m "tile_down_right_key"
     set_keyboard_shortcut /xfwm4/custom/\<Primary\>Tab  "cycle_windows_key"
     set_keyboard_shortcut /xfwm4/custom/\<Alt\>Tab "switch_window_key"
 else
