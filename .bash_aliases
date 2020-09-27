@@ -20,9 +20,10 @@ alias grep='grep --color=auto'
 # ==================
 alias yay='yay --color=auto'  # default yay settings to avoid repeated commands
 alias yu='yay -Syu --noconfirm --needed'  # update packages
+alias yud='yu --devel --timeupdate'
 alias yi='yay -S --needed --noconfirm'
 alias yii='yay -S --needed --useask'  # when conflicts need to be resolved
-alias yc='yay -c --noconfirm'  # Remove unneeded dependencies
+alias yc='yay -Yc --noconfirm'  # Remove unneeded dependencies
 alias ycc='yay -Sc --noconfirm'  # remove old packages from cache directory
 alias yr='yay -Rs'  # remove packages including deps
 alias yrr='yay -Rns'  # remove package including config files and deps
