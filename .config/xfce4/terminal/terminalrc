@@ -2,7 +2,7 @@
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
-MiscCursorBlinks=FALSE
+MiscCursorBlinks=TRUE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=120x24
 MiscInheritGeometry=FALSE
@@ -38,5 +38,7 @@ DropdownKeepOpenDefault=TRUE
 ColorForeground=#ebdbb2
 ColorBackground=#1d2021
 TabActivityColor=#bf4040
-CommandLoginShell=TRUE
+ShortcutsNoMnemonics=TRUE
+ShortcutsNoMenukey=TRUE
+ShortcutsNoHelpkey=TRUE
 
