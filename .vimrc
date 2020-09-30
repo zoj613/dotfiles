@@ -18,12 +18,11 @@ Plugin 'gmarik/Vundle.vim'
 " ...
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'lifepillar/vim-gruvbox8'
-" ctrlp allows for file search anywhere using CTRL+P
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -38,8 +37,21 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
+" map leader to space
+map <Space> <Leader>
+
+
 " highlight all matches for a pattern search
 set hlsearch
+" highlight as I type
+set incsearch
+" map <Leader>h to command thats turns off highlighting
+nmap <Leader>h :nohl<CR>
+
+
+" buffer navigation mappings
+nnoremap <Leader>b :bn<CR>
+nnoremap <Leader>bb :bp<CR>
 
 
 " turn on syntax highlighting in vi
@@ -75,8 +87,6 @@ nnoremap <C-H> <C-W><C-H>
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
-" Fold with spacebar
-nnoremap <space> za
 
 
 " Configure file Indentation by extension
@@ -96,6 +106,20 @@ au BufNewFile,BufRead *.c
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set textwidth=79 |
+
+
+" FZF.vim
+" =======
+" map :FZF to CTRL+P
+nmap <C-p> :FZF<CR>
+
+
+" ALE
+" ===
+" map CTRL+K and CTRL+J to jump between syntax errors/warnings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_completion_enabled = 1
 
 
 " set powerline python command

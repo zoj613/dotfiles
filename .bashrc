@@ -2,10 +2,10 @@
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 
-# Use bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
-
+## Use bash-completion, if available
+#[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+#    . /usr/share/bash-completion/bash_completion
+#
 
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -38,8 +38,6 @@ function vdd { pyenv uninstall "$(virtualenv_name)" ; }
 
 # sox function for displying spectrogram of a music file
 function spec { sox "$@" -n spectrogram -t "$@"; }
-# search for command in history using keyword
-function hist { history | grep "$@"; }
 
 function fripf {
     frip "${@}"/*.flac >> "${@}"/flaccuraterip.log
@@ -59,3 +57,41 @@ if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+
+# configure fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'  # include hidden files
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden"
+# automatically selects the item if there's only one
+export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+# cf - fuzzy cd from anywhere (source: https://github.com/junegunn/fzf/wiki/examples)
+function cf {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+     if [[ -d $file ]]
+     then
+        cd -- $file
+     else
+        cd -- ${file:h}
+     fi
+  fi
+}
+
+# fuzzy open with vim from anywhere
+function vff {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1 -m)"
+
+  if [[ -n $file ]]
+  then
+     vim -- $file
+     print -l $file[1]
+  fi
+}

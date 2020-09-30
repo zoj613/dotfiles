@@ -13,13 +13,13 @@ alias yi='yay -S --needed --noconfirm --color=auto'
 yi git xorg-xrandr curl wget base-devel trash-cli
 
 # development packages
-yi vim r ctags
+yi vim r ctags fzf fd
 
 # audio packages
 yi cmus sox alsa-lib
 
 # desktop packages
-yi pcmanfm ttf-inconsolata ttf-droid noto-fonts
+yi pcmanfm ttf-inconsolata ttf-droid noto-fonts qpdfview
 
 # multimedia
 yi youtube-dl

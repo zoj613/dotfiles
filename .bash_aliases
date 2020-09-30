@@ -7,6 +7,7 @@ alias lsa='ls -a'  # list hidden files too
 alias lsg='ls -a | grep'
 alias dir='dir -Q --color=auto'
 alias ..='cd ..'
+alias df='df -hT'
 
 
 # OS and shell
@@ -20,9 +21,10 @@ alias grep='grep --color=auto'
 # ==================
 alias yay='yay --color=auto'  # default yay settings to avoid repeated commands
 alias yu='yay -Syu --noconfirm --needed'  # update packages
+alias yud='yu --devel --timeupdate'
 alias yi='yay -S --needed --noconfirm'
 alias yii='yay -S --needed --useask'  # when conflicts need to be resolved
-alias yc='yay -c --noconfirm'  # Remove unneeded dependencies
+alias yc='yay -Yc --noconfirm'  # Remove unneeded dependencies
 alias ycc='yay -Sc --noconfirm'  # remove old packages from cache directory
 alias yr='yay -Rs'  # remove packages including deps
 alias yrr='yay -Rns'  # remove package including config files and deps
@@ -53,4 +55,9 @@ alias sub='LANG=en_US.UTF-8 subl3'  # sublimetext
 alias dr14='dr14_tmeter -1'
 alias nf='neofetch --memory_unit gib --os_arch off --disable model packages resolution cpu gpu'
 alias frip='flaccuraterip -sv'
+
+# fzf related
+# ===========
+alias vf='file=$(fzf); [[ -n "$file" ]] && vim $file'  # open with vim using fzf
+alias fif='grep --line-buffered --color=auto -r "" * | fzf'  # search for text in file using fzf
 

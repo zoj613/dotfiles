@@ -16,7 +16,7 @@ yi gstreamer gmusicbrowser dr14_tmeter mediainfo easytag ffmpeg flac
 
 
 # desktop packages
-yi grsync pdfslicer
+yi grsync pdfslicer cmatrix
 
 
 # multimedia
