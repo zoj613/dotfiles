@@ -9,8 +9,9 @@ source ./install_pyenv.sh
 source ./symlink.sh
 source ./install_vundle.sh
 source ./cmus_gruvbox_theme.sh
+source ./configure_fzf.sh
 
-yay -c --noconfirm  # deleting uneeded dependencies using the `yc` alias
+yay -Yc --noconfirm  # deleting uneeded dependencies
 
 figlet "SET UP COMPETE ! !"
 

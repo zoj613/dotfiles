@@ -7,6 +7,7 @@ alias lsa='ls -a'  # list hidden files too
 alias lsg='ls -a | grep'
 alias dir='dir -Q --color=auto'
 alias ..='cd ..'
+alias df='df -hT'
 
 
 # OS and shell
@@ -54,4 +55,9 @@ alias sub='LANG=en_US.UTF-8 subl3'  # sublimetext
 alias dr14='dr14_tmeter -1'
 alias nf='neofetch --memory_unit gib --os_arch off --disable model packages resolution cpu gpu'
 alias frip='flaccuraterip -sv'
+
+# fzf related
+# ===========
+alias vf='file=$(fzf); [[ -n "$file" ]] && vim $file'  # open with vim using fzf
+alias fif='grep --line-buffered --color=auto -r "" * | fzf'  # search for text in file using fzf
 
