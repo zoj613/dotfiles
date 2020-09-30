@@ -14,7 +14,7 @@ Dotfiles for my Manjaro XFCE setup. It may partially work with KDE Plasma as wel
 - `setup.sh`: Runs the other scripts except for `theming.sh` and `install_packages_extras.sh`. Those are ran manually
 - `cmus_gruvbox_theme.sh`: Download the cmus music player gruvbox theme.
 after the initial setup is finished. This is done to save time because many of the extra packages take long to build/install.
-
+- `configure_fzf.sh`: download and source bash keybindings for fuzzy finder.
 
 ## Installation
 ```bash
