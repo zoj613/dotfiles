@@ -54,7 +54,10 @@ alias sub='LANG=en_US.UTF-8 subl3'  # sublimetext
 # dr14_tmeter command for calculating dynamic range of music files
 alias dr14='dr14_tmeter -1'
 alias nf='neofetch --memory_unit gib --os_arch off --disable model packages resolution cpu gpu'
-alias frip='flaccuraterip -sv'
+alias msync='time rsync -r -t -v --progress --delete -s /run/media/zoj/ZOLISAEXT4/Music/ /run/media/zoj/ZOJ/Music/'
+alias trl='trash-list'
+alias tre='trash-empty'
+
 
 # fzf related
 # ===========
