@@ -39,9 +39,35 @@ function vdd { pyenv uninstall "$(virtualenv_name)" ; }
 # sox function for displying spectrogram of a music file
 function spec { sox "$@" -n spectrogram -t "$@"; }
 
-function fripf {
-    frip "${@}"/*.flac >> "${@}"/flaccuraterip.log
+
+# use arverify to verify accuraterip checksums of flac files in a directory
+function arv {
+    local dir=${@:-$PWD}
+    local logfile="${dir}"/accuraterip.log
+    local out=$(arverify -v "${dir}"/*.flac)
+    # early exit if arverify command did not work
+    # this will occur when the out variable contains only 2 lines
+    if [ "$(echo "$out" | wc -l)" == "2" ]; then
+        return 1
+    fi
+    # cleanup and remove path names in log file
+    local IFS_BAK=$IFS
+    IFS=$'\n'
+    for i in $out; do
+        if [[ "$i" =~ ".flac" ]]; then
+            echo "" >> $logfile
+            basename "$i" >> $logfile
+        else
+            echo "$i" >> $logfile
+        fi
+    done
+    IFS=$IFS_BAK
 }
+# fix offset of lossless music files
+function ofix {
+    fixoffset -f flac $1 *.${2:-flac}
+}
+
 
 function writeusb {
     sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync
@@ -50,7 +76,7 @@ function writeusb {
 # Powerline-go setup
 export GOPATH="$HOME/.local"
 function _update_ps1 {
-    PS1="$($GOPATH/bin/powerline-go -error $? -hostname-only-if-ssh -newline -theme "gruvbox")"
+    PS1="$($GOPATH/bin/powerline-go -hostname-only-if-ssh -newline -theme "gruvbox" -cwd-max-depth 4 -error $?)"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
@@ -63,7 +89,7 @@ fi
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'  # include hidden files
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type d --hidden"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude .git"
 # automatically selects the item if there's only one
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 # cf - fuzzy cd from anywhere (source: https://github.com/junegunn/fzf/wiki/examples)
@@ -83,7 +109,7 @@ function cf {
   fi
 }
 
-# fuzzy open with vim from anywhere
+# fuzzy open with vim from anywhere (source: https://github.com/junegunn/fzf/wiki/examples)
 function vff {
   local file
 
@@ -95,3 +121,14 @@ function vff {
      print -l $file[1]
   fi
 }
+
+# peek into a subsequent directory using fzf
+function pf {
+    local cd_dir=$(__fzf_cd__)
+    local dir="${cd_dir#*"cd"}"  # remove "cd" from string
+
+    if ! [ -z "$dir" ]; then
+        tree ${dir} -l --filelimit=30
+    fi
+}
+
