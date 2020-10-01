@@ -7,7 +7,7 @@
 yi gparted
 
 # development
-yi zeal-git sublime-text-3 gummi cblas
+yi zeal-git gummi cblas
 yii openblas
 
 
@@ -16,7 +16,7 @@ yi gstreamer gmusicbrowser dr14_tmeter mediainfo easytag ffmpeg flac cdrip-tools
 
 
 # desktop packages
-yi grsync pdfslicer cmatrix
+yi rsync pdfslicer cmatrix
 
 
 # multimedia
