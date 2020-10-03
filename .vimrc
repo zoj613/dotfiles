@@ -16,6 +16,8 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 
 " ...
+Plugin 'justmao945/vim-clang'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'dense-analysis/ale'
@@ -50,7 +52,7 @@ nmap <Leader>h :nohl<CR>
 
 
 " buffer navigation mappings
-nnoremap <Leader>b :bn<CR>
+nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>bb :bp<CR>
 
 
@@ -67,6 +69,7 @@ set termguicolors
 
 " Turn line numbers on
 set number
+set relativenumber
 
 
 " Allow OS clipboard to work in vim and viceversa
@@ -110,6 +113,17 @@ au BufNewFile,BufRead *.c
 
 " FZF.vim
 " =======
+let g:fzf_preview_window = ''
+
+
+" Jedi-vim
+" ========
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = "2"
+
+
+" FZF.vim
+" =======
 " map :FZF to CTRL+P
 nmap <C-p> :FZF<CR>
 
@@ -147,7 +161,7 @@ let g:SimpylFold_docstring_preview=1
 " NerdTree
 " ========
 " map nerdtree window toggling to CTRL+ALT+n
-map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 " close vim if nerdtree is the only window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -157,9 +171,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " ===========
 let g:airline_powerline_fonts=1
 let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
 
 
 " vim-python-docstring
 " ====================
 let g:python_style="numpy"
+
+
+" Jedivim
+" =======
+let g:jedi#usages_command = "<leader>u"
 
