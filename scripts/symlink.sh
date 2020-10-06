@@ -3,8 +3,8 @@
 BASEDIR="$(cd .. && pwd)"
 
 dotarray=(
-    .config .bash_aliases .bash_profile .bashrc .gitconfig .vimrc
-    .inputrc .Xresources .gtkrc-2.0.mine .profile .i3 .dmenurc
+    .config .i3 .profile .bash_aliases .bash_profile .dmenurc .bashrc
+    .gitconfig .vimrc .inputrc .Xresources .gtkrc-2.0.mine
 )
 
 
