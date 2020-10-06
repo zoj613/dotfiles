@@ -31,6 +31,7 @@ Plugin 'pixelneo/vim-python-docstring'
 Plugin 'vim-python/python-syntax'
 Plugin 'cespare/vim-toml'
 Plugin 'szw/vim-tags'
+Plugin 'francoiscabrol/ranger.vim'
 " Plugin 'davidhalter/jedi-vim'
 "Bundle 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
@@ -109,6 +110,12 @@ au BufNewFile,BufRead *.c
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set textwidth=79 |
+
+
+" Ranger.vim
+" ==========
+" mapping for opening a new file in the cwd
+map <Leader>d :RangerWorkingDirectory<CR>
 
 
 " FZF.vim
