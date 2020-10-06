@@ -2,7 +2,10 @@
 
 BASEDIR="$(cd .. && pwd)"
 
-dotarray=(.config .bash_aliases .bash_profile .bashrc .gitconfig .vimrc .inputrc)
+dotarray=(
+    .config .bash_aliases .bash_profile .bashrc .gitconfig .vimrc
+    .inputrc .Xresources .gtkrc-2.0.mine .profile .i3 .dmenurc
+)
 
 
 # modified from: https://github.com/tomnomnom/dotfiles/blob/master/setup.sh
@@ -21,6 +24,7 @@ function create_symlink
         mkdir -p $(dirname $dest)
     fi
 
+    # create symblic link
     ln -sv ${src} ${dest}
 }
 

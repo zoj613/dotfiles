@@ -1,0 +1,11 @@
+# gtk-2 customization
+
+gtk-theme-name="vimix-dark-laptop"
+gtk-icon-theme-name="Papirus-Dark-Maia"
+gtk-font-name="Noto Sans Medium 8"
+gtk-cursor-theme-name="Maia-Cursor"
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintfull"

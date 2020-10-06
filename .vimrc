@@ -22,7 +22,6 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
 Plugin 'lifepillar/vim-gruvbox8'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
@@ -53,7 +52,8 @@ nmap <Leader>h :nohl<CR>
 
 " buffer navigation mappings
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>bb :bp<CR>
+nnoremap <Leader>j :bprevious<CR>
+nnoremap <Leader>k :bnext<CR>
 
 
 " turn on syntax highlighting in vi
@@ -156,15 +156,6 @@ colorscheme gruvbox8_hard
 " ==========
 " allow review of docstrings in folded python blocks
 let g:SimpylFold_docstring_preview=1
-
-
-" NerdTree
-" ========
-" map nerdtree window toggling to CTRL+ALT+n
-map <Leader>n :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-" close vim if nerdtree is the only window open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 " Vim airline

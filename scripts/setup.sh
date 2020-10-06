@@ -10,6 +10,7 @@ source ./symlink.sh
 source ./install_vundle.sh
 source ./cmus_gruvbox_theme.sh
 source ./configure_fzf.sh
+source ./theming.sh
 
 yay -Yc --noconfirm  # deleting uneeded dependencies
 

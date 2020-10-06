@@ -61,6 +61,7 @@ alias tre='trash-empty'
 
 # fzf related
 # ===========
+alias fzf='fzf --color=16'
 alias vf='file=$(fzf); [[ -n "$file" ]] && vim $file'  # open with vim using fzf
 alias fif='grep --line-buffered --color=auto -r "" * | fzf'  # search for text in file using fzf
 

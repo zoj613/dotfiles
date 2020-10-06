@@ -20,7 +20,7 @@ yi rsync pdfslicer cmatrix
 
 
 # multimedia
-yi firefox vlc freetube-vue-git
+yi vlc freetube
 
 figlet "extras installed succesfully !"
 
