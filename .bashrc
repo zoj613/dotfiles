@@ -2,8 +2,6 @@
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 
-# set variable for i3-sensible-terminal
-export TERMINAL="termite"
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
 # set posgresql path

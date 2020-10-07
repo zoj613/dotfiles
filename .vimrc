@@ -156,7 +156,7 @@ let python_highlight_all=1
 " ====================
 set background=dark
 let g:gruvbox_filetype_hi_groups=1
-colorscheme gruvbox8_hard
+colorscheme gruvbox8
 
 
 " SimpylFold
