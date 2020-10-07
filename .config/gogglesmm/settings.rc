@@ -1,0 +1,180 @@
+[dbus]
+notification-daemon=true
+mpris=true [LastFM] client-id=gmm session= client-version=0.1 client-banned=false [export] underscore=false encoding=0
+character-filter="'\\#~!\"$&();<>|`^*?[]/.:"
+lowercase-extension=true
+id3v1-encoding=2
+lowercase=false
+format-template=%N %T
+
+[SETTINGS]
+normalfont=Droid Sans [1ASC],80,normal,regular,medium,iso10646-1,512
+forecolor=#e0dfdc
+screenres=141
+selmenutextcolor=#fbf1c7
+basecolor=#282828
+selbackcolor=#4f4f4f
+tipforecolor=#fbf1c7
+bordercolor=#e0dfdc
+shadowcolor=#4f4f4f
+backcolor=#282828
+selforecolor=#fbf1c7
+tipbackcolor=#4f4f4f
+hilitecolor=#747474
+selmenubackcolor=#4f4f4f
+
+[colors]
+tray-back-color=#302f2f
+play-color=#b8bb26
+source-selecttext-color=Black
+source-select-color=#d2e6d2
+playtext-color=#282828
+row-color=#282828
+menu-base-color=#201f1f
+
+[sync]
+update=false
+import-new=true
+update-always=false
+remove-missing=true
+
+[window]
+toolbar-labels-above=true
+source-list-hsplit=1964
+width=616
+source-list-sort-reverse=false
+maximized=false
+title-format=%P - %T
+source-list=true
+source-list-current=database
+show-playing-lyrics=true
+tray-icon=false
+track-list-current=-1
+hide-player-when-close=false
+cover-size=128
+fullscreen=false
+window-show=true
+remote=false
+show-statusbar=true
+toolbar-docktop=true
+sort-keywords=a;an;the
+toolbar-bigicons=true
+toolbar-labels=true
+show-playing-titlebar=false
+y=20
+x=652
+browser-icons=true
+show-opengl-coverview=true
+show-playing-albumcover=true
+height=1010
+
+[file-system]
+path=/home/zoj
+
+[directories]
+last-import-dirs=/run/media/zoj/ZOLISAEXT4/Music
+
+[player]
+repeat-mode=2
+play-from-queue=false
+shuffle=false
+replay-gain=0
+
+[user-interface]
+icon-theme=Papirus-Dark-Maia
+
+[application]
+minor-version=2
+level-version=1
+major-version=1
+
+[import]
+fetch-lyrics=false
+replace-underscores=true
+detect-compilation=false
+playback-only=false
+parse-method=2
+album-format-grouping=true
+filename-template=%P/%A/%N %T
+track-from-filelist=false
+exclude-file=
+exclude-folder=
+
+[podcast]
+update-interval=0
+
+[database]
+genre-artist-split=5000
+browse-columnwidth-year=60
+browse-showcolumn-title=true
+browse-showcolumn-year=true
+browse-columnindex-play date=10
+album-list-selection=4;
+browse-columnwidth-play count=86
+browse-showcolumn-no=true
+browse-columnwidth-conductor=400
+browse-showcolumn-play count=true
+album-list-sort-by-year=false
+browse-columnwidth-no=43
+browse-columnwidth-album artist=200
+browse-columnindex-rating=16
+browse-sort-seed=2298584013
+browse-showcolumn-album artist=false
+browse-columnindex-title=2
+browse-columnwidth-album=200
+album-list-browser=false
+browse-showcolumn-queue=false
+browse-columnindex-path=11
+browse-sort-reverse=false
+browse-columnindex-artist=3
+album-list-sort-reverse=false
+browse-columnindex-time=8
+browse-columnindex-year=7
+artist-list-selection=202;
+browser=true
+browse-columnwidth-format=217
+browse-columnwidth-file type=74
+browser-track-split=4995
+browse-columnwidth-disc=43
+album-list-show-year=true
+browse-columnwidth-rating=90
+track-list-posy=0
+track-list-posx=0
+browse-showcolumn-album=false
+browse-showcolumn-time=true
+browse-columnwidth-queue=60
+browse-columnindex-album=5
+browse-showcolumn-artist=true
+browse-columnwidth-path=400
+browse-showcolumn-path=false
+browse-columnwidth-artist=164
+browse-columnindex-album artist=4
+artist-album-split=4848
+browse-showcolumn-rating=true
+browse-columnwidth-title=360
+filter-text=
+browse-showcolumn-composer=false
+browse-sort-column=2
+browse-columnwidth-composer=30
+browse-columnindex-no=0
+filter-mask=7
+browse-columnindex-conductor=15
+browse-columnwidth-play date=86
+filter=true
+genre-list-selection=0;
+browse-columnwidth-time=60
+browse-columnindex-play count=9
+browse-showcolumn-format=true
+artist-list-sort-reverse=false
+browse-columnindex-disc=6
+genre-list-sort-reverse=false
+browse-columnindex-queue=1
+browse-columnindex-file type=12
+browse-showcolumn-conductor=false
+genre-list=false
+browse-columnindex-format=13
+browse-showcolumn-disc=false
+browse-showcolumn-play date=true
+browse-columnindex-composer=14
+browse-showcolumn-file type=true
+
