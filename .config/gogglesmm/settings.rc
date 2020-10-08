@@ -1,10 +1,25 @@
 [dbus]
+lowercase-extension=true
+character-filter="'\\#~!\"$&();<>|`^*?[]/.:"
+mpris=true
+lowercase=false
+id3v1-encoding=2
 notification-daemon=true
-mpris=true [LastFM] client-id=gmm session= client-version=0.1 client-banned=false [export] underscore=false encoding=0
+format-template=%N %T
+
+[LastFM]
+client-id=gmm
+client-version=0.1
+session=
+client-banned=false
+
+[export]
+underscore=false
+lowercase=false
+encoding=0
 character-filter="'\\#~!\"$&();<>|`^*?[]/.:"
 lowercase-extension=true
 id3v1-encoding=2
-lowercase=false
 format-template=%N %T
 
 [SETTINGS]
@@ -12,25 +27,16 @@ normalfont=Droid Sans [1ASC],80,normal,regular,medium,iso10646-1,512
 forecolor=#e0dfdc
 screenres=141
 selmenutextcolor=#fbf1c7
-basecolor=#282828
 selbackcolor=#4f4f4f
 tipforecolor=#fbf1c7
 bordercolor=#e0dfdc
 shadowcolor=#4f4f4f
+tipbackcolor=#4f4f4f
 backcolor=#282828
 selforecolor=#fbf1c7
-tipbackcolor=#4f4f4f
+basecolor=#282828
 hilitecolor=#747474
 selmenubackcolor=#4f4f4f
-
-[colors]
-tray-back-color=#302f2f
-play-color=#b8bb26
-source-selecttext-color=Black
-source-select-color=#d2e6d2
-playtext-color=#282828
-row-color=#282828
-menu-base-color=#201f1f
 
 [sync]
 update=false
@@ -41,7 +47,7 @@ remove-missing=true
 [window]
 toolbar-labels-above=true
 source-list-hsplit=1964
-width=616
+width=928
 source-list-sort-reverse=false
 maximized=false
 title-format=%P - %T
@@ -62,14 +68,20 @@ toolbar-bigicons=true
 toolbar-labels=true
 show-playing-titlebar=false
 y=20
-x=652
+x=972
 browser-icons=true
 show-opengl-coverview=true
 show-playing-albumcover=true
 height=1010
 
-[file-system]
-path=/home/zoj
+[colors]
+tray-back-color=#302f2f
+play-color=#b8bb26
+source-selecttext-color=Black
+source-select-color=#d2e6d2
+playtext-color=#282828
+row-color=#282828
+menu-base-color=#201f1f
 
 [directories]
 last-import-dirs=/run/media/zoj/ZOLISAEXT4/Music
@@ -79,6 +91,9 @@ repeat-mode=2
 play-from-queue=false
 shuffle=false
 replay-gain=0
+
+[file-system]
+path=/home/zoj
 
 [user-interface]
 icon-theme=Papirus-Dark-Maia
@@ -96,9 +111,9 @@ playback-only=false
 parse-method=2
 album-format-grouping=true
 filename-template=%P/%A/%N %T
-track-from-filelist=false
-exclude-file=
 exclude-folder=
+exclude-file=
+track-from-filelist=false
 
 [podcast]
 update-interval=0
@@ -164,12 +179,12 @@ filter=true
 genre-list-selection=0;
 browse-columnwidth-time=60
 browse-columnindex-play count=9
-browse-showcolumn-format=true
+browse-columnindex-file type=12
 artist-list-sort-reverse=false
 browse-columnindex-disc=6
 genre-list-sort-reverse=false
 browse-columnindex-queue=1
-browse-columnindex-file type=12
+browse-showcolumn-format=true
 browse-showcolumn-conductor=false
 genre-list=false
 browse-columnindex-format=13
