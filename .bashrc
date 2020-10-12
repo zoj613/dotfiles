@@ -8,6 +8,8 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/usr/local/pgsql/bin:$PATH"
 # set terminal colors
 export TERM="xterm-termite"
+# set variable used by i3-sensible-terminal to point to preferred terminal
+export TERMINAL="termite"
 
 # command history size limit
 HISTSIZE=10000
@@ -69,8 +71,8 @@ function writeusb { sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync; }
 # Powerline-go setup
 export GOPATH="$HOME/.local"
 function _update_ps1 {
-    PS1="$($GOPATH/bin/powerline-go -hostname-only-if-ssh -newline \
-        -theme "gruvbox" -cwd-max-depth 4 -error $?)"
+    PS1="$($GOPATH/bin/powerline-go -error $? -hostname-only-if-ssh -newline \
+        -theme gruvbox -cwd-max-depth 4)"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then

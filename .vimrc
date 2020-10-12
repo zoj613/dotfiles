@@ -55,14 +55,14 @@ nmap <Leader>h :nohl<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>j :bprevious<CR>
 nnoremap <Leader>k :bnext<CR>
-
+nnoremap <Leader>c :bd<CR>
 
 " turn on syntax highlighting in vi
 syntax on
 
 
 " Enable 256 colour support
-set t_Co=256
+" set t_Co=256
 
 
 " set GUI-like colours
@@ -100,16 +100,8 @@ au BufNewFile,BufRead *
     \ set shiftwidth=4 |
     \ set expandtab |
     \ set autoindent |
+    \ set textwidth=79 |
     \ set fileformat=unix
-
-au BufNewFile,BufRead *.py
-    \ set textwidth=79 |
-
-au BufNewFile,BufRead *.c
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
 
 
 " Ranger.vim
@@ -127,6 +119,7 @@ let g:fzf_preview_window = ''
 " ========
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "2"
+let g:jedi#usages_command = "<leader>u"
 
 
 " FZF.vim
@@ -177,7 +170,4 @@ let g:airline#extensions#tabline#enabled = 1
 let g:python_style="numpy"
 
 
-" Jedivim
-" =======
-let g:jedi#usages_command = "<leader>u"
 

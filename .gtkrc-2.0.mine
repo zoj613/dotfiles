@@ -1,8 +1,8 @@
 # gtk-2 customization
 
 gtk-theme-name="vimix-dark-laptop"
-gtk-icon-theme-name="Papirus-Dark-Maia"
-gtk-font-name="Noto Sans Medium 8"
+gtk-icon-theme-name="Gruvbox-Material-Dark"
+gtk-font-name="Droid Sans 8"
 gtk-cursor-theme-name="Maia-Cursor"
 gtk-enable-event-sounds=0
 gtk-enable-input-feedback-sounds=0

@@ -74,7 +74,7 @@ URxvt*color21:      base06
 Xcursor.theme: Maia-Cursor
 Xcursor.size:                     0
 
-URxvt.font: xft:Inconsolata \for \Powerline:size=9
+URxvt.font: xft:TerminessTTF Nerd Font Mono:style=Bold:size=9
 URxvt.letterSpace:0
 URxvt.boldFont: true
 
