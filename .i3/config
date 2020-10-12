@@ -281,6 +281,11 @@ mode "resize" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
+# screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+
+
 # Autostart applications
 # ======================
 
@@ -290,7 +295,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 exec --no-startup-id xrandr --auto --output eDP1 --primary --mode 1920x1080 \
     --output HDMI-1-4 --mode 1920x1080 --left-of eDP1
 #exec sh ~/.fehbg  # setup wallpaper
-exec redshift
+exec --no-startup-id redshift
 exec --no-startup-id safeeyes
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
