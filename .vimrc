@@ -16,11 +16,12 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 
 " ...
+Plugin 'justmao945/vim-clang'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
 Plugin 'lifepillar/vim-gruvbox8'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
@@ -30,6 +31,7 @@ Plugin 'pixelneo/vim-python-docstring'
 Plugin 'vim-python/python-syntax'
 Plugin 'cespare/vim-toml'
 Plugin 'szw/vim-tags'
+Plugin 'francoiscabrol/ranger.vim'
 " Plugin 'davidhalter/jedi-vim'
 "Bundle 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
@@ -50,16 +52,17 @@ nmap <Leader>h :nohl<CR>
 
 
 " buffer navigation mappings
-nnoremap <Leader>b :bn<CR>
-nnoremap <Leader>bb :bp<CR>
-
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>j :bprevious<CR>
+nnoremap <Leader>k :bnext<CR>
+nnoremap <Leader>c :bd<CR>
 
 " turn on syntax highlighting in vi
 syntax on
 
 
 " Enable 256 colour support
-set t_Co=256
+" set t_Co=256
 
 
 " set GUI-like colours
@@ -67,6 +70,7 @@ set termguicolors
 
 " Turn line numbers on
 set number
+set relativenumber
 
 
 " Allow OS clipboard to work in vim and viceversa
@@ -96,16 +100,26 @@ au BufNewFile,BufRead *
     \ set shiftwidth=4 |
     \ set expandtab |
     \ set autoindent |
+    \ set textwidth=79 |
     \ set fileformat=unix
 
-au BufNewFile,BufRead *.py
-    \ set textwidth=79 |
 
-au BufNewFile,BufRead *.c
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
+" Ranger.vim
+" ==========
+" mapping for opening a new file in the cwd
+map <Leader>d :RangerWorkingDirectory<CR>
+
+
+" FZF.vim
+" =======
+let g:fzf_preview_window = ''
+
+
+" Jedi-vim
+" ========
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = "2"
+let g:jedi#usages_command = "<leader>u"
 
 
 " FZF.vim
@@ -135,7 +149,7 @@ let python_highlight_all=1
 " ====================
 set background=dark
 let g:gruvbox_filetype_hi_groups=1
-colorscheme gruvbox8_hard
+colorscheme gruvbox8
 
 
 " SimpylFold
@@ -144,22 +158,16 @@ colorscheme gruvbox8_hard
 let g:SimpylFold_docstring_preview=1
 
 
-" NerdTree
-" ========
-" map nerdtree window toggling to CTRL+ALT+n
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-" close vim if nerdtree is the only window open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-
 " Vim airline
 " ===========
 let g:airline_powerline_fonts=1
 let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
 
 
 " vim-python-docstring
 " ====================
 let g:python_style="numpy"
+
+
 

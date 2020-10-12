@@ -2,17 +2,14 @@
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
 
-## Use bash-completion, if available
-#[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-#    . /usr/share/bash-completion/bash_completion
-#
-
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
 # set posgresql path
 export PATH="/usr/local/pgsql/bin:$PATH"
 # set terminal colors
-export TERM="xterm-256color"
+export TERM="xterm-termite"
+# set variable used by i3-sensible-terminal to point to preferred terminal
+export TERMINAL="termite"
 
 # command history size limit
 HISTSIZE=10000
@@ -64,19 +61,18 @@ function arv {
     IFS=$IFS_BAK
 }
 # fix offset of lossless music files
-function ofix {
-    fixoffset -f flac $1 *.${2:-flac}
-}
+function ofix { fixoffset -f flac $1 *.${2:-flac}; }
 
 
-function writeusb {
-    sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync
-}
+# burn iso to usb using diskdestroyer
+function writeusb { sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync; }
+
 
 # Powerline-go setup
 export GOPATH="$HOME/.local"
 function _update_ps1 {
-    PS1="$($GOPATH/bin/powerline-go -hostname-only-if-ssh -newline -theme "gruvbox" -cwd-max-depth 4 -error $?)"
+    PS1="$($GOPATH/bin/powerline-go -error $? -hostname-only-if-ssh -newline \
+        -theme gruvbox -cwd-max-depth 4)"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
@@ -86,6 +82,8 @@ fi
 
 # configure fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.completion.bash ] && source ~/.fzf.completion.bash
+
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'  # include hidden files
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

@@ -7,7 +7,7 @@
 yi gparted
 
 # development
-yi zeal-git sublime-text-3 gummi cblas
+yi zeal-git gummi cblas
 yii openblas
 
 
@@ -16,11 +16,11 @@ yi gstreamer gmusicbrowser dr14_tmeter mediainfo easytag ffmpeg flac cdrip-tools
 
 
 # desktop packages
-yi grsync pdfslicer cmatrix
+yi rsync pdfslicer cmatrix
 
 
 # multimedia
-yi firefox vlc freetube-vue-git
+yi vlc freetube
 
 figlet "extras installed succesfully !"
 
