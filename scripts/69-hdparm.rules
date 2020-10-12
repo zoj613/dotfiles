@@ -1,0 +1,4 @@
+# https://wiki.archlinux.org/index.php/Hdparm
+# https://wiki.archlinux.org/index.php/Udev#Identifying_a_disk_by_its_serial
+# control external disk spin down intervals using hdparm
+ACTION=="add|change", KERNEL=="sd[a-z]", ENV{ID_SERIAL_SHORT}=="ZDE80BN5", RUN+="/usr/bin/hdparm -B 128 -S 242 /dev/%k"

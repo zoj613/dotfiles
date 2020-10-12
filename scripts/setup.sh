@@ -12,6 +12,9 @@ source ./cmus_gruvbox_theme.sh
 source ./configure_fzf.sh
 source ./theming.sh
 
+# copy over the hdparm rule script, needs sudo permissions
+sudo cp ./69-hdparm.rules /etc/udev/rules.d/69-hdparm.rules
+
 yay -Yc --noconfirm  # deleting uneeded dependencies
 
 figlet "SET UP COMPETE ! !"
