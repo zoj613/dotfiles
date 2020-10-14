@@ -1,0 +1,19 @@
+
+# Powerline-go setup
+export GOPATH="$HOME/.local"
+
+powerline_go_args=(
+    -hostname-only-if-ssh
+    -newline
+    -theme gruvbox
+    -cwd-max-depth 4
+)
+
+function _update_ps1 {
+    PS1="$($GOPATH/bin/powerline-go -error $? ${powerline_go_args[@]})"
+}
+
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
