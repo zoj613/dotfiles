@@ -51,6 +51,10 @@ set incsearch
 nmap <Leader>h :nohl<CR>
 
 
+" exit insert mode using ii
+inoremap jj <C-c>
+
+
 " buffer navigation mappings
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>j :bprevious<CR>
