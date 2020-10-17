@@ -27,7 +27,7 @@ function cf {
 }
 
 # fuzzy open with vim from anywhere (source: https://github.com/junegunn/fzf/wiki/examples)
-function vff {
+function fff {
   local file
 
   file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1 -m)"
@@ -48,4 +48,9 @@ function pf {
         tree ${dir} -l --filelimit=30
     fi
 }
+
+# Add selected aliases to the fuzzy completion list of commands
+#_fzf_complete_dotd() { _fzf_complete --header-lines=1 --multi -- "$@" < <(dots); }
+#_fzf_complete_dotd_post() { $(echo "$@" | grep -oP "(?<=\s).[^ ]+"); }
+#[ -n "$BASH" ] && complete -F _fzf_complete_dotd -o default -o bashdefault dotd
 

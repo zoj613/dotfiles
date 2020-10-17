@@ -27,6 +27,10 @@ fi
 # load powerline-go config
 [[ -f ~/.bash_powerline ]] && . ~/.bash_powerline
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 # load FZF config
 [[ -f ~/.bash_fzf ]] && . ~/.bash_fzf
 
