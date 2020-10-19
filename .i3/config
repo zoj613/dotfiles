@@ -1,6 +1,8 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# set default terminal
+set $terminal termite
 
 ## Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -31,7 +33,7 @@ font xft:Droid Sans Bold 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec $terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+o exec setxkbmap us # convert back to qwerty
@@ -39,8 +41,7 @@ bindsym $mod+Mod1+o exec setxkbmap -variant dvorak # convert back to qwerty
 
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency # -nb '#1d2021' -sb '#b8bb26' -nf '#ebdbb2' \
-    #-sf '#1d2021' -h '10' # -fn 'Inconsolata for Powerline Bold 9'
+bindsym $mod+d exec --no-startup-id dmenu_recency
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -49,8 +50,8 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
+# exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
@@ -58,16 +59,25 @@ bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5; notify-send 'brightness down'"
 
-# Start Applications
-bindsym $mod+Ctrl+b exec termite -e 'bmenu'
+# volume controls
+# `getvolume` variable grabs the current volume from output of amixer using a
+# regex and sends it as a formatted notification via dunst
+set $getvolume exec --no-startup-id dunstify --replace=1 \
+    "Volume: $(amixer sget Master | grep -oP '(?<=\[)\d+%(?=\])')"
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute; $getvolume
+bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute; $getvolume
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# start applications
+bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
-bindsym $mod+F4 exec termite -e ranger
+bindsym $mod+F4 exec $terminal -e ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec termite -e 'mocp'
+bindsym $mod+F5 exec $terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -189,9 +199,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
 assign [class="firefox"] $ws2
 assign [class="freetube"] $ws4
 
@@ -281,20 +289,12 @@ mode "resize" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-
 
 # Autostart applications
 # ======================
 
 # set keyboard variant (dvp=Dvorak programmer)
 # exec --no-startup-id setxkbmap -variant dvp
-# setup resolution with external monitor where applicable
-exec --no-startup-id xrandr --auto --output eDP1 --primary --mode 1920x1080 \
-    --output HDMI-1-4 --mode 1920x1080 --left-of eDP1
-#exec sh ~/.fehbg  # setup wallpaper
 exec --no-startup-id redshift
 exec --no-startup-id safeeyes
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -308,7 +308,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 #exec --no-startup-id start_conky_grey
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 15 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -342,36 +342,59 @@ exec_always --no-startup-id fix_xcursor
 #set_from_resource $term_color13    color13
 #set_from_resource $term_color14    color14
 #set_from_resource $term_color15    color15
-#
+
+
+# set general color variables for theme and statusbar
+# `vdark` and `vlight` mean very light and very dark, respectively
+set $gray           #4f4f4f
+set $vdark_gray     #1d2021
+set $vlight_yellow  #fbf1c9
+set $dark_yellow    #b8bb26
+set $vlight_orange  #ebdbb2
+set $orange         #cb4b16
+set $red            #fb4934
+set $cyan           #1abc9c
+set $dark_cyan      #16a085
+set $blue           #268bd2
+set $black          #000000
+set $light_black    #0c0c0c
+set $white          #ffffff
+set $dark_gray      #2b2c2b
+set $almost_white   #f9faf9
+
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command /usr/share/bumblebee-status/bumblebee-status -m cmus layout redshift cpu \
-        memory disk battery datetime -p disk.path="/home" memory.format="{used}({percent:.0f}%)" \
-        datetime.format="%a, %b %d | %R" disk.format="{used}/{size}" disk.open="pcmanfm" -t mygruvbox
+	status_command /usr/share/bumblebee-status/bumblebee-status -m cmus layout \
+        redshift cpu memory battery date amixer -p disk.path="/home" \
+        memory.format="{used}({percent:.0f}%)" amixer.percent_change="5%" \
+        date.format="%a | %d %b | %R" datetime.format="%R" disk.format="{used}/{size}" \
+        disk.open="pcmanfm" -t mygruvbox
+
 	position bottom
-    font xft:Inconsolata for Powerline Bold 9
-    height 30
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+    font xft: Inconsolata Condensed Bold,Inconsolata for Powerline,AwesomeFonts 11
+    height 28
+# please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
 #	tray_output eDP1
 
 	bindsym button4 nop
 	bindsym button5 nop
-#   font xft:URWGothec-Book 11
 	strip_workspace_numbers yes
 
     colors {
-        background #1d2021
-        statusline #F9FAF9
-        separator  #454947
+        background $vdark_gray
+        statusline $almost_white
+        separator  $gray
 
-#                      border  backgr. text
-        focused_workspace  #F9FAF9 #b8bb26 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#                          border        backgr.        text
+        focused_workspace  $almost_white $dark_yellow   $vdark_gray
+        active_workspace   $gray         $dark_gray     $vlight_yellow
+        inactive_workspace $gray         $dark_gray     $vlight_yellow
+        binding_mode       $almost_white $dark_yellow   $vdark_gray
+        urgent_workspace   $dark_cyan    $vlight_yellow $red
     }
 }
 
@@ -379,21 +402,21 @@ bar {
 bindsym $mod+m bar mode toggle
 
 # Theme colors
-# class                 border  backgr. text    indic.   child_border
-client.focused          #4f4f4f #4f4f4f #fbf1c9 #FDF6E3 #4f4f4f
-client.focused_inactive #1d2021 #1d2021 #ebdbb2 #454948
-client.unfocused        #1d2021 #1d2021 #ebdbb2 #454948
-client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-client.placeholder      #000000 #0c0c0c #ffffff #000000 
+# class                 border      backgr.        text           indic.          child_border
+client.focused          $gray       $gray          $vlight_yellow $vlight_yellow  $dark_yellow
+client.focused_inactive $vdark_gray $vdark_gray    $vlight_orange $gray
+client.unfocused        $vdark_gray $vdark_gray    $vlight_orange $gray
+client.urgent           $orange     $vlight_yellow $cyan          $blue
+client.placeholder      $black      $light_black   $white         $black
 
-client.background       #2B2C2B #282828
+client.background       $dark_gray  $vdark_gray
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner 14
+gaps inner 6
 gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
