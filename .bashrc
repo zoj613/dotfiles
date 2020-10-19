@@ -8,8 +8,6 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/usr/local/pgsql/bin:$PATH"
 # set terminal colors
 export TERM="xterm-termite"
-# set variable used by i3-sensible-terminal to point to preferred terminal
-export TERMINAL="xterm-termite"
 
 # allow spawning another terminal inside the current directory
 if [[ $TERM == xterm-termite ]]; then
@@ -36,3 +34,13 @@ fi
 
 # load pyenv config
 [[ -f ~/.bash_pyenv ]] && . ~/.bash_pyenv
+
+# add selected aliases to bash completion so I can use them with FZF
+if [ -f "/usr/share/bash-complete-alias/complete_alias" ]; then
+    . /usr/share/bash-complete-alias/complete_alias
+    list=(dot dotd ga gd gr)
+    for i in "${list[@]}"; do
+        complete -F _complete_alias $i
+    done
+fi
+
