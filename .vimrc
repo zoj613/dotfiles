@@ -48,7 +48,7 @@ set hlsearch
 " highlight as I type
 set incsearch
 " map <Leader>h to command thats turns off highlighting
-nmap <Leader>h :nohl<CR>
+nmap <Leader>n :nohl<CR>
 
 
 " exit insert mode using ii
@@ -108,15 +108,21 @@ au BufNewFile,BufRead *
     \ set fileformat=unix
 
 
+" disable use of arrow keys in all modes
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+
+
 " Ranger.vim
 " ==========
 " mapping for opening a new file in the cwd
 map <Leader>d :RangerWorkingDirectory<CR>
-
-
-" FZF.vim
-" =======
-let g:fzf_preview_window = ''
 
 
 " Jedi-vim
@@ -130,6 +136,11 @@ let g:jedi#usages_command = "<leader>u"
 " =======
 " map :FZF to CTRL+P
 nmap <C-p> :FZF<CR>
+" view command history using FZF
+nmap <Leader>H :History:<CR>
+" view buffer histoty using FZF
+nmap <leader>h :History<CR>
+let g:fzf_preview_window = ''
 
 
 " ALE
