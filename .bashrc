@@ -2,19 +2,11 @@
 HISTSIZE=10000
 HISTFILESIZE=20000
 
-# set poetry path
-export PATH="$HOME/.poetry/bin:$PATH"
-# set posgresql path
-export PATH="/usr/local/pgsql/bin:$PATH"
-# set terminal colors
-export TERM="xterm-termite"
-
 # allow spawning another terminal inside the current directory
 if [[ $TERM == xterm-termite ]]; then
   . /etc/profile.d/vte.sh
   __vte_prompt_command
 fi
-
 
 # Load aliases
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
