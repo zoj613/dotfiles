@@ -68,7 +68,7 @@ alias nf='neofetch --memory_unit gib --os_arch off --disable model packages reso
 alias msync='time rsync -r -t -v --progress --delete -s /run/media/zoj/ZOLISAEXT4/Music/ /run/media/zoj/ZOJ/Music/'
 alias trl='trash-list'
 alias tre='trash-empty'
-
+alias trp='trash-put'
 
 # fzf related
 # ===========
