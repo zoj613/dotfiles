@@ -295,8 +295,11 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # set keyboard variant (dvp=Dvorak programmer)
 # exec --no-startup-id setxkbmap -variant dvp
-exec --no-startup-id redshift
-exec --no-startup-id safeeyes
+# exec --no-startup-id redshift
+# exec --no-startup-id safeeyes
+# startup a scratchpad terminal window for quick use throughout a session
+for_window [instance="scratch_term"] \
+    move scratchpad exec --no-startup-id $terminal -name scratch_term
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 # exec --no-startup-id manjaro-hello
@@ -346,6 +349,7 @@ exec_always --no-startup-id fix_xcursor
 
 # set general color variables for theme and statusbar
 # `vdark` and `vlight` mean very light and very dark, respectively
+set $light_gray     #757575
 set $gray           #4f4f4f
 set $vdark_gray     #1d2021
 set $vlight_yellow  #fbf1c9
@@ -369,8 +373,8 @@ bar {
 	i3bar_command i3bar
 	status_command /usr/share/bumblebee-status/bumblebee-status -m cmus layout \
         redshift cpu memory battery date amixer -p disk.path="/home" \
-        memory.format="{used}({percent:.0f}%)" amixer.percent_change="5%" \
-        date.format="%a | %d %b | %R" datetime.format="%R" disk.format="{used}/{size}" \
+        memory.format="{used}" amixer.percent_change=5% date.format="%a, %d %b | %R" \
+        date.interval=60s datetime.format="%R" disk.format="{used}/{size}" \
         disk.open="pcmanfm" -t mygruvbox
 
 	position bottom
@@ -392,7 +396,7 @@ bar {
 #                          border        backgr.        text
         focused_workspace  $almost_white $dark_yellow   $vdark_gray
         active_workspace   $gray         $dark_gray     $vlight_yellow
-        inactive_workspace $gray         $dark_gray     $vlight_yellow
+        inactive_workspace $light_gray   $dark_gray     $vlight_yellow
         binding_mode       $almost_white $dark_yellow   $vdark_gray
         urgent_workspace   $dark_cyan    $vlight_yellow $red
     }
