@@ -14,24 +14,44 @@ Xft.lcdfilter: lcddefault
 !XTerm*reverseVideo:      on
 !XTerm*selectToClipboard: true
 
+Xcursor.theme: xcursor-breeze
+Xcursor.size:  0
+
+
 ! Base16 Gruvbox dark, hard
 ! Scheme: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
+! very dark (mostly black) blue
 #define base00 #1d2021
+! very dark gray with a tint of orange
 #define base01 #3c3836
+! light gray with a tint of orange
 #define base02 #504945
+! very light gray with a tint of orange
 #define base03 #665c54
+! light khaki cream
 #define base04 #bdae93
+! khaki cream
 #define base05 #d5c4a1
+! very light creamy-orange
 #define base06 #ebdbb2
+! very soft yellow
 #define base07 #fbf1c7
+! bright red
 #define base08 #fb4934
+! light vivid orange
 #define base09 #fe8019
+! very bright orange
 #define base0A #fabd2f
+! strong goldish yellow
 #define base0B #b8bb26
+! light desaturated green
 #define base0C #8ec07c
+! greyish cyan
 #define base0D #83a598
+! light desaturated pink
 #define base0E #d3869b
+! strong orange
 #define base0F #d65d0e
 #define background_opacity 90
 
@@ -71,54 +91,62 @@ URxvt*color19:      base02
 URxvt*color20:      base04
 URxvt*color21:      base06
 
-Xcursor.theme: Maia-Cursor
-Xcursor.size:                     0
+! dark cyan
+URxvt*color24:      #076678
+! moderate cyan 
+URxvt*color66:      #427b58
+! Dark red
+URxvt*color88:      #9d0006
+! dark moderate pink
+URxvt*color96:      #8f3f71
+! dark yellow (Olive tone)
+URxvt*color100:     #79740e
+URxvt*color108:     base0C
+URxvt*color109:     base0D
+! dark orange (brown tone)
+URxvt*color130:     #af3a03
+! orangish yellow
+URxvt*color136:     #b57614
+! strong yellow
+URxvt*color142:     base0B
+! bright red
+URxvt*color167:     #fb4934
+URxvt*color175:     base0E
+URxvt*color208:     base09
+URxvt*color214:     base0A
+URxvt*color223:     base06
+! very soft yellow
+URxvt*color228:     #f2e5bc
+URxvt*color229:     base07
+! light grayish yellow
+URxvt*color230:     #f9f5d7
+URxvt*color234:     base00
+! very dark gray (mostly black)
+URxvt*color235:     #282828
+! very dark (mostly black) orange/brown tone
+URxvt*color236:     #32302f
+! very dark grayish orange
+URxvt*color237:     base01
+URxvt*color239:     base02
+URxvt*color241:     base03
+! dark grayish orange
+URxvt*color243:     #7c6f64
+! grayish light orange
+URxvt*color244:     #928374
+URxvt*color245:     #928374
+! grayish light orange
+URxvt*color246:     #a89984
+URxvt*color248:     base04
+URxvt*color250:     base05
 
-URxvt.font: xft:TerminessTTF Nerd Font Mono:style=Bold:size=9
-URxvt.letterSpace:0
-URxvt.boldFont: true
 
-
-! alternative font settings with 'terminus':
-! URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
-! URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
-!! terminus names see end of file!
-URxvt*color24:  #076678
-URxvt*color66:  #427b58
-URxvt*color88:  #9d0006
-URxvt*color96:  #8f3f71
-URxvt*color100: #79740e
-URxvt*color108: #8ec07c
-URxvt*color109: #83a598
-URxvt*color130: #af3a03
-URxvt*color136: #b57614
-URxvt*color142: #b8bb26
-URxvt*color167: #fb4934
-URxvt*color175: #d3869b
-URxvt*color208: #fe8019
-URxvt*color214: #fabd2f
-URxvt*color223: #ebdbb2
-URxvt*color228: #f2e5bc
-URxvt*color229: #fbf1c7
-URxvt*color230: #f9f5d7
-URxvt*color234: #1d2021
-URxvt*color235: #282828
-URxvt*color236: #32302f
-URxvt*color237: #3c3836
-URxvt*color239: #504945
-URxvt*color241: #665c54
-URxvt*color243: #7c6f64
-URxvt*color244: #928374
-URxvt*color245: #928374
-URxvt*color246: #a89984
-URxvt*color248: #bdae93
-URxvt*color250: #d5c4a1
+URxvt.font:                       xft:Inconsolata for Powerline:style=BoldForPowerline:size=9
+!URxvt.letterSpace:                -1
+!URxvt.boldFont:                   xft:TerminessTTF Nerd Font Mono:style=Bold:size=9
 
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
-! URxvt*background:                 black
-! URxvt*foreground:                 grey
 URxvt*saveLines:                  5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
