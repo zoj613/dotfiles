@@ -20,7 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'tmhedberg/SimpylFold'
 Plug 'dense-analysis/ale'
-Plug 'rbong/vim-crystalline'
+Plug 'ap/vim-buftabline'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
@@ -42,6 +42,14 @@ nmap <Leader>n :nohl<CR>
 
 " exit insert mode using ii
 inoremap jj <C-c>
+
+
+" enable switching from an unsaved buffer
+set hidden
+
+
+" turn on statusline for all windows
+set laststatus=2 
 
 
 " buffer navigation mappings
@@ -74,11 +82,6 @@ set clipboard^=unnamed,unnamedplus
 " specify different areas of the screen where the splits should occur
 set splitbelow
 set splitright
-" split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 
 " Enable folding
@@ -124,7 +127,16 @@ let g:ale_default_navigation = 'buffer'
 let g:ale_completion_autoimport = 1
 " Use ALE's function for omnicompletion.
 set omnifunc=ale#completion#OmniFunc
+" prevent the `Omni Completion` message from popping up during autocomplete"
+set shortmess+=c
 set completeopt=popup,longest,menu,menuone
+
+augroup SignatureAfterComplete
+    autocmd!
+    " display argument list of the selected completion candidate using ALEHover
+    autocmd User ALECompletePost ALEHover
+augroup END
+
 let g:ale_completion_symbols = {
 \    'method': '',
 \    'function': '',
@@ -184,6 +196,7 @@ nmap <C-p> :FZF<CR>
 nmap <leader>h :History:<CR>
 " view buffer history using FZF
 nmap <leader>H :History<CR>
+let g:fzf_layout = {'down': '20%'}
 
 
 " python-syntax
@@ -203,21 +216,6 @@ colorscheme gruvbox8
 let g:SimpylFold_docstring_preview=1
 
 
-" vim-crystalline
-" ===============
-function! StatusLine(...)
-  return crystalline#mode() . '%#Crystalline# %f%h%w%m%r %#CrystallineFill#'
-        \ . '%=%#Crystalline# %{&ft}[%{&fenc!=#""?&fenc:&enc}][%{&ff}] %l/%L %c%V %P '
-endfunction
-let g:crystalline_enable_sep = 1
-let g:crystalline_statusline_fn = 'StatusLine'
-let g:crystalline_theme = 'gruvbox'
-set laststatus=2
-set tabline=%!crystalline#bufferline()
-set showtabline=2
-
-
-" pydocstring
 " ===========
 let g:pydocstring_formatter = 'numpy'
 nmap <silent> <Leader>pd <Plug>(pydocstring)
