@@ -1,5 +1,5 @@
-set encoding=utf-8
-set nocompatible              " required
+" load settings file before everything else
+runtime! settings.vim
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -9,213 +9,54 @@ endif
 
 call plug#begin()
 
-
-" add path to system fzf before installing vim plugin
-Plug '/usr/bin/'
-" install from last sensible commit because latest version requires FZF to be
-" version > 0.22.0 and my current system version is still at v0.22
-Plug 'junegunn/fzf.vim', { 'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b'}
+if executable('fzf')
+    " add path to system fzf before installing vim plugin
+    Plug '/usr/bin/'
+    " install from last sensible commit because latest version requires FZF to be
+    " version > 0.22.0 and my current system version is still at v0.22
+    Plug 'junegunn/fzf.vim', { 'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b'}
+else
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+endif
 
 Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'tmhedberg/SimpylFold'
 Plug 'dense-analysis/ale'
-Plug 'ap/vim-buftabline'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'francoiscabrol/ranger.vim'
+
 call plug#end()
 
-
-" map leader to space
-map <Space> <Leader>
-
-
-" highlight all matches for a pattern search
-set hlsearch
-" highlight as I type
-set incsearch
 " map <Leader>h to command thats turns off highlighting
-nmap <Leader>n :nohl<CR>
-
-
+nnoremap <Leader>n :nohl<CR>
 " exit insert mode using ii
 inoremap jj <C-c>
-
-
-" enable switching from an unsaved buffer
-set hidden
-
-
-" turn on statusline for all windows
-set laststatus=2 
-
-
 " buffer navigation mappings
-nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>b :buffers<CR>
+nnoremap <Leader>h :history<CR>
 nnoremap <Leader>j :bprevious<CR>
 nnoremap <Leader>k :bnext<CR>
 nnoremap <Leader>c :bd<CR>
-
-" turn on syntax highlighting in vi
-syntax on
-
-
-" Enable 256 colour support
-" set t_Co=256
-
-
-" set GUI-like colours
-set termguicolors
-
-" Turn line numbers on
-set number
-set relativenumber
-
-
-" Allow OS clipboard to work in vim and viceversa
-set clipboard^=unnamed,unnamedplus
-
-
-" Split config
-" specify different areas of the screen where the splits should occur
-set splitbelow
-set splitright
-
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-
-" set verical ruler
-set colorcolumn=79
-
-
-" Configure file Indentation by extension
-au BufNewFile,BufRead *
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set textwidth=79 |
-    \ set fileformat=unix
-
-
 " disable use of arrow keys in all modes
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <Up> <Nop>
-
-
-" ALE
-" ===
-" map CTRL+K and CTRL+J to jump between syntax errors/warnings
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:ale_completion_enabled = 1
-let g:ale_completion_max_suggestions = 25
-let g:ale_completion_autoimport = 1
-let g:ale_default_navigation = 'buffer'
-let g:ale_completion_autoimport = 1
-" Use ALE's function for omnicompletion.
-set omnifunc=ale#completion#OmniFunc
-" prevent the `Omni Completion` message from popping up during autocomplete"
-set shortmess+=c
-set completeopt=popup,longest,menu,menuone
-
-augroup SignatureAfterComplete
-    autocmd!
-    " display argument list of the selected completion candidate using ALEHover
-    autocmd User ALECompletePost ALEHover
-augroup END
-
-let g:ale_completion_symbols = {
-\    'method': '',
-\    'function': '',
-\    'constructor': '',
-\    'class': '',
-\    'enum': '',
-\    'reference': 'ref',
-\    'enum member': '',
-\    'constant': '',
-\    'struct': '',
-\    'type_parameter': 'type param',
-\    '<default>': 'v'
-\}
-noremap ;d :ALEGoToDefinition<CR>
-noremap ;td :ALEGoToTypeDefinition<CR>
-noremap ;r :ALEFindReferences<CR>
-noremap ;h :ALEHover<CR>
-noremap ;i :ALEInfo<CR>
-noremap ;f :ALEFix <CR>
-let g:ale_hover_to_preview = 0
-noremap ;s :ALESymbolSearch<CR>
-let g:ale_c_cc_options = '-std=c99 -Wall -Wextra -pedantic'
-let g:ale_c_clangd_options = "--all-scopes-completion --header-insertion=iwyu 
-\   --suggest-missing-includes --completion-style=detailed"
-let g:ale_python_pyls_executable = '/usr/bin/pyls'
-let g:ale_sh_language_server_executable = '/usr/bin/bash-language-server'
-let g:ale_lint_on_insert_leave = 1
-let g:ale_linters = {
-\   'python': ['pyls', 'flake8', 'mypy'],
-\   'sh': ['language_server'],
-\   'c': ['cc', 'clangd', 'clangtidy'],
-\   'vim': ['ale_custom_linting_rules', 'vimls']
-\}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'sh': ['shfmt'],
-\   'python': [
-\       'add_blank_lines_for_python_control_statements',
-\       'black',
-\       'reorder-python-imports'
-\   ],
-\   'c': ['clang-format', 'clangtidy']
-\}
-" use tab to step through completion choices instead of C-n
+" use tab to step through completion choices instead when pop-menu is shown.
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " use shift-tab to step backwards through completion choices
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " use enter to to close the completion pop-up when not wanted
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-
-
-" FZF.vim
-" =======
-" map :FZF to CTRL+P
-nmap <C-p> :FZF<CR>
-" view command histoty using FZF
-nmap <leader>h :History:<CR>
-" view buffer history using FZF
-nmap <leader>H :History<CR>
-let g:fzf_layout = {'down': '20%'}
-
-
-" python-syntax
-" =============
-let python_highlight_all=1
+" map to generate python docstrings
+nmap <silent> <Leader>pd <Plug>(pydocstring)
 
 
 " Gruvbox color scheme
 " ====================
-set background=dark
 let g:gruvbox_filetype_hi_groups=1
 colorscheme gruvbox8
-
-
-" SimpylFold
-" ==========
-let g:SimpylFold_docstring_preview=1
-
-
-" ===========
-let g:pydocstring_formatter = 'numpy'
-nmap <silent> <Leader>pd <Plug>(pydocstring)
