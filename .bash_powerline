@@ -7,6 +7,7 @@ powerline_go_args=(
     -newline
     -theme gruvbox
     -cwd-max-depth 4
+    -modules venv,host,ssh,cwd,perms,git,hg,jobs,exit
 )
 
 function _update_ps1 {
