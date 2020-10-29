@@ -1,3 +1,4 @@
+" made with https://tdaly.co.uk/projects/vim-statusline-generator/
 function! StatuslineGitBranch()
   let b:gitbranch=""
   if &modifiable
@@ -5,7 +6,7 @@ function! StatuslineGitBranch()
       let l:dir=expand('%:p:h')
       let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
       if !v:shell_error
-        let b:gitbranch=" ".substitute(l:gitrevparse, '\n', '', 'g')."  "
+        let b:gitbranch = "  ".substitute(l:gitrevparse, '\n', '', 'g')." "
       endif
     catch
     endtry
@@ -18,14 +19,14 @@ augroup GetGitBranch
 augroup END
 
 set statusline=
-set statusline+=%#IncSearch#
-set statusline+=\ %n 
+set statusline+=%#IncSearch#  "change the highlight group for the buffer number
+set statusline+=\ %n  " display the buffer number 
 set statusline+=\ %#PmenuSel#
-set statusline+=%{b:gitbranch}
+set statusline+=%{b:gitbranch}  " display the git branch if buffer is in a repo
 set statusline+=%#CursorColumn#
 set statusline+=\ %f
-set statusline+=%{&modified?'[+]\ ':''}
-set statusline+=%{&readonly?'\ ':''}
+set statusline+=%{&modified?'[+]\ ':''}  " buffer mod indicator
+set statusline+=%{&readonly?'\ ':''}  " read only indicator
 set statusline+=\ %h
 set statusline+=%#LineNr#
 set statusline+=%=
