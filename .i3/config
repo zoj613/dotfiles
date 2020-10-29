@@ -90,10 +90,10 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # focus_follows_mouse no
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -119,7 +119,7 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+Shift+v split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
@@ -371,7 +371,7 @@ set $almost_white   #f9faf9
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command /usr/share/bumblebee-status/bumblebee-status -m cmus layout \
+	status_command /usr/share/bumblebee-status/bumblebee-status -m cmus \
         redshift cpu memory battery date amixer -p disk.path="/home" \
         memory.format="{used}" amixer.percent_change=5% date.format="%a, %d %b | %R" \
         date.interval=60s datetime.format="%R" disk.format="{used}/{size}" \
