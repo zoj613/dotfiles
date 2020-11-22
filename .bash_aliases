@@ -68,7 +68,7 @@ alias nf='neofetch --memory_unit gib --os_arch off --disable model packages reso
 alias msync='time rsync -r -t -v --progress --delete -s /run/media/zoj/ZOLISAEXT4/Music/ /run/media/zoj/ZOJ/Music/'
 alias trl='trash-list'
 alias tre='trash-empty'
-alias trp='trash-put'
+alias rm='trash-put'
 
 # fzf related
 # ===========
@@ -76,3 +76,8 @@ alias fzf='fzf --color=16'
 alias ff='file=$(fzf); [[ -n "$file" ]] && vim $file'  # open with vim using fzf
 alias fif='grep --line-buffered --color=auto -r "" * | fzf'  # search for text in file using fzf
 
+# valgrind related
+# ===============
+alias vg='valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s'
+alias vgc='valgrind --tool=callgrind'
+alias cga='callgrind_annotate --auto=yes --inclusive=yes'
