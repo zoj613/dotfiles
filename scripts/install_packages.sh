@@ -10,7 +10,7 @@ sudo pacman -S --needed --noconfirm yay
 alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essential packages
-yi git xorg-xrandr curl wget base-devel trash-cli mlocate
+yi git xorg-xrandr curl wget base-devel trash-cli mlocate xorg-xbacklight ufw
 
 # update mlocate database so as to use the locate command
 sudo updatedb
@@ -28,7 +28,7 @@ yi pcmanfm ttf-inconsolata ttf-droid noto-fonts qpdfview feh
 yi youtube-dl firefox
 
 # misc packages
-yi neofetch htop figlet redshift
+yi neofetch htop figlet redshift bash-completion bash-complete-alias
 
 echo "Packages installed successfully"
 

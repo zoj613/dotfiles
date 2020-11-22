@@ -13,7 +13,7 @@ alias df='df -hT'
 # OS and shell
 # ============
 alias manjaro='cat /etc/lsb-release'  # manjaro release info
-alias reload='exec $SHELL'  # restart shell
+alias r='exec $SHELL'  # restart shell
 alias grep='grep --color=auto'
 alias q='exit' # quit shell
 
@@ -49,6 +49,17 @@ alias gbn='git checkout -b'
 alias gd='git diff'
 
 
+# dotfiles related aliases
+# ========================
+# for interacting with the sotfiles repo from any directory
+alias dot='git -C $HOME/dotfiles/'
+alias dots='dot st'
+alias dotp='dot push'
+alias dotc='dot cm'
+alias dota='dot add -u'
+alias dotd='dot diff'
+
+
 # Tools
 # =====
 # dr14_tmeter command for calculating dynamic range of music files
@@ -57,11 +68,16 @@ alias nf='neofetch --memory_unit gib --os_arch off --disable model packages reso
 alias msync='time rsync -r -t -v --progress --delete -s /run/media/zoj/ZOLISAEXT4/Music/ /run/media/zoj/ZOJ/Music/'
 alias trl='trash-list'
 alias tre='trash-empty'
-
+alias rm='trash-put'
 
 # fzf related
 # ===========
 alias fzf='fzf --color=16'
-alias vf='file=$(fzf); [[ -n "$file" ]] && vim $file'  # open with vim using fzf
+alias ff='file=$(fzf); [[ -n "$file" ]] && vim $file'  # open with vim using fzf
 alias fif='grep --line-buffered --color=auto -r "" * | fzf'  # search for text in file using fzf
 
+# valgrind related
+# ===============
+alias vg='valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s'
+alias vgc='valgrind --tool=callgrind'
+alias cga='callgrind_annotate --auto=yes --inclusive=yes'

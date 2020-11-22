@@ -1,0 +1,56 @@
+# configure fzf
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'  # include hidden files
+export FZF_DEFAULT_OPTS='--height 20% --layout=reverse --border'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude .git"
+# automatically selects the item if there's only one
+export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+
+# cf - fuzzy cd from anywhere (source: https://github.com/junegunn/fzf/wiki/examples)
+function cf {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+     if [[ -d $file ]]
+     then
+        cd -- $file
+     else
+        cd -- ${file:h}
+     fi
+  fi
+}
+
+# fuzzy open with vim from anywhere (source: https://github.com/junegunn/fzf/wiki/examples)
+function fff {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1 -m)"
+
+  if [[ -n $file ]]
+  then
+     vim -- $file
+     print -l $file[1]
+  fi
+}
+
+# peek into a subsequent directory using fzf
+function pf {
+    local cd_dir=$(__fzf_cd__)
+    local dir="${cd_dir#*"cd"}"  # remove "cd" from string
+
+    if ! [ -z "$dir" ]; then
+        tree ${dir} -l --filelimit=30
+    fi
+}
+
+# Add selected aliases to the fuzzy completion list of commands
+#_fzf_complete_dotd() { _fzf_complete --header-lines=1 --multi -- "$@" < <(dots); }
+#_fzf_complete_dotd_post() { $(echo "$@" | grep -oP "(?<=\s).[^ ]+"); }
+#[ -n "$BASH" ] && complete -F _fzf_complete_dotd -o default -o bashdefault dotd
+

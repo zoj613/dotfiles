@@ -12,7 +12,7 @@ yii openblas
 
 
 # audio
-yi gstreamer gmusicbrowser dr14_tmeter mediainfo easytag ffmpeg flac cdrip-tools
+yi gstreamer gmusicbrowser-git dr14_tmeter mediainfo easytag ffmpeg flac cdrip-tools
 
 
 # desktop packages
