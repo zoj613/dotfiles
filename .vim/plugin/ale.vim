@@ -8,7 +8,7 @@ let g:ale_completion_autoimport = 1
 let g:ale_hover_to_preview = 0
 
 " language specific options
-let g:ale_c_cc_options = '-std=c11 -Wall -Wextra -pedantic'
+let g:ale_c_cc_options = '-std=c11 -Wall -Wextra -pedantic -Werror -Wshadow'
 let g:ale_c_clangd_options = "--all-scopes-completion --header-insertion=iwyu 
 \   --suggest-missing-includes --completion-style=detailed"
 let g:ale_python_pyls_executable = '/usr/bin/pyls'
