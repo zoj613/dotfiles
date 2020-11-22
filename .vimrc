@@ -12,14 +12,10 @@ call plug#begin()
 if executable('fzf')
     " add path to system fzf before installing vim plugin
     Plug '/usr/bin/'
-    " install from last sensible commit because latest version requires FZF to be
-    " version > 0.22.0 and my current system version is still at v0.22
-    Plug 'junegunn/fzf.vim', { 'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b'}
 else
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
 endif
-
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'tmhedberg/SimpylFold'
@@ -28,8 +24,8 @@ Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'francoiscabrol/ranger.vim'
-
 call plug#end()
+
 
 " map <Leader>h to command thats turns off highlighting
 nnoremap <Leader>n :nohl<CR>
@@ -54,7 +50,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " map to generate python docstrings
 nmap <silent> <Leader>pd <Plug>(pydocstring)
-
 
 " Gruvbox color scheme
 " ====================
