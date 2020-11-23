@@ -21,7 +21,7 @@ augroup END
 set statusline=
 set statusline+=%#IncSearch#  "change the highlight group for the buffer number
 set statusline+=\ %n  " display the buffer number 
-set statusline+=\ %#PmenuSel#
+set statusline+=\ %#DiffAdd#
 set statusline+=%{b:gitbranch}  " display the git branch if buffer is in a repo
 set statusline+=%#CursorColumn#
 set statusline+=\ %f

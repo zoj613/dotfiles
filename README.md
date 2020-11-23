@@ -1,7 +1,5 @@
 # My dotfiles
-Dotfiles for my Manjaro XFCE setup. It may partially work with KDE Plasma as well.
-
-![shell screenshot](scripts/img/screenshot.png)
+Dotfiles for my Manjaro i3 setup. Old dotfiles for XFCE can be found [here](https://github.com/zoj613/dotfiles/tree/manjaro).
 
 ## Script details
 - `symlink.sh`: Sets up the symbolic links of the relevant dotfiles in the home directory.
@@ -30,3 +28,14 @@ source install_packages_extras.sh
 source theming.sh
 
 ```
+
+## Screenshots
+Desktop
+![desktop](scripts/img/desktop.png)
+
+floating windows
+![floating](scripts/img/floating.png)
+
+tiling windows
+![tiling](scripts/img/tiling.png)
+
