@@ -19,3 +19,5 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/usr/local/pgsql/bin:$PATH"
 # set terminal colors
 export TERM="xterm-termite"
+# set bumblebee status token for gh notifications
+export GIT_NOTIF_TOKEN=$(cat ~/GIT_BUMBLEBEESTATUS_TOKEN)

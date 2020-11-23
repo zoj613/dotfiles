@@ -35,6 +35,3 @@ if [ -f "/usr/share/bash-complete-alias/complete_alias" ]; then
         complete -F _complete_alias $i
     done
 fi
-
-# set bumblebee status token for gh notifications
-export GIT_BUMBLEBEESTATUS_TOKEN=$(cat ~/GIT_BUMBLEBEESTATUS_TOKEN)
