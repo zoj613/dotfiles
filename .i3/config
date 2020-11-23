@@ -361,9 +361,6 @@ set $dark_gray      #2b2c2b
 set $almost_white   #f9faf9
 
 
-# set github notifications token key
-set $gh_token exec --no-startup-id echo "$GIT_BUMBLEBEESTATUS_TOKEN"
-
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
@@ -371,7 +368,7 @@ bar {
         redshift cpu memory battery github date amixer -p disk.path="/home" \
         memory.format="{used}" amixer.percent_change=5% date.format="%a, %d %b | %R" \
         date.interval=60s datetime.format="%R" disk.format="{used}/{size}" \
-        disk.open="pcmanfm" github.token="{$gh_token}" github.reasons=\
+        disk.open="pcmanfm" github.token=$GIT_NOTIF_TOKEN github.reasons=\
         "author,comment,manual,security_alert,state_change,mention,subscribed" \
         -t mygruvbox
 
