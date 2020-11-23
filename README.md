@@ -39,7 +39,3 @@ floating windows
 tiling windows
 ![tiling](scripts/img/tiling.png)
 
-gtk2 filemanager theme
-![filemanager](scripts/img/filemanager.png)
-
-
