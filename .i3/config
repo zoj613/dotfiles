@@ -367,7 +367,7 @@ set $gh_token exec --no-startup-id echo "$GIT_BUMBLEBEESTATUS_TOKEN"
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command /usr/share/bumblebee-status/bumblebee-status -m cmus \
+	status_command /usr/share/bumblebee-status/bumblebee-status -m \
         redshift cpu memory battery github date amixer -p disk.path="/home" \
         memory.format="{used}" amixer.percent_change=5% date.format="%a, %d %b | %R" \
         date.interval=60s datetime.format="%R" disk.format="{used}/{size}" \
