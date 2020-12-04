@@ -27,18 +27,20 @@ alias yi='yay -S --needed --noconfirm'
 alias yii='yay -S --needed --useask'  # when conflicts need to be resolved
 alias yc='yay -Yc --noconfirm'  # Remove unneeded dependencies
 alias ycc='yay -Sc --noconfirm'  # remove old packages from cache directory
-alias yr='yay -Rs'  # remove packages including deps
+alias yr='yay -Rdd'  # remove package and leave dependencies
 alias yrr='yay -Rns'  # remove package including config files and deps
 alias yo='yay -Rns $(yay -Qtdq)'
 alias yoo='yay -Rns $(yay -Qttdq)'
 alias ys='yay -Ss'
 alias ysi='yay -Si'
+alias yf='yay -Ql' # list all files that come with an installed package
 
 
 # Git
 # ===
 alias gc='git commit -m'
 alias gp='git push'
+alias gpu='git push --set-upstream origin'
 alias ga='git add'
 alias gaa='ga -u'
 alias gr='git rm'

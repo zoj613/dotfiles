@@ -7,8 +7,8 @@
 yi gparted
 
 # development
-yi zeal-git gummi cblas
-yii openblas
+yay -Rdd blas
+yi zeal-git gummi openblas-lapack
 
 
 # audio
