@@ -3,12 +3,10 @@
 # Install extra packages that are uncecessary during initial setup
 # and those that take a while to build/install
 
-#essential
-yi gparted
 
 # development
 yay -Rdd blas
-yi zeal-git gummi openblas-lapack
+yi zeal-git openblas-lapack-git
 
 
 # audio
@@ -16,7 +14,7 @@ yi gstreamer gmusicbrowser-git dr14_tmeter mediainfo easytag ffmpeg flac cdrip-t
 
 
 # desktop packages
-yi rsync pdfslicer cmatrix
+yi rsync 
 
 
 # multimedia

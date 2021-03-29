@@ -1,7 +1,7 @@
 #!/bin/bash
 
-xrandr --auto --output eDP1 --primary --mode 1920x1080 \
-    --output HDMI-1-4 --mode 1920x1080 --left-of eDP1 &
+xrandr --auto --output LVDS1 --primary --mode 1366x768 \
+    --output HDMI1 --mode 1920x1080 --left-of LVDS1 &
 
 # run file manager in the background to automout external drives
 pcmanfm -d &

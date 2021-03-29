@@ -28,14 +28,3 @@ source install_packages_extras.sh
 source theming.sh
 
 ```
-
-## Screenshots
-Desktop
-![desktop](scripts/img/desktop.png)
-
-floating windows
-![floating](scripts/img/floating.png)
-
-tiling windows
-![tiling](scripts/img/tiling.png)
-

@@ -300,6 +300,7 @@ exec --no-startup-id $terminal --title=scratch_term
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
+exec --no-startup-id safeeyes
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
@@ -373,8 +374,8 @@ bar {
         -t mygruvbox
 
 	position bottom
-    font xft: Inconsolata Condensed Bold,Inconsolata for Powerline,AwesomeFonts 11
-    height 28
+    font xft: Inconsolata Condensed Bold,Inconsolata for Powerline,AwesomeFonts 10
+    height 34
 # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
 #	tray_output eDP1

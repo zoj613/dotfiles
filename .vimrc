@@ -24,6 +24,7 @@ Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'lervag/vimtex'
 call plug#end()
 
 
