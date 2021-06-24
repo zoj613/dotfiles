@@ -8,6 +8,7 @@ alias lsg='ls -a | grep'
 alias dir='dir -Q --color=auto'
 alias ..='cd ..'
 alias df='df -hT'
+alias tree='tree -C'
 
 
 # OS and shell
@@ -83,3 +84,7 @@ alias fif='grep --line-buffered --color=auto -r "" * | fzf'  # search for text i
 alias vg='valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s'
 alias vgc='valgrind --tool=callgrind'
 alias cga='callgrind_annotate --auto=yes --inclusive=yes'
+
+# multimedia
+# ==========
+alias yta='youtube-dl -x --audio-format flac'
