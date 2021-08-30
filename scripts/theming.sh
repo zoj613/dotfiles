@@ -2,8 +2,7 @@
 
 alias yi='yay -S --needed --noconfirm'
 
-
-yi vimix-gtk-themes-git bumblebee-status-git xkb-switch gruvbox-material-icon-theme-git
+yi vimix-gtk-themes-git xkb-switch gruvbox-material-icon-theme-git
 
 # apply themes to root applications using symlinks
 # https://wiki.archlinux.org/index.php/GTK#Theme_not_applied_to_root_applications

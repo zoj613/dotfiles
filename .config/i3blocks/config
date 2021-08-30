@@ -1,0 +1,48 @@
+# Global properties
+separator=true
+separator_block_width=15
+
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[github]
+command=github/github
+interval=60
+format=json
+markup=pango
+color=#fabd2f
+
+[email]
+label= 
+command=notmuch count search tag:unread
+interval=180
+color=#fe8019
+
+[memory]
+label= 
+command=memory/memory
+interval=20
+markup=pango
+
+[calendar]
+command=calendar/calendar
+interval=1
+LABEL= 
+DATEFMT=+%d %b %H:%M
+HEIGHT=230
+color=#d3869b
+
+[battery]
+command=battery/battery
+interval=30
+LABEL=
+color=#b8bb26
+
+[volume]
+command=volume/volume
+LABEL= 
+interval=1
+signal=10
+color=#83a598

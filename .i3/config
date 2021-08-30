@@ -2,7 +2,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # set default terminal
-set $terminal termite
+set $terminal alacritty
 
 ## Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -201,7 +201,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
 # assign [class="Pcmanfm"] $ws3
-assign [class="firefox"] $ws2 border none
+assign [class="firefox"] $ws2
 assign [class="freetube"] $ws4
 
 # Open specific applications in floating mode
@@ -236,6 +236,7 @@ for_window [class="Xarchiver"] floating enable
 for_window [title="scratch_term"] floating enable, move scratchpad
 for_window [class="Gitter"] floating enable
 for_window [class="Transmission"] floating enable
+for_window [class="Yad"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -367,14 +368,7 @@ set $almost_white   #f9faf9
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command /usr/share/bumblebee-status/bumblebee-status -m \
-        redshift cpu memory battery github date amixer -p disk.path="/home" \
-        memory.format="{used}" amixer.percent_change=5% date.format="%a, %d %b | %R" \
-        date.interval=60s datetime.format="%R" disk.format="{used}/{size}" \
-        disk.open="pcmanfm" github.token=$GIT_NOTIF_TOKEN github.reasons=\
-        "author,comment,manual,security_alert,state_change,mention,subscribed" \
-        -t mygruvbox
-
+	status_command i3blocks -c ~/.config/i3blocks/config
 	position bottom
     font xft: Inconsolata Condensed Bold,Inconsolata for Powerline,AwesomeFonts 10
     height 34
@@ -389,7 +383,7 @@ bar {
     colors {
         background $dark_gray
         statusline $almost_white
-        separator  $gray
+        separator  $light_gray
 
 #                          border        backgr.        text
         focused_workspace  $almost_white $dark_yellow   $vdark_gray
@@ -427,7 +421,7 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+smart_gaps inverse_outer
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)

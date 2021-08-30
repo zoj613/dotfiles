@@ -7,6 +7,7 @@ source ./install_packages.sh
 source ./install_powerline.sh
 source ./install_pyenv.sh
 source ./symlink.sh
+source ./configure_i3blocks.sh
 source ./install_vimplug.sh
 source ./cmus_gruvbox_theme.sh
 source ./configure_fzf.sh
