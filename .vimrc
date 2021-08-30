@@ -23,7 +23,7 @@ Plug 'dense-analysis/ale'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
-Plug 'francoiscabrol/ranger.vim'
+Plug 'chrisbra/Colorizer'
 Plug 'lervag/vimtex'
 call plug#end()
 
@@ -57,3 +57,9 @@ nmap <silent> <Leader>pd <Plug>(pydocstring)
 let g:gruvbox_filetype_hi_groups=1
 let g:gruvbox_plugin_hi_groups=1
 colorscheme gruvbox8
+
+" Color Highlighter
+" =================
+let g:colorizer_auto_color = 1
+let g:colorizer_auto_filetype='css,html'
+let g:colorizer_colornames = 0
