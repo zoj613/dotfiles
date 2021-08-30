@@ -2,12 +2,6 @@
 HISTSIZE=10000
 HISTFILESIZE=20000
 
-# allow spawning another terminal inside the current directory
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_prompt_command
-fi
-
 # Load aliases
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 

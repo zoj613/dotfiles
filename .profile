@@ -11,13 +11,9 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # fix "xdg-open fork-bomb" export your preferred browser from here
 export BROWSER="$(command -v firefox)"
 # used by i3-sensible-terminal script to pick the preferred terminal in i3
-export TERMINAL="termite"
+export TERMINAL="alacritty"
 
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
-# set posgresql path
-export PATH="/usr/local/pgsql/bin:$PATH"
 # set terminal colors
-export TERM="xterm-termite"
-# set bumblebee status token for gh notifications
-export GIT_NOTIF_TOKEN=$(cat ~/GIT_BUMBLEBEESTATUS_TOKEN)
+export TERM="alacritty"

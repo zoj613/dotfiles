@@ -16,19 +16,19 @@ yi git xorg-xrandr curl wget base-devel trash-cli mlocate xorg-xbacklight ufw
 sudo updatedb
 
 # development packages
-yi vim r ctags fzf fd termite
+yi vim r ctags fzf fd alacritty xplr
 
 # audio packages
 yi cmus sox alsa-lib
 
 # desktop packages
-yi pcmanfm ttf-inconsolata ttf-droid noto-fonts qpdfview feh
+yi pcmanfm ttf-inconsolata ttf-droid noto-fonts qpdfview feh neomutt
 
 # multimedia
 yi youtube-dl firefox
 
 # misc packages
-yi neofetch htop figlet redshift bash-completion bash-complete-alias
+yi fastfetch htop figlet redshift bash-completion bash-complete-alias
 
 echo "Packages installed successfully"
 
