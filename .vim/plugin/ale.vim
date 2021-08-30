@@ -13,7 +13,7 @@ let g:ale_c_cc_options = "-std=c99 -Wall -Wextra -pedantic -Werror -Wshadow
 \   -Wmissing-prototypes -Wno-missing-braces -Wstrict-aliasing -fstrict-aliasing"
 let g:ale_c_clangd_options = "--all-scopes-completion --header-insertion=iwyu 
 \   --suggest-missing-includes --completion-style=detailed"
-let g:ale_python_pyls_executable = '/usr/bin/pyls'
+let g:ale_python_pyls_executable = 'pyls'
 let g:ale_sh_language_server_executable = '/usr/bin/bash-language-server'
 let g:ale_r_languageserver_cmd = 'languageserver::run()'
 let g:ale_fortran_language_server_executable = 'fortls'
@@ -29,7 +29,8 @@ let g:ale_linters = {
 \   'vim': ['ale_custom_linting_rules', 'vimls'],
 \   'r': ['languageserver', 'lintr'],
 \   'fortran': ['language_server', 'gcc'],
-\   'tex': ['texlab', 'lacheck', 'chktex']
+\   'tex': ['texlab', 'lacheck', 'chktex'],
+\   'go': ['gopls', 'gofmt', 'golint'],
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -40,7 +41,8 @@ let g:ale_fixers = {
 \       'reorder-python-imports'
 \   ],
 \   'c': ['clang-format', 'clangtidy'],
-\   'r': ['styler']
+\   'r': ['styler'],
+\   'go': ['gofmt'],
 \}
 let g:ale_completion_symbols = {
 \    'method': '',
