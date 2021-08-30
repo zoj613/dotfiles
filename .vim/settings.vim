@@ -21,7 +21,9 @@ syntax on
 " Enable 256 colour support
 " set t_Co=256
 " set GUI-like colours
-set termguicolors
+if has('termguicolors')
+  set termguicolors
+endif
 " Turn line numbers on
 set number
 set relativenumber

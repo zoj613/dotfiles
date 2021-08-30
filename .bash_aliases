@@ -41,12 +41,13 @@ alias yf='yay -Ql' # list all files that come with an installed package
 # ===
 alias gc='git commit -m'
 alias gp='git push'
+alias gpl='git pull --rebase'
 alias gpu='git push --set-upstream origin'
 alias ga='git add'
 alias gaa='ga -u'
 alias gr='git rm'
 alias gs='git status -s -b'
-alias gl='git log'
+alias gl='git log --graph'
 alias gb='git checkout'
 alias gbn='git checkout -b'
 alias gd='git diff'
@@ -67,7 +68,7 @@ alias dotd='dot diff'
 # =====
 # dr14_tmeter command for calculating dynamic range of music files
 alias dr14='dr14_tmeter -1'
-alias nf='neofetch --memory_unit gib --os_arch off --disable model packages resolution cpu gpu'
+alias nf='fastfetch'
 alias msync='time rsync -r -t -v --progress --delete -s /run/media/zoj/ZOLISAEXT4/Music/ /run/media/zoj/ZOJ/Music/'
 alias trl='trash-list'
 alias tre='trash-empty'

@@ -1,13 +1,12 @@
 
 # Powerline-go setup
-export GOPATH="$HOME/.local"
 
 powerline_go_args=(
     -hostname-only-if-ssh
     -newline
     -theme gruvbox
     -cwd-max-depth 4
-    -modules venv,host,ssh,cwd,perms,git,hg,jobs,exit
+    -modules venv,host,ssh,cwd,perms,git,hg,jobs,exit,docker
 )
 
 function _update_ps1 {
