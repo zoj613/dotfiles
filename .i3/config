@@ -372,6 +372,7 @@ bar {
 	position bottom
     font xft: Inconsolata Condensed Bold,Inconsolata for Powerline,AwesomeFonts 10
     height 34
+    # separator_symbol ❪
 # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
 #	tray_output eDP1
