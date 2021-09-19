@@ -4,7 +4,7 @@ BASEDIR="$(cd .. && pwd)"
 
 dotarray=(
     .vim .config .profile .bash_profile .dmenurc .bashrc .gitconfig
-    .vimrc .inputrc .Xresources .fehbg .gtkrc-2.0.mine .xsession
+    .vimrc .Xresources .fehbg .gtkrc-2.0.mine .xsession
 )
 
 

@@ -17,3 +17,4 @@ export TERMINAL="alacritty"
 export PATH="$HOME/.poetry/bin:$PATH"
 # set terminal colors
 export TERM="alacritty"
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
