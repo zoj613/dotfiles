@@ -25,6 +25,8 @@ Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'chrisbra/Colorizer'
 Plug 'lervag/vimtex'
+Plug 'mboughaba/i3config.vim'
+Plug 'vifm/vifm.vim'
 call plug#end()
 
 
@@ -38,6 +40,7 @@ nnoremap <Leader>h :history<CR>
 nnoremap <Leader>j :bprevious<CR>
 nnoremap <Leader>k :bnext<CR>
 nnoremap <Leader>c :bd<CR>
+nnoremap <Leader>f :Vifm<CR>
 " disable use of arrow keys in all modes
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -51,6 +54,14 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " map to generate python docstrings
 nmap <silent> <Leader>pd <Plug>(pydocstring)
+
+"auto-closes braces
+ino " ""<left>
+ino ' ''<left>
+ino ( ()<left>
+ino [ []<left>
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O
 
 " Gruvbox color scheme
 " ====================
