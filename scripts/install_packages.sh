@@ -22,7 +22,7 @@ yi vim r ctags fzf fd alacritty vifm
 yi mpd ncmpcpp sox alsa-lib
 
 # desktop packages
-yi pcmanfm ttf-inconsolata ttf-droid ttf-devicons noto-fonts qpdfview feh neomutt
+yi pcmanfm ttf-inconsolata ttf-droid ttf-devicons noto-fonts zathura zathura-pdf-poppler feh neomutt
 
 # multimedia
 yi youtube-dl firefox ytfzf mpv
