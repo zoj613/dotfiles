@@ -1,3 +1,5 @@
+# vim: filetype=bash
+#
 # use arverify to verify accuraterip checksums of flac files in a directory
 function arv {
     local dir=${@:-$PWD}

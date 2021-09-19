@@ -3,23 +3,23 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 
 # Load aliases
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f ~/.config/bash/aliases ]] && . ~/.config/bash/aliases
 
 # load generic functions
-[[ -f ~/.bash_functions ]] && . ~/.bash_functions
+[[ -f ~/.config/bash/functions ]] && . ~/.config/bash/functions
 
 # load powerline-go config
-[[ -f ~/.bash_powerline ]] && . ~/.bash_powerline
+[[ -f ~/.config/bash/powerline ]] && . ~/.config/bash/powerline
 
 # Use bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
+[[ $PS1 && -f /usr/share/bash-completion/completion ]] && \
+    . /usr/share/bash-completion/completion
 
 # load FZF config
-[[ -f ~/.bash_fzf ]] && . ~/.bash_fzf
+[[ -f ~/.config/bash/fzf ]] && . ~/.config/bash/fzf
 
 # load pyenv config
-[[ -f ~/.bash_pyenv ]] && . ~/.bash_pyenv
+[[ -f ~/.config/bash/pyenv ]] && . ~/.config/bash/pyenv
 
 # add selected aliases to bash completion so I can use them with FZF
 if [ -f "/usr/share/bash-complete-alias/complete_alias" ]; then

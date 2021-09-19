@@ -1,8 +1,10 @@
+# vim: filetype=bash
+#
 # File System
 # ===========
 alias mkdir='mkdir -p'
 alias cp='cp -i'  # confirm before overwrite
-alias ls='ls -lt --color=always --group-directories-first --human-readable'  # list files
+alias ls='ls --color=always --group-directories-first --human-readable'  # list files
 alias lsa='ls -a'  # list hidden files too
 alias lsg='ls -a | grep'
 alias dir='dir -Q --color=auto'
@@ -73,6 +75,7 @@ alias msync='time rsync -r -t -v --progress --delete -s /run/media/zoj/ZOLISAEXT
 alias trl='trash-list'
 alias tre='trash-empty'
 alias rm='trash-put'
+alias zathura='zathura --fork'
 
 # fzf related
 # ===========
@@ -89,3 +92,4 @@ alias cga='callgrind_annotate --auto=yes --inclusive=yes'
 # multimedia
 # ==========
 alias yta='youtube-dl -x --audio-format flac'
+alias ytfzf='ytfzf -ts'

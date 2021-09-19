@@ -1,4 +1,5 @@
-
+# vim: filetype=bash
+#
 # Powerline-go setup
 
 powerline_go_args=(
