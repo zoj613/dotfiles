@@ -1,11 +1,18 @@
 # Global properties
 separator=true
 separator_block_width=15
+align=center
 
-[weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+[arch-update]
+command=arch-update/arch-update
+markup=pango
 interval=3600
-color=#A4C2F4
+QUIET=true
+WATCH=^linux.* ^pacman.*
+BASE_COLOR=#FFFF85
+UPDATE_COLOR=#FB4934
+AUR=true
+LABEL= 
 
 [redshift]
 command=./redshift_blocklet
@@ -27,18 +34,19 @@ interval=180
 color=#fe8019
 
 [memory]
-label= 
+label=
 command=memory/memory
 interval=20
 markup=pango
 
-[calendar]
-command=calendar/calendar
+[cpu_usage]
+command=cpu_usage/cpu_usage
 interval=1
-LABEL= 
-DATEFMT=+%d %b %H:%M
-HEIGHT=230
-color=#d3869b
+LABEL= 
+T_WARN=50
+T_CRIT=80
+DECIMALS=1
+color=#a89984
 
 [battery]
 command=battery/battery
@@ -52,3 +60,11 @@ LABEL=
 interval=1
 signal=10
 color=#83a598
+
+[calendar]
+command=calendar/calendar
+interval=1
+LABEL= 
+DATEFMT=+%d %b %H:%M 
+HEIGHT=230
+color=#d3869b

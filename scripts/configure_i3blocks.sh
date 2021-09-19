@@ -17,3 +17,5 @@ yi acpi
 yi yad xdotool
 # for github
 yi github-cli otf-font-awesome ttf-font-awesome
+# for cpu_usage
+yi sysstat
