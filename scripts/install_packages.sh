@@ -16,16 +16,16 @@ yi git xorg-xrandr curl wget base-devel trash-cli mlocate xorg-xbacklight ufw
 sudo updatedb
 
 # development packages
-yi vim r ctags fzf fd alacritty xplr
+yi vim r ctags fzf fd alacritty vifm
 
 # audio packages
 yi cmus sox alsa-lib
 
 # desktop packages
-yi pcmanfm ttf-inconsolata ttf-droid noto-fonts qpdfview feh neomutt
+yi pcmanfm ttf-inconsolata ttf-droid ttf-devicons noto-fonts qpdfview feh neomutt
 
 # multimedia
-yi youtube-dl firefox
+yi youtube-dl firefox ytfzf
 
 # misc packages
 yi fastfetch htop figlet redshift bash-completion bash-complete-alias
