@@ -19,16 +19,15 @@ sudo updatedb
 yi vim r ctags fzf fd alacritty vifm
 
 # audio packages
-yi cmus sox alsa-lib
+yi mpd ncmpcpp sox alsa-lib
 
 # desktop packages
 yi pcmanfm ttf-inconsolata ttf-droid ttf-devicons noto-fonts qpdfview feh neomutt
 
 # multimedia
-yi youtube-dl firefox ytfzf
+yi youtube-dl firefox ytfzf mpv
 
 # misc packages
-yi fastfetch htop figlet redshift bash-completion bash-complete-alias
+yi fastfetch htop figlet redshift bash-completion bash-complete-alias dunst
 
 echo "Packages installed successfully"
-

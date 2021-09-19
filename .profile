@@ -18,3 +18,5 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # set terminal colors
 export TERM="alacritty"
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+# MPD daemon start (if no other user instance exists)
+[ ! -s ~/.config/mpd/pid ] && mpd
