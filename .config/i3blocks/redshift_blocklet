@@ -3,7 +3,7 @@
 TEMP=$(redshift -p | grep temperature | awk -F': ' '{print $2}')
 
 if [ "$TEMP" == '5700K' ]; then
-    echo " $TEMP"
+    echo "  $TEMP"
 else
-    echo " $TEMP"
+    echo "  $TEMP"
 fi

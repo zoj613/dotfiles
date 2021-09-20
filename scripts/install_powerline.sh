@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Setup powerline
-yay -S --needed --noconfirm powerline-fonts-git go awesome-terminal-fonts powerline-go
+yay -S --needed --noconfirm go powerline-go
 # set go execution path
 mkdir -p $HOME/go $HOME/go-dev
 export GOPATH=$HOME/go:$HOME/go-dev

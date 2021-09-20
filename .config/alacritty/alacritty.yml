@@ -21,16 +21,16 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Inconsolata for Powerline
-    style: BoldForPowerline 
+    family: Inconsolata Nerd Font
+    style: Bold
 
   italic:
-    family: Inconsolata for Powerline
-    style: BoldForPowerline
+    family: Inconsolata Nerd Font
+    style: Bold
 
   bold_italic:
-    family: Inconsolata for Powerline
-    style: Bold Italic
+    family: Inconsolata Nerd Font
+    style: Bold
 
   size: 9.0
 

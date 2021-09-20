@@ -21,8 +21,11 @@ yi vim r ctags fzf fd alacritty vifm
 # audio packages
 yi mpd ncmpcpp sox alsa-lib
 
+# fonts
+yi ttf-inconsolata nerd-fonts-inconsolata ttf-droid noto-fonts
+
 # desktop packages
-yi pcmanfm ttf-inconsolata ttf-droid ttf-devicons noto-fonts zathura zathura-pdf-poppler feh neomutt
+yi pcmanfm zathura zathura-pdf-poppler feh neomutt
 
 # multimedia
 yi youtube-dl firefox ytfzf mpv

@@ -28,13 +28,13 @@ markup=pango
 color=#fabd2f
 
 [email]
-label= 
+label=  
 command=notmuch count search tag:unread
 interval=180
 color=#fe8019
 
 [memory]
-label=
+label= 
 command=memory/memory
 interval=20
 markup=pango
@@ -42,7 +42,7 @@ markup=pango
 [cpu_usage]
 command=cpu_usage/cpu_usage
 interval=1
-LABEL= 
+LABEL=  
 T_WARN=50
 T_CRIT=80
 DECIMALS=1
@@ -51,12 +51,12 @@ color=#a89984
 [battery]
 command=battery/battery
 interval=30
-LABEL=
+LABEL= 
 color=#b8bb26
 
 [volume]
 command=volume/volume
-LABEL= 
+LABEL=  
 interval=1
 signal=10
 color=#83a598
@@ -64,7 +64,7 @@ color=#83a598
 [calendar]
 command=calendar/calendar
 interval=1
-LABEL= 
+LABEL=  
 DATEFMT=+%d %b %H:%M 
 HEIGHT=230
 color=#d3869b
