@@ -76,6 +76,7 @@ alias trl='trash-list'
 alias tre='trash-empty'
 alias rm='trash-put'
 alias zathura='zathura --fork'
+alias vifm='vifmrun'
 
 # fzf related
 # ===========
