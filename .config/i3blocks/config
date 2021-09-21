@@ -61,6 +61,16 @@ interval=1
 signal=10
 color=#83a598
 
+[wifi]
+command=BLOCK_INSTANCE=$(nmcli | grep connected | head -n1 | sed -e 's/\:.*$//') wifi/wifi
+label=  
+interval=30
+COLOR_GE80=#8ec07c
+COLOR_GE60=#fabd2f
+COLOR_GE40=#fe8019
+COLOR_LOWR=#fb4934
+COLOR_DOWN=#cc241d
+
 [calendar]
 command=calendar/calendar
 interval=1
