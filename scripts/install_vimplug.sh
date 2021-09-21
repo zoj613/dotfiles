@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install Language Servers and other vim specific sytem packages
-yay -S --needed --noconfirm python-language-server vim-language-server shfmt \
+yay -S --needed --noconfirm python-lsp-server vim-language-server shfmt \
     bashate bash-language-server clang r-lintr texlab
 
 echo "Installing vim plugins..."
