@@ -2,10 +2,11 @@
 separator=true
 separator_block_width=15
 align=center
+markup=pango
+color=#ebdbb2
 
 [arch-update]
 command=arch-update/arch-update
-markup=pango
 interval=3600
 QUIET=true
 WATCH=^linux.* ^pacman.*
@@ -17,14 +18,12 @@ LABEL=
 [redshift]
 command=./redshift_blocklet
 interval=1800
-markup=pango
 color=#8ec07c
 
 [github]
 command=github/github
 interval=60
 format=json
-markup=pango
 color=#fabd2f
 
 [email]
@@ -37,7 +36,6 @@ color=#fe8019
 label= 
 command=memory/memory
 interval=20
-markup=pango
 
 [cpu_usage]
 command=cpu_usage/cpu_usage
