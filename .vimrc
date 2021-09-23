@@ -67,7 +67,7 @@ ino {<CR> {<CR>}<ESC>O
 " ====================
 let g:gruvbox_filetype_hi_groups=1
 let g:gruvbox_plugin_hi_groups=1
-colorscheme gruvbox8
+colorscheme gruvbox8_soft
 
 " Color Highlighter
 " =================

@@ -160,14 +160,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
+set $ws1 i
+set $ws2 ii
+set $ws3 iii
+set $ws4 iv
+set $ws5 v
+set $ws6 vi
+set $ws7 vii
+set $ws8 viii
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -352,7 +352,7 @@ set $light_gray     #757575
 set $gray           #4f4f4f
 set $vdark_gray     #1d2021
 set $vlight_yellow  #fbf1c9
-set $dark_yellow    #b8bb26
+set $dark_yellow    #fabd2f
 set $vlight_orange  #ebdbb2
 set $orange         #cb4b16
 set $red            #fb4934
@@ -388,7 +388,7 @@ bar {
         separator  $light_gray
 
 #                          border        backgr.        text
-        focused_workspace  $almost_white $dark_yellow   $vdark_gray
+        focused_workspace  $dark_yellow  $dark_yellow   $vdark_gray
         active_workspace   $gray         $dark_gray     $vlight_yellow
         inactive_workspace $light_gray   $dark_gray     $vlight_yellow
         binding_mode       $almost_white $dark_yellow   $vdark_gray
@@ -401,7 +401,7 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                 border      backgr.        text           indic.          child_border
-client.focused          $gray       $gray          $vlight_yellow $vlight_yellow  $dark_yellow
+client.focused          $gray       $gray          $vlight_yellow $vlight_yellow  $vlight_orange
 client.focused_inactive $vdark_gray $vdark_gray    $vlight_orange $gray
 client.unfocused        $vdark_gray $vdark_gray    $vlight_orange $gray
 client.urgent           $orange     $vlight_yellow $cyan          $blue

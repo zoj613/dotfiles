@@ -19,11 +19,11 @@ set laststatus=2
 " turn on syntax highlighting in vi
 syntax on
 " Enable 256 colour support
-" set t_Co=256
+set t_Co=256
 " set GUI-like colours
-if has('termguicolors')
-  set termguicolors
-endif
+""if has('termguicolors')
+""  set termguicolors
+""endif
 " Turn line numbers on
 set number
 set relativenumber
