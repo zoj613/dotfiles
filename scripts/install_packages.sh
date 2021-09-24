@@ -25,7 +25,7 @@ yi mpd ncmpcpp sox alsa-lib
 yi ttf-inconsolata nerd-fonts-inconsolata ttf-droid noto-fonts
 
 # desktop packages
-yi pcmanfm zathura zathura-pdf-poppler feh neomutt
+yi pcmanfm zathura zathura-pdf-poppler sxiv neomutt
 
 # multimedia
 yi youtube-dl firefox ytfzf mpv
