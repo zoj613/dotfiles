@@ -7,6 +7,3 @@ xrandr --auto --output LVDS1 --primary --mode 1366x768 \
 pcmanfm -d &
 safeeyes &
 redshift &
-
-# ~/.fehbg &
-

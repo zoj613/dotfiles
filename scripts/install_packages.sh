@@ -10,27 +10,30 @@ sudo pacman -S --needed --noconfirm yay
 alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essential packages
-yi git xorg-xrandr curl wget base-devel trash-cli mlocate xorg-xbacklight ufw
+yi git xorg-xrandr curl wget base-devel i3-gaps trash-cli mlocate ufw \
+    dmenu dunst xorg-xbacklight lxappearance nitrogen i3exit xterm \
+    xf86-input-synaptics gnupg pass ly
 
 # update mlocate database so as to use the locate command
 sudo updatedb
 
 # development packages
-yi vim r ctags fzf fd alacritty vifm
+yi vim ctags fzf fd alacritty vifm
 
 # audio packages
-yi mpd ncmpcpp sox alsa-lib
+yi mpd mpc ncmpcpp sox alsa-lib pavucontrol
 
 # fonts
 yi ttf-inconsolata nerd-fonts-inconsolata ttf-droid noto-fonts
 
 # desktop packages
-yi pcmanfm zathura zathura-pdf-poppler sxiv neomutt
+yi pcmanfm zathura zathura-pdf-poppler sxiv neomutt i3-scrot xclip \
+    blueman xautolock
 
 # multimedia
-yi youtube-dl firefox ytfzf mpv
+yi youtube-dl librewolf-bin ytfzf mpv
 
 # misc packages
-yi fastfetch htop figlet redshift bash-completion bash-complete-alias dunst
+yi fastfetch htop figlet redshift bash-completion bash-complete-alias
 
 echo "Packages installed successfully"

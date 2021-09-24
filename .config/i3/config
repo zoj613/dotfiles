@@ -37,15 +37,13 @@ floating_modifier $mod
 bindsym $mod+Return exec $terminal
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+o exec setxkbmap us # convert back to qwerty
-bindsym $mod+Mod1+o exec setxkbmap -variant dvorak # convert back to qwerty
+# bindsym $mod+Shift+o exec setxkbmap us # convert back to qwerty
+# bindsym $mod+Mod1+o exec setxkbmap -variant dvorak # convert back to qwerty
 
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
-
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+bindsym $mod+d exec --no-startup-id dmenu_run \
+    -fn "Droid-9" -nb "#1d2021" -nf "#ebdbb2" -sb "#fabd2f" -sf "#1d2021"
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -73,19 +71,15 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute; $getvolume
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # start applications
-bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec $terminal -e ranger
-bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec $terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Ctrl+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
@@ -200,39 +194,27 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pcmanfm"] $ws3
 assign [class="firefox"] $ws2
-assign [class="freetube"] $ws4
+assign [class="freetube"] $ws6
+assign [class="ncmpcpp"] $ws4
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
-for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="Zoom"] floating enable border normal
+for_window [class="Teams"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [title="scratch_term"] floating enable, move scratchpad
 for_window [class="Gitter"] floating enable
@@ -301,49 +283,14 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # startup a scratchpad terminal window for quick use throughout a session
 exec --no-startup-id $terminal --title=scratch_term
+
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id safeeyes
-# exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
 exec --no-startup-id xautolock -time 15 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your 
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
-#set_from_resource $term_background background
-#set_from_resource $term_foreground foreground
-#set_from_resource $term_color0     color0
-#set_from_resource $term_color1     color1
-#set_from_resource $term_color2     color2
-#set_from_resource $term_color3     color3
-#set_from_resource $term_color4     color4
-#set_from_resource $term_color5     color5
-#set_from_resource $term_color6     color6
-#set_from_resource $term_color7     color7
-#set_from_resource $term_color8     color8
-#set_from_resource $term_color9     color9
-#set_from_resource $term_color10    color10
-#set_from_resource $term_color11    color11
-#set_from_resource $term_color12    color12
-#set_from_resource $term_color13    color13
-#set_from_resource $term_color14    color14
-#set_from_resource $term_color15    color15
 
 
 # set general color variables for theme and statusbar
@@ -373,7 +320,6 @@ bar {
 	position top
     font xft: Inconsolata Condensed Bold,Inconsolata Nerd Font 10
     height 26
-    # separator_symbol ❪
 # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
 #	tray_output eDP1

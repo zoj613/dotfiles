@@ -2,7 +2,7 @@
 
 # install Language Servers and other vim specific sytem packages
 yay -S --needed --noconfirm python-lsp-server vim-language-server shfmt \
-    bashate bash-language-server clang r-lintr texlab
+    bashate bash-language-server clang texlab
 
 echo "Installing vim plugins..."
 curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
