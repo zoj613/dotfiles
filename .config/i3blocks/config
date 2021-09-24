@@ -44,7 +44,7 @@ LABEL=
 T_WARN=50
 T_CRIT=80
 DECIMALS=1
-color=#a89984
+COLOR_NORMAL=#a89984
 
 [battery]
 command=battery/battery
