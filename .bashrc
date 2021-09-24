@@ -29,3 +29,6 @@ if [ -f "/usr/share/bash-complete-alias/complete_alias" ]; then
         complete -F _complete_alias $i
     done
 fi
+
+# less formating
+export LESS='-R --use-color -Dd+y$Du+g'
