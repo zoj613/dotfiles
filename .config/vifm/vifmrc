@@ -22,7 +22,7 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15E %20d  "
 
 mark b ~/bin/
 mark h ~/
-mark e /run/media/zoj/ZOLISAEXT4/
+mark e /media/ZOLISAEXT4/
 mark d ~/dotfiles
 mark g ~/dev/
 
