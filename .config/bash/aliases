@@ -71,7 +71,7 @@ alias dotd='dot diff'
 # dr14_tmeter command for calculating dynamic range of music files
 alias dr14='dr14_tmeter -1'
 alias nf='fastfetch'
-alias msync='time rsync -r -t -v --progress --delete -s /run/media/zoj/ZOLISAEXT4/Music/ /run/media/zoj/ZOJ/Music/'
+alias msync='time rsync -r -t -v --progress --delete -s /media/ZOLISAEXT4/Music/ /media/ZOJ/Music/'
 alias trl='trash-list'
 alias tre='trash-empty'
 alias rm='trash-put'

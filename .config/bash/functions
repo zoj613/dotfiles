@@ -57,3 +57,19 @@ function ex {
     echo "'$1' is not a valid file"
   fi
 }
+
+# get last n packages installed, defaults to 5
+function lastni {
+    grep -i installed /var/log/pacman.log | tail -n${1:-5}
+}
+
+# get last n removed packages, defaults to 5
+function lastnr {
+    grep -i removed /var/log/pacman.log | tail -n${1:-5}
+}
+
+# split one flac into multiple files using cuesheet info
+# source: https://unix.stackexchange.com/questions/10251/how-do-i-split-a-flac-with-a-cue
+function cuesplit {
+    shnsplit -f ${1} -t "%n - %t" -o flac [0-9]*.flac
+}
