@@ -72,6 +72,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # start applications
 bindsym $mod+F2 exec firefox
+bindsym $mod+F1 exec $terminal -e vim ~/.config/i3/config
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec $terminal -e ranger
 bindsym $mod+t exec --no-startup-id pkill picom
@@ -154,14 +155,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 i
-set $ws2 ii
-set $ws3 iii
-set $ws4 iv
-set $ws5 v
-set $ws6 vi
-set $ws7 vii
-set $ws8 viii
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
