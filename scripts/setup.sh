@@ -3,15 +3,12 @@
 
 echo "Beginning Machine setup..."
 
-# install yay to make suree
-if [ -e $(which yay) ]; then
-    echo "YaY is already installed.."
-else
-    git clone https://aur.archlinux.org/yay.git ${HOME}/
-    cd ${HOME}/yay/
-    makepkg -sri
-    cd -
-fi
+
+#THISPATH=${PWD}
+#git clone https://aur.archlinux.org/yay.git ~/
+#cd ${HOME}/yay/
+#makepkg -sri
+#cd ${THISPATH}
 
 
 source ./install_packages.sh
