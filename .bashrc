@@ -2,6 +2,9 @@
 HISTSIZE=10000
 HISTFILESIZE=20000
 
+# set vi mode
+set -o vi
+
 # Load aliases
 [[ -f ~/.config/bash/aliases ]] && . ~/.config/bash/aliases
 

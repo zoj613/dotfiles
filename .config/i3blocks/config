@@ -1,9 +1,14 @@
 # Global properties
 separator=true
-separator_block_width=15
+separator_block_width=20
 align=center
 markup=pango
 color=#ebdbb2
+
+[mediaplayer]
+command=mediaplayer/mediaplayer
+interval=5
+signal=10
 
 [arch-update]
 command=arch-update/arch-update
@@ -35,22 +40,22 @@ color=#fe8019
 [memory]
 label= 
 command=memory/memory
-interval=20
-
-[cpu_usage]
-command=cpu_usage/cpu_usage
-interval=1
-LABEL=  
-T_WARN=50
-T_CRIT=80
-DECIMALS=1
-COLOR_NORMAL=#a89984
+interval=5
 
 [battery]
 command=battery/battery
 interval=30
 LABEL= 
 color=#b8bb26
+
+[cpu_usage]
+command=cpu_usage/cpu_usage
+interval=1
+LABEL=  
+T_WARN=50
+T_CRIT=80
+DECIMALS=1
+COLOR_NORMAL=#a89984
 
 [volume]
 command=volume/volume
@@ -59,15 +64,15 @@ interval=1
 signal=10
 color=#83a598
 
-[wifi]
-command=BLOCK_INSTANCE=$(nmcli | grep connected | head -n1 | sed -e 's/\:.*$//') wifi/wifi
-label=  
-interval=30
-COLOR_GE80=#8ec07c
-COLOR_GE60=#fabd2f
-COLOR_GE40=#fe8019
-COLOR_LOWR=#fb4934
-COLOR_DOWN=#cc241d
+#[wifi]
+#command=BLOCK_INSTANCE=$(nmcli | grep connected | head -n1 | sed -e 's/\:.*$//') wifi/wifi
+#label=  
+#interval=30
+#COLOR_GE80=#8ec07c
+#COLOR_GE60=#fabd2f
+#COLOR_GE40=#fe8019
+#COLOR_LOWR=#fb4934
+#COLOR_DOWN=#cc241d
 
 [calendar]
 command=calendar/calendar
@@ -75,4 +80,4 @@ interval=1
 LABEL=  
 DATEFMT=+%d %b %H:%M 
 HEIGHT=230
-color=#d3869b
+color=#fabd2f

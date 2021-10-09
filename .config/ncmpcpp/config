@@ -38,8 +38,8 @@ visualizer_sync_interval = 0
 visualizer_type = spectrum
 visualizer_fps = 60
 visualizer_autoscale = yes
-visualizer_look = ●▮
-#visualizer_color = blue, cyan, green, yellow, magenta, red
+visualizer_look = ⬬⬮
+visualizer_color = blue, cyan, green, yellow, magenta, red
 ## Alternative subset of 256 colors for terminals that support it.
 #visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
 #
@@ -52,7 +52,7 @@ visualizer_look = ●▮
 ## and visualizer_in_stereo set, artifacts may be visible on the bottom half of
 ## the visualization.
 #
-#visualizer_spectrum_smooth_look = yes
+visualizer_spectrum_smooth_look = yes
 #
 ## A value between 1 and 5 inclusive. Specifying a larger value makes the
 ## visualizer look at a larger slice of time, which results in less jumpy
@@ -64,11 +64,11 @@ visualizer_look = ●▮
 #
 ## Left-most frequency of visualizer in Hz, must be less than HZ MAX
 #
-#visualizer_spectrum_hz_min = 20
+visualizer_spectrum_hz_min = 15
 #
 ## Right-most frequency of visualizer in Hz, must be greater than HZ MIN
 #
-#visualizer_spectrum_hz_max = 20000
+visualizer_spectrum_hz_max = 28000
 #
 ##### system encoding #####
 ##
@@ -281,7 +281,7 @@ execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%a
 #
 #discard_colors_if_item_is_selected = yes
 #
-#show_duplicate_tags = yes
+show_duplicate_tags = no
 #
 incremental_seeking = yes
 seek_time = 1

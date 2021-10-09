@@ -19,3 +19,5 @@ yi yad xdotool
 yi github-cli otf-font-awesome ttf-font-awesome
 # for cpu_usage
 yi sysstat
+# for arch-update
+yi pacman-contrib

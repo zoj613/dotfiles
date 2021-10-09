@@ -14,7 +14,7 @@ fi
 # virtualenv shortcuts via pyenv
 function virtualenv_name { echo "${PWD##*/}" ; }
 function vn () { pyenv virtualenv $1 "$(virtualenv_name)" ; }
-function va { pyenv activate "$(virtualenv_name)" ; }
+function va { pyenv activate "$(virtualenv_name)" ; python -m ensurepip --upgrade; }
 alias vd='pyenv deactivate'
 function vdd { pyenv uninstall "$(virtualenv_name)" ; }
 

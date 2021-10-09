@@ -9,7 +9,7 @@ alias lsa='ls -a'  # list hidden files too
 alias lsg='ls -a | grep'
 alias dir='dir -Q --color=auto'
 alias ..='cd ..'
-alias df='df -hT'
+alias df='df -hT --sync'
 alias tree='tree -C'
 
 
@@ -70,7 +70,7 @@ alias dotd='dot diff'
 # =====
 # dr14_tmeter command for calculating dynamic range of music files
 alias dr14='dr14_tmeter -1'
-alias nf='fastfetch'
+alias nf='neofetch'
 alias msync='time rsync -r -t -v --progress --delete -s /media/ZOLISAEXT4/Music/ /media/ZOJ/Music/'
 alias trl='trash-list'
 alias tre='trash-empty'

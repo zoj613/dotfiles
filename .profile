@@ -9,18 +9,15 @@ export EDITOR="$(command -v vim || command -v vi)"
 export VISUAL=${EDITOR}
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER="$(command -v firefox)"
-# used by i3-sensible-terminal script to pick the preferred terminal in i3
-export TERMINAL="alacritty"
-
+export BROWSER="$(command -v librewolf)"
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
+# pyenv variables
+export PATH="$PYENV_ROOT/shims:$PATH"
+# golang variables
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
-# set local bin
+# add local binary path to $PATH
 export PATH="$HOME/.local/bin:$PATH"
-# set terminal colors
-export TERM="alacritty"
-export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
-# MPD daemon start (if no other user instance exists)
-[ ! -s ~/.config/mpd/pid ] && mpd
+export EDITOR=$(which vim)

@@ -27,6 +27,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'lervag/vimtex'
 Plug 'mboughaba/i3config.vim'
 Plug 'vifm/vifm.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 

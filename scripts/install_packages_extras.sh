@@ -10,7 +10,7 @@ yi zeal-git openblas-lapack-git
 
 
 # audio
-yi gstreamer dr14_tmeter mediainfo easytag ffmpeg flac cdrip-tools
+yi gstreamer dr14_tmeter mediainfo easytag ffmpeg flac cdrip-tools pragha
 
 
 # desktop packages

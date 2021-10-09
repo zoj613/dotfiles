@@ -3,7 +3,9 @@
 # vim: filetype=i3config
 
 # set default terminal
-set $terminal alacritty
+set $terminal st
+# set default editor
+set $editor vim
 
 ## Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -71,10 +73,8 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute; $getvolume
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # start applications
-bindsym $mod+F2 exec firefox
-bindsym $mod+F1 exec $terminal -e vim ~/.config/i3/config
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+F4 exec $terminal -e ranger
+bindsym $mod+F2 exec librewolf
+#bindsym $mod+F3 exec pcmanfm
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom --config ~/.config/picom/picom.conf
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -82,8 +82,24 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+Shift+f exec $terminal -e vifmrun
+
+# mode to quickly open my most used config files
+# configs will be added and removed as needed
+bindsym $mod+c mode "$open_config"
+set $open_config Open Config: (i)3config, (v)imrc, i3(b)locks
+mode "$open_config" {
+    bindsym i exec $terminal -e $editor ~/.config/i3/config, mode "default"
+    bindsym v exec $terminal -e $editor ~/.vimrc, mode "default"
+    bindsym b exec $terminal -e $editor ~/.config/i3blocks/config, mode "default"
+
+    # exit resize mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # focus_follows_mouse no
+
 
 # change focus
 bindsym $mod+h focus left
@@ -195,7 +211,7 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="firefox"] $ws2
+assign [class="LibreWolf"] $ws2
 assign [class="freetube"] $ws6
 assign [class="ncmpcpp"] $ws4
 
@@ -212,15 +228,13 @@ for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
 for_window [class="Zoom"] floating enable border normal
 for_window [class="Teams"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xarchiver"] floating enable
 for_window [title="scratch_term"] floating enable, move scratchpad
-for_window [class="Gitter"] floating enable
 for_window [class="Transmission"] floating enable
 for_window [class="Yad"] floating enable
+for_window [class="Blueman-manager"] floating enable border normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -278,7 +292,6 @@ mode "resize" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-
 # Autostart applications
 # ======================
 
@@ -330,7 +343,7 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background $dark_gray99  # the number at the end is the opacity level
+        background $black99  # the number at the end is the opacity level
         statusline $almost_white
         separator  $light_gray
 

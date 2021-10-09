@@ -73,3 +73,9 @@ function lastnr {
 function cuesplit {
     shnsplit -f ${1} -t "%n - %t" -o flac [0-9]*.flac
 }
+
+
+# must be used as yp <name> and will list all packages that match name
+function yp {
+    yay -Q | grep ${1}
+}
