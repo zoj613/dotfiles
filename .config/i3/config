@@ -3,7 +3,7 @@
 # vim: filetype=i3config
 
 # set default terminal
-set $terminal st
+set $terminal alacritty
 # set default editor
 set $editor vim
 
@@ -273,10 +273,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -300,11 +300,11 @@ exec --no-startup-id $terminal --title=scratch_term
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -bG
 exec --no-startup-id nm-applet
 exec --no-startup-id safeeyes
 # exec --no-startup-id blueman-applet
-exec --no-startup-id xautolock -time 15 -locker blurlock
+exec --no-startup-id xautolock -time 30 -locker blurlock
 
 
 # set general color variables for theme and statusbar

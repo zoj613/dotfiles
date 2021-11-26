@@ -30,7 +30,7 @@ function spec { sox "$@" -n spectrogram -t "$@"; }
 
 
 # fix offset of lossless music files
-function ofix { fixoffset -f flac $1 *.${2:-flac}; }
+function ofix { fixoffset -f flac $1 *."${2:-flac}"; }
 
 
 # burn iso to usb using diskdestroyer
@@ -71,7 +71,7 @@ function lastnr {
 # split one flac into multiple files using cuesheet info
 # source: https://unix.stackexchange.com/questions/10251/how-do-i-split-a-flac-with-a-cue
 function cuesplit {
-    shnsplit -f ${1} -t "%n - %t" -o flac [0-9]*.flac
+    shnsplit -f "${1}" -t "${2:-"%n - %t"}" -o flac "${1%.*}.flac"
 }
 
 

@@ -47,6 +47,8 @@ alias gpl='git pull --rebase'
 alias gpu='git push --set-upstream origin'
 alias ga='git add'
 alias gaa='ga -u'
+alias gau='git remote add upstream'
+alias gfu='git fetch upstream'
 alias gr='git rm'
 alias gs='git status -s -b'
 alias gl='git log --graph'
@@ -82,6 +84,7 @@ alias vifm='vifmrun'
 # ===========
 alias fzf='fzf --color=16'
 alias ff='file=$(fzf); [[ -n "$file" ]] && vim $file'  # open with vim using fzf
+alias zo='file=$(fzf); [[ -n "$file" ]] && zathura --fork "$file"'  # open with zathura using fzf
 alias fif='grep --line-buffered --color=auto -r "" * | fzf'  # search for text in file using fzf
 
 # valgrind related

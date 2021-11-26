@@ -63,10 +63,12 @@ let g:ale_completion_symbols = {
 noremap ;d :ALEGoToDefinition<CR>
 noremap ;td :ALEGoToTypeDefinition<CR>
 noremap ;r :ALEFindReferences<CR>
+noremap ;R :ALERename<CR>
 noremap ;h :ALEHover<CR>
 noremap ;i :ALEInfo<CR>
 noremap ;f :ALEFix <CR>
-noremap ;s :ALESymbolSearch<CR>
+noremap ;s :ALESymbolSearch<space>
+"noremap ;s :ALESymbolSearch<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 

@@ -21,3 +21,5 @@ export PATH="$GOPATH/bin:$PATH"
 # add local binary path to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=$(which vim)
+# less formating
+export LESS='-R --use-color -Dd+y$Du+g'

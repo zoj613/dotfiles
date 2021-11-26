@@ -16,20 +16,40 @@ else
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 endif
 Plug 'junegunn/fzf.vim'
+" Client for Language server protocol and languge specific linters/fixers
+Plug 'dense-analysis/ale'
+" Git tooling inside vim
 Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-gruvbox8'
+" fold blocks of code in python
 Plug 'tmhedberg/SimpylFold'
-Plug 'dense-analysis/ale'
+" autogenerate docstrings for python functions/classes
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'chrisbra/Colorizer'
 Plug 'lervag/vimtex'
+" Syntax highlighting for i3wm config file.
 Plug 'mboughaba/i3config.vim'
 Plug 'vifm/vifm.vim'
+" Preview markdown files
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" syntax highlighting and filetype plugins for Markdown
+Plug 'tpope/vim-markdown'
+" Auto close parentheses
+Plug 'cohama/lexima.vim'
+" code snippet engine
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/junk/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/.git/*
 
 " map <Leader>h to command thats turns off highlighting
 nnoremap <Leader>n :nohl<CR>
@@ -42,6 +62,11 @@ nnoremap <Leader>j :bprevious<CR>
 nnoremap <Leader>k :bnext<CR>
 nnoremap <Leader>c :bd<CR>
 nnoremap <Leader>f :Vifm<CR>
+nnoremap <Leader>s :Snippets<CR>
+" Navigate quickfix list
+nnoremap <Leader>co :copen<CR>
+nnoremap <Leader>cn :cnext<CR>
+nnoremap <Leader>cp :cprev<CR>
 " disable use of arrow keys in all modes
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -56,13 +81,6 @@ inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " map to generate python docstrings
 nmap <silent> <Leader>pd <Plug>(pydocstring)
 
-"auto-closes braces
-ino " ""<left>
-ino ' ''<left>
-ino ( ()<left>
-ino [ []<left>
-ino { {}<left>
-ino {<CR> {<CR>}<ESC>O
 
 " Gruvbox color scheme
 " ====================
@@ -75,3 +93,17 @@ colorscheme gruvbox8_soft
 let g:colorizer_auto_color = 1
 let g:colorizer_auto_filetype='css,html'
 let g:colorizer_colornames = 0
+
+" vim Markdown config
+" ===================
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'go', 'javascript', 'c']
+
+" vimtex config
+" =============
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_method = 'latexmk'
+let maplocalleader = ","
+
+" snippets config
+" ===============
+let g:UltiSnipsExpandTrigger=";<tab>"

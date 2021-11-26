@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# open an ebook using dmenu from a specified folder or home/ebooks if not given
+# adapted from: https://github.com/simonhughxyz/dmenu-bin/blob/master/src/pdfmenu.sh
+
+# location of directory containing ebooks
+PDFDIR=${@:-"$HOME/ebooks"}
+
+# select file to open
+choice=$(find -L "$PDFDIR" -type f -regex ".*\.\(pdf\|epub\)" | dmenu -i -l 10) || exit
+
+# open it using zathura
+zathura --fork "$choice"

@@ -44,7 +44,5 @@ set shortmess+=c
 set completeopt=popup,menu,menuone,noselect,noinsert
 
 set background=dark
-highlight Normal ctermbg=Black
 " turn on filetype plugins
 filetype plugin indent on
-

@@ -33,5 +33,6 @@ if [ -f "/usr/share/bash-complete-alias/complete_alias" ]; then
     done
 fi
 
-# less formating
-export LESS='-R --use-color -Dd+y$Du+g'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

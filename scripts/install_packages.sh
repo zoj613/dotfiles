@@ -12,16 +12,16 @@ alias yi='yay -S --needed --noconfirm --color=auto'
 # essential packages
 yi git xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
     dmenu dunst xorg-xbacklight lxappearance nitrogen i3exit xterm \
-    xf86-input-synaptics gnupg pass pass-update passff-host pam-gnupg ly
+    xf86-input-synaptics gnupg pass pass-update passff-host pam-gnupg ntfs-3g
 
 # update mlocate database so as to use the locate command
 sudo updatedb
 
 # development packages
-yi vim ctags fzf fd alacritty vifm
+yi vim ctags fzf fd alacritty vifm tmux
 
 # audio packages
-yi mpd mpc ncmpcpp sox alsa-lib alsa-utils pulsemixer
+yi mpd mpc ncmpcpp sox alsa-lib alsa-utils pulsemixer gst-libav
 
 # fonts
 yi ttf-inconsolata nerd-fonts-inconsolata ttf-droid noto-fonts

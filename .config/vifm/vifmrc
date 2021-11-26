@@ -12,6 +12,7 @@ colorscheme gruvbox Default-256 Default
 
 " Use increment searching (search while typing)
 set incsearch
+set ignorecase
 
 " Set custom status line look
 set statusline="  Hint: %z%= %A %10u:%-7g %15E %20d  "
@@ -20,11 +21,12 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15E %20d  "
 
 " :mark mark /full/directory/path [filename]
 
-mark b ~/bin/
+mark b ~/.local/bin/
 mark h ~/
 mark e /media/ZOLISAEXT4/
-mark d ~/dotfiles
+mark d ~/Downloads/
 mark g ~/dev/
+mark m ~/Music/
 
 " ------------------------------------------------------------------------------
 
@@ -39,7 +41,7 @@ mark g ~/dev/
 " %d the current directory name.
 " %D the other window directory name.
 " %m run the command in a menu window
-
+command! ff :set noquickview | :execute 'goto' fnameescape(term('fd -H | fzf --height 10 2>/dev/tty'))
 command! zip zip -r %f.zip %f
 command! uzip unzip %c
 command! run !! ./%f
@@ -52,6 +54,15 @@ command! link ln -s %d/%f %D
 " music file related commands
 command! arv bash -lc arv %d
 command! drt dr14_tmeter
+" remove executable permission from file/directory under cursor
+command! unex chmod -R a-x+X,u-x+rwX,go-wx+rX %c
+command! setcover metaflac --import-picture-from=%c *.flac
+command! setartist metaflac --set-tag="ARTIST"=%a --set-tag="ALBUM ARTIST"=%a *.flac
+command! setalbum metaflac --set-tag="ALBUM="%a *.flac
+command! setyear metaflac --set-tag="DATE"=%a *.flac
+command! settag metaflac --set-tag=%a *.flac
+command! removetag metaflac --remove-tag=%a *.flac
+command! removerg metaflac --remove-replay-gain *.flac
 
 " ------------------------------------------------------------------------------
 
@@ -98,10 +109,10 @@ fileviewer *.epub
 " Audio
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
-       \ {Play using ffplay}
-       \ ffplay -nodisp -autoexit %c,
        \ {Play using MPlayer}
-       \ mplayer %f,
+       \ mplayer %c,
+       \ {Play using ffplay}
+       \ ffplay -nodisp -autoexit %c
 fileviewer <audio/*> mediainfo %f
 
 " Video
@@ -335,7 +346,7 @@ nnoremap ,w :set wrap!<cr>
 nnoremap <f3> :!less %f<cr>
 nnoremap <f4> :edit<cr>
 nnoremap <f5> :copy<cr>
-nnoremap <C-m> :move<cr>
+nnoremap <space>m :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
@@ -349,6 +360,7 @@ nnoremap <c-u> <c-w>x
 " draganddrop with dragon
 nnoremap <C-d> :dragon<CR>
 
+nunmap <cr>
 " ------------------------------------------------------------------------------
 
 " Various customization examples
