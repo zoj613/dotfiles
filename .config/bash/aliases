@@ -20,7 +20,6 @@ alias r='exec $SHELL'  # restart shell
 alias grep='grep --color=auto'
 alias q='exit' # quit shell
 
-
 # Package management
 # ==================
 alias yay='yay --color=auto'  # default yay settings to avoid repeated commands
@@ -97,3 +96,8 @@ alias cga='callgrind_annotate --auto=yes --inclusive=yes'
 # ==========
 alias yta='youtube-dl -x --audio-format flac'
 alias ytfzf='ytfzf -ts'
+
+# tmux
+# ====
+alias txa='tmux new-session -As'
+alias txl='tmux ls'
