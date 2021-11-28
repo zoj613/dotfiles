@@ -24,6 +24,13 @@ set t_Co=256
 ""if has('termguicolors')
 ""  set termguicolors
 ""endif
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/junk/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/.git/*
 " Turn line numbers on
 set number
 set relativenumber

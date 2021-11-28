@@ -74,8 +74,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 
 " custom functions and autocommands
-augroup SignatureAfterComplete
-    autocmd!
-    " display argument list of the selected completion candidate using ALEHover
-    autocmd User ALECompletePost ALEHover
-augroup END
+" augroup SignatureAfterComplete
+"     autocmd!
+"     " display argument list of the selected completion candidate using ALEHover
+"     autocmd User ALECompletePost ALEHover
+" augroup END
