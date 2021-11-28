@@ -1,2 +1,10 @@
+# mainly for use with FZF so certain folders/files can be ignored to aid performance.
 # Vim
 *.swp
+.cache
+.aesara
+.npm
+.nvm
+Music
+**/*/node_modules
+

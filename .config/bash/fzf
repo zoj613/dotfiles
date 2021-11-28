@@ -4,10 +4,10 @@
 [ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
 [ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'  # include hidden files
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --ignore-file=${HOME}/.gitignore'  # include hidden files
 export FZF_DEFAULT_OPTS='--height 20% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude .git"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude .git --ignore-file=${HOME}/.gitignore"
 # automatically selects the item if there's only one
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 
