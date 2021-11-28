@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# prints the number of unread feeds every 30 minutes and only on click of the blocklet.
+# Additionally, when right-clicking the blocklet, newsboat is lauched in a new terminal window.
+
+update=$(newsboat -x "reload" && newsboat -x "print-unread" | awk -F' ' '{print $1}')
+
+[[ "$BLOCK_BUTTON" == "3" ]] && alacritty -e bash -c newsboat
+
+echo "$update"
+
+exit

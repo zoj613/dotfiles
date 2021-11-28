@@ -25,6 +25,13 @@ command=./redshift_blocklet
 interval=1800
 color=#8ec07c
 
+[newsboat]
+command=./newsboat_blocklet
+# update every 6 hours
+interval=21600
+label=  
+color=#fb4934
+
 [github]
 command=github/github
 interval=60
@@ -41,6 +48,7 @@ color=#fe8019
 label= 
 command=memory/memory
 interval=5
+PERCENT=false
 
 [battery]
 command=battery/battery
@@ -79,5 +87,6 @@ command=calendar/calendar
 interval=1
 LABEL=  
 DATEFMT=+%d %b %H:%M 
-HEIGHT=230
+HEIGHT=-25
+WIDTH=625
 color=#fabd2f
