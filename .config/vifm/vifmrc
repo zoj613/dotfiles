@@ -17,6 +17,10 @@ set ignorecase
 " Set custom status line look
 set statusline="  Hint: %z%= %A %10u:%-7g %15E %20d  "
 
+" set shell flags to allow .bashrc to be expanded
+" https://q2a.vifm.info/778/how-can-i-let-vifm-have-access-to-my-shell-environment?show=783#c783
+set shellcmdflag=-lc
+
 " ------------------------------------------------------------------------------
 
 " :mark mark /full/directory/path [filename]
@@ -41,21 +45,31 @@ mark m ~/Music/
 " %d the current directory name.
 " %D the other window directory name.
 " %m run the command in a menu window
-command! ff :set noquickview | :execute 'goto' fnameescape(term('fd -H | fzf --height 10 2>/dev/tty'))
+command! ff :set noquickview | :execute 'goto' fnameescape(term('fd -H --ignore-file=${HOME}/.gitignore | fzf --height 10 2>/dev/tty'))
 command! zip zip -r %f.zip %f
-command! uzip unzip %c
 command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
+" drag and drop selected files from vifm to external program
 command! dragon dragon-drag-and-drop -a -x %f
 command! link ln -s %d/%f %D
-" music file related commands
-command! arv bash -lc arv %d
-command! drt dr14_tmeter
 " remove executable permission from file/directory under cursor
 command! unex chmod -R a-x+X,u-x+rwX,go-wx+rX %c
+
+" commands related to my bashrc config aliases/functions
+" uses the custom bash `ex` function to extract files from archive
+command! ex ex "%c"
+command! arv arv %d
+command! spec spec %c &
+command! ofix ofix %a
+command! cuesplit cuesplit %c %a
+
+" Music file related commands
+" calculate dynamic range of music files in current directory
+command! drt dr14_tmeter
+" TODO: improve this mess below and use vimscript functions to de-duplicate some things 
 command! setcover metaflac --import-picture-from=%c *.flac
 command! setartist metaflac --set-tag="ARTIST"=%a --set-tag="ALBUM ARTIST"=%a *.flac
 command! setalbum metaflac --set-tag="ALBUM="%a *.flac
@@ -110,7 +124,7 @@ fileviewer *.epub
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
        \ {Play using MPlayer}
-       \ mplayer %c,
+       \ mpv %c,
        \ {Play using ffplay}
        \ ffplay -nodisp -autoexit %c
 fileviewer <audio/*> mediainfo %f
@@ -126,8 +140,8 @@ filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
         \ ffplay -fs -autoexit %f,
         \ {View using Dragon}
         \ dragon %f:p,
-        \ {View using mplayer}
-        \ mplayer %f,
+        \ {View using mpv}
+        \ mpv %f,
 fileviewer <video/*>
     \ vifmimg video %px %py %pw %ph %c
     \ %pc
@@ -330,6 +344,8 @@ elseif executable('xsel')
     nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
                 \ echo -n %c:p | xsel --clipboard --input %i<cr>
 endif
+" copy just the base name under the cursor to clipboard
+nnoremap yn :!basename %c | xclip -selection clipboard %i<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
