@@ -7,4 +7,4 @@
 .nvm
 Music
 **/*/node_modules
-
+.local/share
