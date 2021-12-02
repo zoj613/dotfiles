@@ -11,7 +11,7 @@ alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essential packages
 yi git xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
-    dmenu dunst xorg-xbacklight lxappearance nitrogen i3exit xterm \
+    dmenu dunst xorg-xbacklight nitrogen i3exit xterm \
     xf86-input-synaptics gnupg pass pass-update passff-host pam-gnupg ntfs-3g
 
 # update mlocate database so as to use the locate command
