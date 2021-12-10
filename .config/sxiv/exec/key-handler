@@ -11,6 +11,9 @@ do
         "C-c")
                 echo -n "$file" | xclip -selection clipboard ;;
         "C-w")
-                nitrogen --save --set-zoom-fill "$file" ;;
+                NUM_MONITORS=$(xrandr --listmonitors | grep Monitors | awk -F': ' '{print $2}')
+                for (( i = 0; i < ${NUM_MONITORS}; i++ )); do
+                    nitrogen --save --set-scaled --head=${i} "$file"
+                done
         esac
 done
