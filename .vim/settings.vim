@@ -53,3 +53,5 @@ set completeopt=popup,menu,menuone,noselect,noinsert
 set background=dark
 " turn on filetype plugins
 filetype plugin indent on
+
+set nowrap
