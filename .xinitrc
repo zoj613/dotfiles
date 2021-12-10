@@ -33,13 +33,20 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# TODO: Programmically set the monitor resolution and positioning using
+# `xrandr --listmonitors` instead of hardcoding the names and resolutions
 xrandr --auto --output LVDS1 --primary --mode 1366x768 \
     --output HDMI1 --mode 1920x1080 --right-of LVDS1 &
+
+NUM_MONITORS=$(xrandr --listmonitors | grep Monitors | awk -F': ' '{print $2}')
+for (( i = 0; i < ${NUM_MONITORS}; i++ )); do
+    nitrogen --set-scaled --head=${i} ${HOME}/dotfiles/scripts/img/wallpaper.jpg &
+done
+
 xautolock -time 15 -locker blurlock &
 redshift &
+picom --config $HOME/.config/picom/picom.conf &
 # MPD daemon start (if no other user instance exists)
 # [ ! -s ~/.config/mpd/pid ] && mpd
-nitrogen --set-scaled --head=0 ${HOME}/dotfiles/scripts/img/wallpaper.jpg &
-nitrogen --set-scaled --head=1 ${HOME}/dotfiles/scripts/img/wallpaper.jpg &
-picom -f --config $HOME/.config/picom/picom.conf &
+
 exec "$windowmanager"
