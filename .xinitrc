@@ -40,7 +40,7 @@ xrandr --auto --output LVDS1 --primary --mode 1366x768 \
 
 NUM_MONITORS=$(xrandr --listmonitors | grep Monitors | awk -F': ' '{print $2}')
 for (( i = 0; i < ${NUM_MONITORS}; i++ )); do
-    nitrogen --set-scaled --head=${i} ${HOME}/dotfiles/scripts/img/wallpaper.jpg &
+    nitrogen --set-scaled --head=${i} ${HOME}/dotfiles/scripts/img/wallpaper.png &
 done
 
 xautolock -time 15 -locker blurlock &
