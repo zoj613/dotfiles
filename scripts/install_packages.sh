@@ -21,7 +21,8 @@ sudo updatedb
 yi vim ctags fzf fd alacritty vifm tmux
 
 # audio packages
-yi mpd mpc ncmpcpp sox alsa-lib alsa-utils pulsemixer gst-libav
+yi mpd mpc ncmpcpp sox alsa-lib alsa-utils pulsemixer gst-libav \
+    pulseaudio-equalizer-ladspa
 
 # fonts
 yi ttf-inconsolata nerd-fonts-inconsolata ttf-droid noto-fonts
