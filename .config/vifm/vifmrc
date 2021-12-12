@@ -68,7 +68,7 @@ command! cuesplit cuesplit %c %a
 
 " Music file related commands
 " calculate dynamic range of music files in current directory
-command! drt dr14_tmeter
+command! drt dr14_tmeter --quiet &
 " TODO: improve this mess below and use vimscript functions to de-duplicate some things 
 command! setcover metaflac --import-picture-from=%c *.flac &
 command! setartist metaflac --set-tag="ARTIST"=%a --set-tag="ALBUM ARTIST"=%a *.flac &
