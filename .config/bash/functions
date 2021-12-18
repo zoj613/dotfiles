@@ -38,23 +38,23 @@ function writeusb { sudo dd bs=4M if=$1 of=$2 status=progress oflag=sync; }
 
 # extract archives
 function ex {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
+  if [ -f "${1}" ] ; then
+    case "${1}" in
+      *.tar.bz2)   tar xjf "${1}"   ;;
+      *.tar.gz)    tar xzf "${1}"   ;;
+      *.bz2)       bunzip2 "${1}"   ;;
+      *.rar)       unrar x "${1}"     ;;
+      *.gz)        gunzip "${1}"    ;;
+      *.tar)       tar xf "${1}"    ;;
+      *.tbz2)      tar xjf "${1}"   ;;
+      *.tgz)       tar xzf "${1}"   ;;
+      *.zip)       unzip "${1}"     ;;
+      *.Z)         uncompress "${1}";;
+      *.7z)        7z x "${1}"      ;;
+      *)           echo "'${1}' cannot be extracted via ex()" ;;
     esac
   else
-    echo "'$1' is not a valid file"
+    echo "'${1}' is not a valid file"
   fi
 }
 
@@ -78,4 +78,9 @@ function cuesplit {
 # must be used as yp <name> and will list all packages that match name
 function yp {
     yay -Q | grep ${1}
+}
+
+# backup files in directory $1 to $2
+function rsync_backup {
+    rsync -r -t -v --progress --delete -s "${1}" "${2}"
 }
