@@ -41,8 +41,8 @@ set clipboard^=unnamed,unnamedplus
 set splitbelow
 set splitright
 " Enable folding
-set foldmethod=indent
-set foldlevel=99
+"set foldmethod=indent
+"set foldlevel=99
 " set verical ruler
 set colorcolumn=79
 " prevent the `Omni Completion` message from popping up during autocomplete"
