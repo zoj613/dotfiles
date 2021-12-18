@@ -1,24 +1,35 @@
 # vim: filetype=bash
 #
+command_exists () {
+    command -v "$1" &> /dev/null ;
+}
+
 # File System
 # ===========
+command_exists rg && grep_cmd='rg' || grep_cmd='grep --color=auto'
+
 alias mkdir='mkdir -p'
-alias cp='cp -i'  # confirm before overwrite
-alias ls='ls --color=always --group-directories-first --human-readable'  # list files
+alias cp='rsync -avhW --no-compress --progress'  # confirm before overwrite
+
+command_exists lsd && ls_cmd='lsd' || ls_cmd='ls'
+alias ls='$ls_cmd --color=always --human-readable'
 alias lsa='ls -a'  # list hidden files too
-alias lsg='ls -a | grep'
+alias lsg='ls -a | $grep_cmd'
+alias lsl='ls -l' # long format
+alias lst='ls --tree' # only works if lsd is installed
+
 alias dir='dir -Q --color=auto'
 alias ..='cd ..'
-alias df='df -hT --sync'
+alias df='command_exists duf && duf -hide special || df -hT --sync'
 alias tree='tree -C'
 
 
 # OS and shell
 # ============
-alias manjaro='cat /etc/lsb-release'  # manjaro release info
 alias r='exec $SHELL'  # restart shell
-alias grep='grep --color=auto'
 alias q='exit' # quit shell
+alias grep='$grep_cmd --color=auto'
+alias lsservices='systemctl list-units --type=service'
 
 # Package management
 # ==================
@@ -72,7 +83,7 @@ alias dotd='dot diff'
 # dr14_tmeter command for calculating dynamic range of music files
 alias dr14='dr14_tmeter -1'
 alias nf='neofetch'
-alias msync='time rsync -r -t -v --progress --delete -s /media/ZOLISAEXT4/Music/ /media/ZOJ/Music/'
+# alias msync='time rsync_backup /mnt/ZOLISAEXT4/Music/ /mnt/ZOJ/Music/'
 alias trl='trash-list'
 alias tre='trash-empty'
 alias rm='trash-put'
@@ -94,7 +105,7 @@ alias cga='callgrind_annotate --auto=yes --inclusive=yes'
 
 # multimedia
 # ==========
-alias yta='youtube-dl -x --audio-format flac'
+alias yta='yt-dlp -x --audio-format flac --audio-quality 0'
 alias ytfzf='ytfzf -ts'
 
 # tmux
