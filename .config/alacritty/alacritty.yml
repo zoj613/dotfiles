@@ -21,18 +21,19 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Inconsolata Nerd Font
+    family: Inconsolata Nerd Font Mono
     style: Bold
 
   italic:
-    family: Inconsolata Nerd Font
+    family: Inconsolata Nerd Font Mono
     style: Bold
 
   bold_italic:
-    family: Inconsolata Nerd Font
+    family: Inconsolata Nerd Font Mono
     style: Bold
 
   size: 10
+  use_thin_strokes: false
 
 background_opacity: 0.9
 
@@ -41,6 +42,8 @@ save_to_clipboard: true
 cursor:
   shape: Block
   blinking: On
+
+draw_bold_text_with_bright_colors: false
 
 colors:
   # Default colors
@@ -96,7 +99,7 @@ colors:
     - { index: 175, color: '#d3869b' }
     - { index: 208, color: '#fe8019' }
     - { index: 214, color: '#fabd2f' }
-    - { index: 223, color: '#ebdbb2' }
+#    - { index: 223, color: '#ebdbb2' }
     - { index: 228, color: '#f2e5bc' }
     - { index: 229, color: '#fbf1c7' }
     - { index: 230, color: '#f9f5d7' }
