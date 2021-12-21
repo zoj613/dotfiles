@@ -11,7 +11,7 @@ nnoremap <leader>H :History<CR>
 let g:fzf_preview_window = []
 " let g:fzf_layout = {'down': '20%', }
 let g:fzf_layout = {
-\    'window': { 'width': 0.4, 'height': 0.2, 'yoffset': 0.5, 'xoffset': 0.5 }
+\    'window': { 'width': 0.4, 'height': 0.4, 'yoffset': 0.5, 'xoffset': 0.5 }
 \}
 let g:fzf_colors = {
 \   'fg':      ['fg', 'Normal'],
