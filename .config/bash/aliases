@@ -34,7 +34,7 @@ alias lsservices='systemctl list-units --type=service'
 # Package management
 # ==================
 alias yay='yay --color=auto'  # default yay settings to avoid repeated commands
-alias yu='yay -Syu --noconfirm --needed'  # update packages
+alias yu='time yay -Syu --noconfirm --needed'  # update packages
 alias yud='yu --devel --timeupdate'
 alias yi='yay -S --needed --noconfirm'
 alias yii='yay -S --needed --useask'  # when conflicts need to be resolved
