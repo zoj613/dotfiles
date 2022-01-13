@@ -21,19 +21,19 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Inconsolata Nerd Font Mono
-    style: Bold
+    family: Iosevka Nerd Font Mono
+    style: Medium
 
   italic:
-    family: Inconsolata Nerd Font Mono
-    style: Bold
+    family: Iosevka Nerd Font Mono
+    style: Medium Italic
 
   bold_italic:
-    family: Inconsolata Nerd Font Mono
-    style: Bold
+    family: Iosevka Nerd Font Mono
+    style: Bold Italic
 
-  size: 10
-  use_thin_strokes: false
+  size: 9.5
+  use_thin_strokes: true
 
 background_opacity: 0.9
 

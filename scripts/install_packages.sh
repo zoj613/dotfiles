@@ -25,7 +25,7 @@ yi mpd mpc ncmpcpp sox alsa-lib alsa-utils pulsemixer gst-libav \
     pulseaudio-equalizer-ladspa
 
 # fonts
-yi ttf-inconsolata nerd-fonts-inconsolata ttf-droid noto-fonts
+yi ttf-inconsolata nerd-fonts-inconsolata ttf-droid noto-fonts ttf-iosevka-nerd
 
 # desktop packages
 yi zathura zathura-pdf-mupdf sxiv neomutt i3-scrot xclip blueman xautolock
