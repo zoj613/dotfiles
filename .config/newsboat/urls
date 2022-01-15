@@ -15,6 +15,10 @@ https://yewtu.be/feed/channel/UCoOjH8D2XAgjzQlneM2W0EQ YOUTUBE "Jake Train"
 https://yewtu.be/feed/channel/UCVpb6nv1igxnoY0SRVhaoEA YOUTUBE "John L. Miller"
 https://yewtu.be/feed/channel/UCFU7a7OMYfcpjtIpu2j47_Q YOUTUBE "DevOnDuty"
 https://yewtu.be/feed/channel/UC_ML5xP23TOWKUcc-oAE_Eg YOUTUBE "Hussein Nasser"
+https://yewtu.be/feed/channel/UC4bq21IPPbpu0Qrsl7LW0sw YOUTUBE "Slidebean"
 
 GIT
 https://github.com/numpy/numpy/releases.atom GIT "NumPy Releases" Software
+https://github.com/scipy/scipy/releases.atom GIT "NumPy Releases" Software
+https://github.com/aesara-devs/aesara/releases.atom GIT "Aesara Releases" Software
+https://github.com/aesara-devs/aeppl/releases.atom GIT "Aeppl Releases" Software
