@@ -12,7 +12,7 @@ signal=10
 
 [arch-update]
 command=arch-update/arch-update
-interval=3600
+interval=604800
 QUIET=true
 WATCH=^linux.* ^pacman.*
 BASE_COLOR=#FFFF85
@@ -31,7 +31,6 @@ command=./newsboat_blocklet
 interval=21600
 label=  
 color=#fb4934
-
 [github]
 command=github/github
 interval=60
