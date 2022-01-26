@@ -55,3 +55,5 @@ set background=dark
 filetype plugin indent on
 
 set nowrap
+
+set clipboard=unnamedplus

@@ -18,7 +18,7 @@ yi git xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
 sudo updatedb
 
 # development packages
-yi vim ctags fzf fd alacritty vifm tmux
+yi gvim ctags fzf fd alacritty vifm tmux
 
 # audio packages
 yi mpd mpc ncmpcpp sox alsa-lib alsa-utils pulsemixer gst-libav \
