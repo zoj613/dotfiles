@@ -1,19 +1,19 @@
 BLOGS
 https://feeds.captivate.fm/learnbayesstats/ BLOG "~LearnBayesStats Podcast"
-https://www.johndcook.com/blog/feed BLOG "~John Cook" Tech
 https://brandonwillard.github.io/feeds/all.rss.xml BLOG "~Brandon Willard" Tech
+https://lucumr.pocoo.org/feed.atom BLOG "Armin Ronacher" Tech
+https://blog.ploeh.dk/rss.xml BLOG "Mark Seemann" Tech
 
 YOUTUBE
-https://yewtu.be/feed/channel/UCtUbO6rBht0daVIOGML3c8w YOUTUBE "SummoningSalt" Gaming
-https://yewtu.be/feed/channel/UCJYVW4HVrMWpUvvsjPQc8-Q YOUTUBE "DorianDotSlash" Linux
-https://yewtu.be/feed/channel/UC2eYFnH61tmytImy1mTYvhA YOUTUBE "Luke Smith" Linux
-https://yewtu.be/feed/channel/UC9-y-6csu5WGm29I7JiwpnA YOUTUBE "Computerphile"
-https://yewtu.be/feed/channel/UCkf4VIqu3Acnfzuk3kRIFwA YOUTUBE "gotbletu" Linux
-https://yewtu.be/feed/channel/UCp4Tghm96iQs2JmYSoiS0kw YOUTUBE "BLK0314" Gaming
-https://yewtu.be/feed/channel/UCZRoNJu1OszFqABP8AuJIuw YOUTUBE "Logically Answered"
-https://yewtu.be/feed/channel/UCoOjH8D2XAgjzQlneM2W0EQ YOUTUBE "Jake Train"
-https://yewtu.be/feed/channel/UCFU7a7OMYfcpjtIpu2j47_Q YOUTUBE "DevOnDuty"
-https://yewtu.be/feed/channel/UC4bq21IPPbpu0Qrsl7LW0sw YOUTUBE "Slidebean"
+https://invidious.snopyta.org/feed/channel/UCtUbO6rBht0daVIOGML3c8w YOUTUBE "SummoningSalt" Gaming
+https://invidious.snopyta.org/feed/channel/UCJYVW4HVrMWpUvvsjPQc8-Q YOUTUBE "DorianDotSlash" Linux
+https://invidious.snopyta.org/feed/channel/UC9-y-6csu5WGm29I7JiwpnA YOUTUBE "Computerphile"
+https://invidious.snopyta.org/feed/channel/UCkf4VIqu3Acnfzuk3kRIFwA YOUTUBE "gotbletu" Linux
+https://invidious.snopyta.org/feed/channel/UCp4Tghm96iQs2JmYSoiS0kw YOUTUBE "BLK0314" Gaming
+https://invidious.snopyta.org/feed/channel/UCZRoNJu1OszFqABP8AuJIuw YOUTUBE "Logically Answered"
+https://invidious.snopyta.org/feed/channel/UCoOjH8D2XAgjzQlneM2W0EQ YOUTUBE "Jake Train"
+https://invidious.snopyta.org/feed/channel/UCFU7a7OMYfcpjtIpu2j47_Q YOUTUBE "DevOnDuty"
+https://invidious.snopyta.org/feed/channel/UC4bq21IPPbpu0Qrsl7LW0sw YOUTUBE "Slidebean"
 
 GIT
 https://github.com/numpy/numpy/releases.atom GIT "NumPy Releases" Software
