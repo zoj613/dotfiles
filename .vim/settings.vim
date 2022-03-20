@@ -57,3 +57,4 @@ filetype plugin indent on
 set nowrap
 
 set clipboard=unnamedplus
+highlight Comment cterm=italic

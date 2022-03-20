@@ -24,7 +24,7 @@ Plug 'lifepillar/vim-gruvbox8'
 " fold blocks of code in python
 " Plug 'tmhedberg/SimpylFold'
 " autogenerate docstrings for python functions/classes
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'chrisbra/Colorizer'
@@ -36,8 +36,6 @@ Plug 'vifm/vifm.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " syntax highlighting and filetype plugins for Markdown
 Plug 'tpope/vim-markdown'
-" Auto close parentheses
-Plug 'cohama/lexima.vim'
 " code snippet engine
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -57,6 +55,7 @@ nnoremap <Leader>f :Vifm<CR>
 nnoremap <Leader>s :Snippets<CR>
 " Navigate quickfix list
 nnoremap <Leader>co :copen<CR>
+nnoremap <Leader>cc :cclose<CR>
 nnoremap <Leader>cn :cnext<CR>
 nnoremap <Leader>cp :cprev<CR>
 " disable use of arrow keys in all modes
@@ -71,7 +70,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " use enter to to close the completion pop-up when not wanted
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " map to generate python docstrings
-nmap <silent> <Leader>pd <Plug>(pydocstring)
+"nmap <silent> <Leader>pd :Pydocstring<CR>
+nmap <silent> <Leader>pp <Plug>(pydocstring)
 
 nnoremap <Leader>gs :G<CR>
 
