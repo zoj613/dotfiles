@@ -37,7 +37,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 " syntax highlighting and filetype plugins for Markdown
 Plug 'tpope/vim-markdown'
 " code snippet engine
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 call plug#end()
 

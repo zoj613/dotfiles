@@ -58,3 +58,5 @@ set nowrap
 
 set clipboard=unnamedplus
 highlight Comment cterm=italic
+
+set showmatch
