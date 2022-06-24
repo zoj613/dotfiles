@@ -4,6 +4,9 @@ https://brandonwillard.github.io/feeds/all.rss.xml BLOG "~Brandon Willard" Tech
 https://lucumr.pocoo.org/feed.atom BLOG "Armin Ronacher" Tech
 https://blog.ploeh.dk/rss.xml BLOG "Mark Seemann" Tech
 https://mbernste.github.io/feed.xml BLOG "~Matthew N. Bernstein" Stats
+https://fangpenlin.com/feed.xml BLOG "Fang-Pen" Tech
+https://sobolevn.me/feed.xml BLOG "Sobolevn" Tech
+https://blog.djy.io/rss.xml BLOG "Dave Yarwood" Tech
 
 YOUTUBE
 https://invidious.snopyta.org/feed/channel/UCtUbO6rBht0daVIOGML3c8w YOUTUBE "SummoningSalt" Gaming
@@ -15,6 +18,8 @@ https://invidious.snopyta.org/feed/channel/UCZRoNJu1OszFqABP8AuJIuw YOUTUBE "Log
 https://invidious.snopyta.org/feed/channel/UCoOjH8D2XAgjzQlneM2W0EQ YOUTUBE "Jake Train"
 https://invidious.snopyta.org/feed/channel/UCFU7a7OMYfcpjtIpu2j47_Q YOUTUBE "DevOnDuty"
 https://invidious.snopyta.org/feed/channel/UC4bq21IPPbpu0Qrsl7LW0sw YOUTUBE "Slidebean"
+https://invidious.snopyta.org/feed/channel/UC4QZ_LsYcvcq7qOsOhpAX4A YOUTUBE "Cold Fusion"
+https://invidious.snopyta.org/feed/channel/UC16rTFKsAUc2SW9tpViNs_Q YOUTUBE "Remedy Mixtapes SA"
 
 GIT
 https://github.com/numpy/numpy/releases.atom GIT "NumPy Releases" Software
