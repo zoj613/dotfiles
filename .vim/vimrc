@@ -39,6 +39,7 @@ Plug 'tpope/vim-markdown'
 " code snippet engine
 " Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'kovisoft/slimv'
 call plug#end()
 
 " map <Leader>h to command thats turns off highlighting
@@ -100,3 +101,7 @@ let maplocalleader = "<space>"
 " snippets config
 " ===============
 let g:UltiSnipsExpandTrigger=";<tab>"
+
+" slimv config
+" ============
+let g:lisp_rainbow=1
