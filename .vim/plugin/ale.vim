@@ -23,7 +23,7 @@ let g:ale_lint_on_insert_leave = 1
 
 " linter and fixer options
 let g:ale_linters = {
-\   'python': ['pylsp', 'flake8', 'mypy'],
+\   'python': ['pylsp', 'flake8', 'mypy', 'pydocstyle'],
 \   'sh': ['language_server'],
 \   'c': ['cc', 'clangd', 'clangtidy'],
 \   'vim': ['ale_custom_linting_rules', 'vimls'],
