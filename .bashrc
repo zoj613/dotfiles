@@ -36,20 +36,20 @@ fi
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/usr/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/zoj/micromamba";
+__mamba_setup="$('/usr/bin/micromamba' shell hook --shell bash --prefix '/home/zoj/micromamba' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+    eval "$__mamba_setup"
 else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/zoj/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/zoj/micromamba/etc/profile.d/micromamba.sh"
     else
-        export PATH="/opt/miniconda3/bin:$PATH"
+        export  PATH="/home/zoj/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
     fi
 fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+unset __mamba_setup
+# <<< mamba initialize <<<
