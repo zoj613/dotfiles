@@ -42,6 +42,8 @@ Plug 'honza/vim-snippets'
 Plug 'kovisoft/slimv'
 call plug#end()
 
+" make a shortcut for spawning a vertical terminal split window
+nnoremap ;t :vertical term<CR>
 " map <Leader>h to command thats turns off highlighting
 nnoremap <Leader>n :nohl<CR>
 " exit insert mode using ii
