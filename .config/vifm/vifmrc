@@ -57,6 +57,7 @@ command! dragon dragon-drag-and-drop -a -x %f
 command! link ln -s %d/%f %D
 " remove executable permission from file/directory under cursor
 command! unex chmod -R a-x+X,u-x+rwX,go-wx+rX %c
+command! send croc send %f
 
 " commands related to my bashrc config aliases/functions
 " uses the custom bash `ex` function to extract files from archive
