@@ -14,6 +14,7 @@ colorscheme gruvbox Default-256 Default
 set incsearch
 set ignorecase
 
+set laststatus
 " Set custom status line look
 set statusline="  Hint: %z%= %A %10u:%-7g %15E %20d  "
 
@@ -53,7 +54,7 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
 " drag and drop selected files from vifm to external program
-command! dragon dragon-drag-and-drop -a -x %f
+command! dragon dragon-drop -a -x %f
 command! link ln -s %d/%f %D
 " remove executable permission from file/directory under cursor
 command! unex chmod -R a-x+X,u-x+rwX,go-wx+rX %c
@@ -78,7 +79,7 @@ command! setalbum metaflac --set-tag="ALBUM="%a *.flac &
 command! setyear metaflac --set-tag="DATE"=%a *.flac &
 command! settag metaflac --set-tag=%a *.flac &
 command! removetag metaflac --remove-tag=%a *.flac &
-command! removerg metaflac --remove-replay-gain *.flac &
+command! removerg metaflac --remove-replay-gain **/*.flac &
 
 " ------------------------------------------------------------------------------
 
