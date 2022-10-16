@@ -15,7 +15,7 @@ set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
-default_floating_border normal
+default_floating_border pixel 1
 
 # Winddw title alignment
 title_align center
@@ -216,6 +216,7 @@ assign [class="freetube"] $ws6
 assign [class="ncmpcpp"] $ws4
 
 # Open specific applications in floating mode
+for_window [class=".*"] border pixel 1
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
