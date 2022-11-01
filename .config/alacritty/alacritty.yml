@@ -33,7 +33,6 @@ font:
     style: Bold Italic
 
   size: 9.5
-  use_thin_strokes: true
 
 window:
   opacity: 0.9
