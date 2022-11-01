@@ -89,5 +89,6 @@ function rsync_backup {
 # download a section A-B of a youtube video as audio using yt-dlp
 # usage: yta_section <video url> <section of video as "start_timestamp-end_timestamp">
 function yta_section {
-    yt-dlp --extract-audio --audio-format best --audio-quality 0 --force-keyframes-at-cuts --download-sections "*${2}" "${1}"
+    yt-dlp --extract-audio --audio-format best --audio-quality 0 --add-metadata \
+        --xattrs --embed-thumbnail --force-keyframes-at-cuts --download-sections "*${2}" "${1}"
 }
