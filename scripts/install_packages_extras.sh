@@ -17,7 +17,7 @@ git clone https://github.com/zoj613/cdrip-tools.git ~/dev/
 yi sox ffmpeg libsndfile
 
 # desktop packages
-yi rsync 
+yi rsync nicotine+ 
 
 
 # multimedia
