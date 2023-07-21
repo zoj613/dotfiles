@@ -31,11 +31,20 @@ command=./newsboat_blocklet
 interval=21600
 label=  
 color=#fb4934
+
 [github]
 command=github/github
 interval=60
 format=json
 color=#fabd2f
+
+[ytdl-mpv]
+command=ytdl-mpv/ytdl-mpv
+markup=pango
+interval=once
+signal=4
+PLAYING_COLOR=red
+NOT_PLAYING_COLOR=white
 
 [email]
 label=  

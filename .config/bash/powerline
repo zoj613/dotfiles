@@ -11,7 +11,7 @@ powerline_go_args=(
 )
 
 function _update_ps1 {
-    PS1="$($GOPATH/bin/powerline-go -error $? ${powerline_go_args[@]})"
+    PS1="$($GOPATH/bin/powerline-go -error $?  -jobs $(jobs -p | wc -l) ${powerline_go_args[@]})"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then

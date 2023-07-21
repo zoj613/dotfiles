@@ -40,6 +40,8 @@ Plug 'tpope/vim-markdown'
 " Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'kovisoft/slimv'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+" Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 
 " make a shortcut for spawning a vertical terminal split window
@@ -107,3 +109,6 @@ let g:UltiSnipsExpandTrigger=";<tab>"
 " slimv config
 " ============
 let g:lisp_rainbow=1
+
+" Add requirements-dev syntnax highlighting to detectibale patterns for requirements.vim
+let g:requirements#detect_filename_pattern = 'requirements-dev.txt'

@@ -5,12 +5,12 @@
 
 
 # development
-yay -Rdd blas
-yi zeal-git openblas-lapack-git
+# yay -Rdd blas
+# yi zeal-git openblas-lapack-git
 
 
 # audio
-yi gstreamer dr14_tmeter mediainfo easytag ffmpeg flac cdrip-tools pragha
+yi gstreamer dr14_tmeter mediainfo ffmpeg flac audacious-gtk3 deadbeef # cdrip-tools
 
 
 # desktop packages

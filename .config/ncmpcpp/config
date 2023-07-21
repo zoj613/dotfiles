@@ -36,8 +36,9 @@ visualizer_in_stereo = yes
 ## with fftw3 support.
 ## Available values: spectrum, wave, wave_filled, ellipse.
 visualizer_type = spectrum
-visualizer_fps = 60
+visualizer_fps = 144
 visualizer_autoscale = yes
+# visualizer_look = ▮▮
 visualizer_look = ⬮⬮
 visualizer_color = blue, cyan, green, yellow, magenta, red
 ## Alternative subset of 256 colors for terminals that support it.
@@ -52,7 +53,7 @@ visualizer_color = blue, cyan, green, yellow, magenta, red
 ## and visualizer_in_stereo set, artifacts may be visible on the bottom half of
 ## the visualization.
 #
-visualizer_spectrum_smooth_look = yes
+visualizer_spectrum_smooth_look = no
 #
 ## A value between 1 and 5 inclusive. Specifying a larger value makes the
 ## visualizer look at a larger slice of time, which results in less jumpy
@@ -64,11 +65,11 @@ visualizer_spectrum_smooth_look = yes
 #
 ## Left-most frequency of visualizer in Hz, must be less than HZ MAX
 #
-visualizer_spectrum_hz_min = 15
+#visualizer_spectrum_hz_min = 15
 #
 ## Right-most frequency of visualizer in Hz, must be greater than HZ MIN
 #
-visualizer_spectrum_hz_max = 28000
+#visualizer_spectrum_hz_max = 28000
 #
 ##### system encoding #####
 ##
@@ -303,7 +304,7 @@ progressbar_look = "=>"
 #
 ## Available values: classic, alternative.
 ##
-user_interface = alternative
+user_interface = classic
 #
 #data_fetching_delay = yes
 #
@@ -317,9 +318,9 @@ media_library_hide_album_dates = no
 #
 #default_tag_editor_pattern = %n - %t
 #
-#header_visibility = yes
+header_visibility = no
 #
-#statusbar_visibility = yes
+statusbar_visibility = no
 #
 ## Show the "Connected to ..." message on startup
 connected_message_on_startup = yes

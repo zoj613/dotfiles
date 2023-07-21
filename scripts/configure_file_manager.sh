@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install all tthe necessary packages needed
-yay -S --needed --noconfirm dragon-drag-and-drop wget ueberzug poppler
+yay -S --needed --noconfirm dragon-drop wget ueberzug poppler
 
 # download icons
 wget -P ~/.config/vifm/ https://raw.githubusercontent.com/cirala/vifm_devicons/master/favicons.vifm

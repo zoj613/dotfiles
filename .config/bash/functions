@@ -1,10 +1,12 @@
 # vim: filetype=bash
 #
+#
+CDRIP_TOOLS_PREFIX="${HOME}/dev/cdrip-tools"
 # use arverify to verify accuraterip checksums of flac files in a directory
 function arv {
     local dir=${@:-$PWD}
     local logfile="${dir}"/accuraterip.log
-    local out=$(arverify -v "${dir}"/*.flac)
+    local out=$(${CDRIP_TOOLS_PREFIX}/arverify.py -v "${dir}"/*.flac)
     # early exit if arverify command did not work
     # this will occur when the out variable contains only 2 lines
     if [ "$(echo "$out" | wc -l)" == "2" ]; then
@@ -30,7 +32,7 @@ function spec { sox "$@" -n spectrogram -t "$@"; }
 
 
 # fix offset of lossless music files
-function ofix { fixoffset -f flac $1 *."${2:-flac}"; }
+function ofix { ${CDRIP_TOOLS_PREFIX}/fixoffset.py -f flac $1 *."${2:-flac}"; }
 
 
 # burn iso to usb using diskdestroyer
@@ -91,4 +93,9 @@ function rsync_backup {
 function yta_section {
     yt-dlp --extract-audio --audio-format best --audio-quality 0 --add-metadata \
         --xattrs --embed-thumbnail --force-keyframes-at-cuts --download-sections "*${2}" "${1}"
+}
+
+
+function audio_stats {
+    cat /proc/asound/${1}/pcm0p/sub0/hw_params
 }

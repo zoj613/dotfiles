@@ -36,7 +36,8 @@ fi
 # TODO: Programmically set the monitor resolution and positioning using
 # `xrandr --listmonitors` instead of hardcoding the names and resolutions
 xrandr --auto --output LVDS1 --primary --mode 1366x768 \
-    --output HDMI1 --mode 1920x1080 --right-of LVDS1 &
+    --output DP1 --mode 3840x2160 --left-of LVDS1 &
+#xrandr --auto --output DP1 --primary --mode 1920x1080 --output LVDS1 --mode 1366x768 --left-of DP1 &
 
 NUM_MONITORS=$(xrandr --listmonitors | grep Monitors | awk -F': ' '{print $2}')
 for (( i = 0; i < ${NUM_MONITORS}; i++ )); do

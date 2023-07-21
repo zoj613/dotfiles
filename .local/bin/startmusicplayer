@@ -12,20 +12,20 @@ tmux start-server
 tmux new-session -d -s $session -n musicplayer
 
 # run ncmpcpp in media library view mode on pane 1
-tmux send-keys "ncmpcpp -s media_library" C-m 
+tmux send-keys "ncmpcpp -s visualizer" C-m 
 
 # Split window into 4 panes
-tmux splitw -v -t 0 -l 30%
+tmux splitw -v -t 0 -l 50%
 tmux splitw -h -t 0 -l 50%
-tmux splitw -h -t 2 -l 25%
+# tmux splitw -h -t 2 -l 25%
 
 # run ncmpcpp with different screens on the first 3 panes and pulsemixer on the last one
 tmux selectp -t 1
 tmux send-keys "ncmpcpp -s playlist" C-m 
 tmux selectp -t 2
-tmux send-keys "ncmpcpp -s visualizer" C-m 
-tmux selectp -t 3
-tmux send-keys "pulsemixer" C-m 
+tmux send-keys "ncmpcpp -s media_library" C-m 
+#tmux selectp -t 3
+#tmux send-keys "pulsemixer" C-m 
 
 # Finished setup, attach to the tmux session!
 tmux selectp -t 0

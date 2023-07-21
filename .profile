@@ -7,7 +7,7 @@ export XDG_DATA_HOME="$HOME"/.local/share
 # add local binary path to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME="gtk3"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
 
@@ -15,7 +15,7 @@ export EDITOR="$(command -v vim || command -v vi)"
 export VISUAL=${EDITOR}
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER="$(command -v librewolf)"
+export BROWSER="$(command -v chromium)"
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"

@@ -5,7 +5,10 @@ let g:ale_completion_max_suggestions = 25
 let g:ale_completion_autoimport = 1
 let g:ale_default_navigation = 'buffer'
 let g:ale_completion_autoimport = 1
-let g:ale_hover_to_preview = 0
+let g:ale_hover_cursor = 1
+let g:ale_floating_preview = 1
+let g:ale_hover_to_preview = 1
+let g:ale_virtualtext_cursor = 'disabled'
 
 " language specific options
 let g:ale_c_cc_options = "-std=c99 -Wall -Wextra -pedantic -Werror -Wshadow 
@@ -43,6 +46,7 @@ let g:ale_fixers = {
 \   'c': ['clang-format', 'clangtidy'],
 \   'r': ['styler'],
 \   'go': ['gofmt'],
+\   'tex': ['latexindent'],
 \}
 let g:ale_completion_symbols = {
 \    'method': '',

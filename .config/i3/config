@@ -6,6 +6,8 @@
 set $terminal alacritty
 # set default editor
 set $editor vim
+# set browser
+set $browser chromium
 
 ## Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -73,7 +75,7 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute; $getvolume
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # start applications
-bindsym $mod+F2 exec librewolf
+bindsym $mod+F2 exec $browser
 #bindsym $mod+F3 exec pcmanfm
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom --config ~/.config/picom/picom.conf
@@ -237,6 +239,9 @@ for_window [class="Transmission"] floating enable
 for_window [class="Yad"] floating enable
 for_window [class="Blueman-manager"] floating enable border normal
 for_window [class="Pulseaudio-equalizer-gtk"] floating enable
+for_window [class="mpv"] floating enable
+for_window [class="Deluge-gtk"] floating enable
+for_window [class="transmission*"] floating enable border normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -311,7 +316,7 @@ exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id nm-applet
 exec --no-startup-id safeeyes
 # exec --no-startup-id blueman-applet
-exec --no-startup-id xautolock -time 30 -locker blurlock
+exec --no-startup-id xautolock -time 40 -locker blurlock
 
 
 # set general color variables for theme and statusbar

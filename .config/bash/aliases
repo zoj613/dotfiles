@@ -10,6 +10,7 @@ command_exists rg && grep_cmd='rg' || grep_cmd='grep --color=auto'
 
 alias mkdir='mkdir -p'
 alias cp='rsync -avhW --no-compress --progress'  # confirm before overwrite
+alias lscards='cat /proc/asound/cards'
 
 command_exists lsd && ls_cmd='lsd' || ls_cmd='ls'
 alias ls='$ls_cmd --color=always --human-readable'
@@ -90,6 +91,7 @@ alias tre='trash-empty'
 alias rm='trash-put'
 alias zathura='zathura --fork'
 alias vifm='vifmrun'
+alias deemix='deemix -p ~/Downloads/Deezer/ -b flac'
 
 # fzf related
 # ===========

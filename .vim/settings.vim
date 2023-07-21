@@ -60,3 +60,5 @@ set clipboard=unnamedplus
 highlight Comment cterm=italic
 
 set showmatch
+" Add support to read .whl file contents in vim.
+au BufReadCmd *.whl call zip#Browse(expand("<amatch>"))
