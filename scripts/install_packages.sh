@@ -13,7 +13,7 @@ alias yi='yay -S --needed --noconfirm --color=auto'
 yi git xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
     dmenu dunst xorg-xbacklight nitrogen i3exit xterm \
     xf86-input-synaptics gnupg pass pass-update pass-otp passff-host pam-gnupg ntfs-3g \
-    qt5ct qt5-styleplugins
+    qt5ct qt5-styleplugins picom sg3_utils
 
 # update mlocate database so as to use the locate command
 sudo updatedb
@@ -22,7 +22,7 @@ sudo updatedb
 yi gvim ctags fzf fd alacritty vifm tmux
 
 # audio packages
-yi mpd ncmpcpp sox alsa-lib alsa-utils pulsemixer gst-libav
+yi mpd mpc ncmpcpp sox alsa-lib alsa-utils pulsemixer gst-libav
 
 # fonts
 yi ttf-inconsolata-nerd ttf-droid noto-fonts ttf-iosevka-nerd
@@ -31,7 +31,7 @@ yi ttf-inconsolata-nerd ttf-droid noto-fonts ttf-iosevka-nerd
 yi zathura zathura-pdf-mupdf sxiv neomutt i3-scrot xclip blueman xautolock
 
 # multimedia
-yi youtube-dl chromium mpv
+yi youtube-dl chromium mpv newsboat
 
 # misc packages
 yi neofetch htop figlet redshift bash-completion bash-complete-alias

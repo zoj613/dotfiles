@@ -92,6 +92,7 @@ alias rm='trash-put'
 alias zathura='zathura --fork'
 alias vifm='vifmrun'
 alias deemix='deemix -p ~/Downloads/Deezer/ -b flac'
+alias mpvgpu='mpv --hwdec=vdpau --vo=gpu'
 
 # fzf related
 # ===========

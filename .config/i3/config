@@ -344,7 +344,7 @@ bar {
 	i3bar_command i3bar --transparency
 	status_command i3blocks -c ~/.config/i3blocks/config
 	position top
-    font xft: Inconsolata Condensed Bold,Inconsolata Nerd Font 10
+    font xft: Inconsolata Nerd Font Condensed Medium 9.5
     height 26
 # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary

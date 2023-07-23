@@ -41,6 +41,7 @@ export NVM_DIR="$HOME/.config/nvm"
 # !! Contents within this block are managed by 'mamba init' !!
 export MAMBA_EXE="${HOME}/.local/bin/micromamba";
 export MAMBA_ROOT_PREFIX="${HOME}/micromamba";
+export MAMBARC="${XDG_CONFIG_HOME}/mamba/mambarc";
 __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
