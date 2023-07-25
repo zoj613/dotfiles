@@ -3,6 +3,8 @@
 #
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
+# Config for Xorg
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 
 # add local binary path to $PATH
 export PATH="$HOME/.local/bin:$PATH"
