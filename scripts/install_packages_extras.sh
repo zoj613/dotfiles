@@ -22,8 +22,9 @@ yi rsync nicotine+
 
 # multimedia
 yi vlc freetube
-# install yt-dlp
-wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -P ~/.local/bin/ --show-progress && chmod +x ~/.local/bin/yt-dlp
+# install yt-dlp, ensuring mutagen is installed for youtube audio postprocessing.
+yi python-mutagen
+wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -P ${HOME}/.local/bin/ --show-progress && chmod +x ${HOME}/.local/bin/yt-dlp
 
 figlet "extras installed succesfully !"
 
