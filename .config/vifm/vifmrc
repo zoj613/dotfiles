@@ -50,6 +50,7 @@ mark q ~/Downloads/qobuz
 " %m run the command in a menu window
 command! ff :set noquickview | :execute 'goto' fnameescape(term('fd -H --ignore-file=${HOME}/.gitignore | fzf --height 10 2>/dev/tty'))
 command! zip zip -r %f.zip %f
+command! unzip unzip %f
 command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
@@ -213,7 +214,8 @@ filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
        \ zip -sf %c | less,
        \ {Extract here}
        \ tar -xf %c,
-fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
+fileviewer *.jar,*.war,*.ear,*.oxt zip -sf %c
+fileviewer *.zip unzip -l %c
 
 " ArchiveMount
 filetype {*.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz},
@@ -253,11 +255,11 @@ filetype {*.7z},<application/x-7z-compressed>
 fileviewer {*.7z},<application/x-7z-compressed> 7z l %c
 
 " Office files
-filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
-         \<application/vnd.openxmlformats-officedocument.*,
-          \application/msword,
-          \application/vnd.ms-excel>
-        \ libreoffice %f &
+filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt, *.csv},
+        \ libreoffice %c &,
+        \ <application/vnd.openxmlformats-officedocument.*,
+        \ application/msword,
+        \ application/vnd.ms-excel>
 fileviewer {*.doc},<application/msword> catdoc %c
 fileviewer {*.docx},
           \<application/
@@ -368,7 +370,7 @@ nnoremap ,w :set wrap!<cr>
 nnoremap <f3> :!less %f<cr>
 nnoremap <f4> :edit<cr>
 nnoremap <silent> yy :copy &<cr>
-nnoremap <silent> mm :move &<cr>
+nnoremap mm :move &<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete &<cr>
 nnoremap dd :delete &<cr>

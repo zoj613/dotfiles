@@ -17,7 +17,7 @@ export EDITOR="$(command -v vim || command -v vi)"
 export VISUAL=${EDITOR}
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER="$(command -v chromium)"
+export BROWSER="$(command -v firefox)"
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -48,3 +48,5 @@ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
 # export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 export SQLITE_HISTORY="$XDG_DATA_HOME"/sqlite_history
+
+export SYSTEMD_TIMEDATED_NTP_SERVICES=chronyd.service:systemd-timesyncd.service

@@ -10,7 +10,7 @@
 
 
 # audio
-yi gstreamer dr14_tmeter mediainfo ffmpeg flac audacious-gtk3 deadbeef # cdrip-tools
+yi gstreamer dr14_tmeter mediainfo ffmpeg flac audacious-gtk3 quodlibet-git
 
 # setup cd-tools to use arverify and fixoffset scripts and ensure mandatory packages are installed
 git clone https://github.com/zoj613/cdrip-tools.git ~/dev/

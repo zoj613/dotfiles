@@ -25,9 +25,9 @@ bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
 
-browser "chromium %u"
+browser "firefox %u"
 
-macro y set browser "mpv %u" ; open-in-browser ; set browser "librefox %u"
+macro y set browser "mpv %u" ; open-in-browser ; set browser "firefox %u"
 macro , set browser "librewolf %u"; open-in-browser
 
 # colors

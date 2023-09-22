@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PYENV_HOST="https://github.com/pyenv"
-PYENV_HOME="${HOME}/.pyenv"
+PYENV_HOME="${HOME}/.local/share/pyenv"
 
 
 git clone ${PYENV_HOST}/pyenv.git ${PYENV_HOME}

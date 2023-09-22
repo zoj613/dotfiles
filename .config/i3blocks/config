@@ -20,6 +20,20 @@ UPDATE_COLOR=#FB4934
 AUR=true
 LABEL= 
 
+[ytdl-mpv]
+command=ytdl-mpv/ytdl-mpv
+markup=pango
+interval=once
+signal=4
+PLAYING_COLOR=red
+NOT_PLAYING_COLOR=white
+
+[github]
+command=github/github
+interval=60
+format=json
+color=#fabd2f
+
 [redshift]
 command=./redshift_blocklet
 interval=1800
@@ -32,20 +46,6 @@ interval=21600
 label=  
 color=#fb4934
 
-[github]
-command=github/github
-interval=60
-format=json
-color=#fabd2f
-
-[ytdl-mpv]
-command=ytdl-mpv/ytdl-mpv
-markup=pango
-interval=once
-signal=4
-PLAYING_COLOR=red
-NOT_PLAYING_COLOR=white
-
 [email]
 label=  
 command=notmuch count search tag:unread
@@ -53,7 +53,7 @@ interval=180
 color=#fe8019
 
 [memory]
-label= 
+label= 
 command=memory/memory
 interval=5
 PERCENT=false
@@ -72,6 +72,14 @@ T_WARN=50
 T_CRIT=80
 DECIMALS=1
 COLOR_NORMAL=#a89984
+
+[temperature]
+command=temperature/temperature
+label=  
+interval=10
+T_WARN=70
+T_CRIT=90
+#SENSOR_CHIP=""
 
 [volume]
 command=volume/volume

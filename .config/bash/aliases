@@ -49,6 +49,7 @@ alias yoo='yay -Rns $(yay -Qttdq)'
 alias ys='yay -Ss'
 alias ysi='yay -Si'
 alias yf='yay -Ql' # list all files that come with an installed package
+alias yfn='yay -Q | wc -l' # show number of total packgaes installed
 
 
 # Git
@@ -83,7 +84,7 @@ alias dotd='dot diff'
 # Tools
 # =====
 # dr14_tmeter command for calculating dynamic range of music files
-alias dr14='dr14_tmeter -1'
+alias dr14='dr14_tmeter'
 alias nf='neofetch'
 # alias msync='time rsync_backup /mnt/ZOLISAEXT4/Music/ /mnt/ZOJ/Music/'
 alias trl='trash-list'
@@ -92,7 +93,7 @@ alias rm='trash-put'
 alias zathura='zathura --fork'
 alias vifm='vifmrun'
 alias deemix='deemix -p ~/Downloads/Deezer/ -b flac'
-alias mpvgpu='mpv --hwdec=vdpau --vo=gpu'
+alias cpu_watts='sudo powerstat -R -c -z 1 60'
 
 # fzf related
 # ===========

@@ -11,9 +11,10 @@ alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essential packages
 yi git xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
-    dmenu dunst xorg-xbacklight nitrogen i3exit xterm \
+    dmenu dunst xorg-xbacklight nitrogen i3exit xterm netctl \
     xf86-input-synaptics gnupg pass pass-update pass-otp passff-host pam-gnupg ntfs-3g \
-    qt5ct qt5-styleplugins picom sg3_utils
+    qt5ct qt5-styleplugins picom sg3_utils chrony networkmanager-dispatcher-chrony \
+    netctl-dispatcher-chrony
 
 # update mlocate database so as to use the locate command
 sudo updatedb

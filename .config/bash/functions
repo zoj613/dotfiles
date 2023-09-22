@@ -83,9 +83,9 @@ function yp {
     yay -Q | grep ${1}
 }
 
-# backup files in directory $1 to $2
-function rsync_backup {
-    rsync -r -t -v --progress --delete -s "${1}" "${2}"
+# backup files from mounted drive $1 to $2
+function music_backup {
+    rsync -r -t -v --progress --delete -s "${1}/Music/" "${2}/Music/"
 }
 
 # download a section A-B of a youtube video as audio using yt-dlp
@@ -95,7 +95,14 @@ function yta_section {
         --xattrs --embed-thumbnail --force-keyframes-at-cuts --download-sections "*${2}" "${1}"
 }
 
-
+# get output of hardware params for a particular card while its in use. Input params are card name/number & card device number
 function audio_stats {
-    cat /proc/asound/${1}/pcm0p/sub0/hw_params
+    cat /proc/asound/${1}/pcm${2}p/sub0/hw_params
+}
+
+
+# extract timestamped snippet from audio input
+# example: audio_snippet file.opus 00:03:00 00:05:20 flac
+function audio_snippet {
+    ffmpeg -i "${1}" -ss "${2}" -to "${3}" "${1}.${4}"
 }

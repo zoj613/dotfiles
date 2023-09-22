@@ -4,6 +4,10 @@ HISTFILESIZE=20000
 
 # set vi mode
 set -o vi
+# enable auto cd'ing to a directory
+shopt -s autocd
+# line wrap on window resize
+shopt -s checkwinsize
 
 # Load aliases
 [[ -f ~/.config/bash/aliases ]] && . ~/.config/bash/aliases
@@ -40,7 +44,7 @@ export NVM_DIR="$HOME/.config/nvm"
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
 export MAMBA_EXE="${HOME}/.local/bin/micromamba";
-export MAMBA_ROOT_PREFIX="${HOME}/micromamba";
+export MAMBA_ROOT_PREFIX="${HOME}/.local/share/micromamba";
 export MAMBARC="${XDG_CONFIG_HOME}/mamba/mambarc";
 __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
