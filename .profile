@@ -7,6 +7,7 @@ export XDG_STATE_HOME="$HOME"/.local/state
 
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export HISTFILE="${XDG_STATE_HOME}/bash/history"
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 # add local binary path to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -45,8 +46,9 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc
 export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
-# store Xauthority in runtime directory instead of home root.
-# export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 export SQLITE_HISTORY="$XDG_DATA_HOME"/sqlite_history
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+export PYTHONUSERBASE=$XDG_DATA_HOME/python

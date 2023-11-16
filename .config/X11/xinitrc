@@ -45,9 +45,8 @@ for (( i = 0; i < ${NUM_MONITORS}; i++ )); do
 done
 
 xautolock -time 15 -locker blurlock &
-redshift &
 picom --config $HOME/.config/picom/picom.conf &
 # MPD daemon start (if no other user instance exists)
-# [ ! -s ~/.config/mpd/pid ] && mpd
+[ ! -s ~/.config/mpd/pid ] && mpd
 
 exec "$windowmanager"
