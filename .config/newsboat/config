@@ -25,10 +25,10 @@ bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
 
-browser "librewolf %u"
+browser "chromium %u"
 
-macro y set browser "mpv %u" ; open-in-browser ; set browser "librefox %u"
-macro , set browser "librewolf %u"; open-in-browser
+macro y set browser "mpv %u" ; open-in-browser ; set browser "chromium %u"
+macro , set browser "chromium %u"; open-in-browser
 
 # colors
 color listnormal default default

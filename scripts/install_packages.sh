@@ -10,7 +10,7 @@ sudo pacman -S --needed --noconfirm yay
 alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essential packages
-yi git xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
+yi git xorg-xinit xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
     dmenu dunst xorg-xbacklight nitrogen i3exit xterm \
     xf86-input-synaptics gnupg pass pass-update pass-otp passff-host pam-gnupg ntfs-3g \
     qt5ct qt5-styleplugins

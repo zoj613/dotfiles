@@ -20,10 +20,10 @@ UPDATE_COLOR=#FB4934
 AUR=true
 LABEL= 
 
-[redshift]
-command=./redshift_blocklet
-interval=1800
-color=#8ec07c
+# [redshift]
+# command=./redshift_blocklet
+# interval=1800
+# color=#8ec07c
 
 [newsboat]
 command=./newsboat_blocklet

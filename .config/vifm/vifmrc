@@ -371,7 +371,7 @@ nnoremap <silent> yy :copy &<cr>
 nnoremap <silent> mm :move &<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete &<cr>
-nnoremap dd :!trash &<cr>
+nnoremap dd :delete &<cr>
 
 " Midnight commander alike mappings
 " Open current directory in the other pane

@@ -3,7 +3,10 @@
 #
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_STATE_HOME="$HOME"/.local/state
 
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export HISTFILE="${XDG_STATE_HOME}/bash/history"
 # add local binary path to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -46,3 +49,4 @@ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
 # export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 export SQLITE_HISTORY="$XDG_DATA_HOME"/sqlite_history
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"

@@ -4,6 +4,10 @@ HISTFILESIZE=20000
 
 # set vi mode
 set -o vi
+# enable auto cd'ing to a directory
+shopt -s autocd
+# line wrap on window resize
+shopt -s checkwinsize
 
 # Load aliases
 [[ -f ~/.config/bash/aliases ]] && . ~/.config/bash/aliases

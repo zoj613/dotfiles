@@ -3,6 +3,7 @@
 *.swp
 .cache
 .aesara
+.mozilla
 .npm
 .nvm
 Music

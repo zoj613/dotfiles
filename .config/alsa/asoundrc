@@ -1,11 +1,11 @@
 pcm.!default  {
     type hw
-    card Audio
+    card PCH
     device 0
     format raw
 }
 
 ctl.!default {
     type hw
-    card Audio
+    card PCH
 }
