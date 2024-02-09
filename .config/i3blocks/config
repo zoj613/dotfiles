@@ -53,7 +53,7 @@ interval=180
 color=#fe8019
 
 [memory]
-label= 
+label= 
 command=memory/memory
 interval=5
 PERCENT=false
@@ -61,7 +61,7 @@ PERCENT=false
 [battery]
 command=battery/battery
 interval=30
-LABEL= 
+LABEL=  
 color=#b8bb26
 
 [cpu_usage]
