@@ -1,0 +1,195 @@
+# save_to_clipboard = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[colors.indexed_colors]]
+color = "#fe8019"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#d65d0e"
+index = 17
+
+[[colors.indexed_colors]]
+color = "#3c3836"
+index = 18
+
+[[colors.indexed_colors]]
+color = "#504945"
+index = 19
+
+[[colors.indexed_colors]]
+color = "#bdae93"
+index = 20
+
+[[colors.indexed_colors]]
+color = "#ebdbb2"
+index = 21
+
+[[colors.indexed_colors]]
+color = "#076678"
+index = 24
+
+[[colors.indexed_colors]]
+color = "#427b58"
+index = 66
+
+[[colors.indexed_colors]]
+color = "#9d0006"
+index = 88
+
+[[colors.indexed_colors]]
+color = "#8f3f71"
+index = 96
+
+[[colors.indexed_colors]]
+color = "#79740e"
+index = 100
+
+[[colors.indexed_colors]]
+color = "#8ec07c"
+index = 108
+
+[[colors.indexed_colors]]
+color = "#83a598"
+index = 109
+
+[[colors.indexed_colors]]
+color = "#af3a03"
+index = 130
+
+[[colors.indexed_colors]]
+color = "#b57614"
+index = 136
+
+[[colors.indexed_colors]]
+color = "#b8bb26"
+index = 142
+
+[[colors.indexed_colors]]
+color = "#fb4934"
+index = 167
+
+[[colors.indexed_colors]]
+color = "#d3869b"
+index = 175
+
+[[colors.indexed_colors]]
+color = "#fe8019"
+index = 208
+
+[[colors.indexed_colors]]
+color = "#fabd2f"
+index = 214
+
+[[colors.indexed_colors]]
+color = "#f2e5bc"
+index = 228
+
+[[colors.indexed_colors]]
+color = "#fbf1c7"
+index = 229
+
+[[colors.indexed_colors]]
+color = "#f9f5d7"
+index = 230
+
+[[colors.indexed_colors]]
+color = "#1d2021"
+index = 234
+
+[[colors.indexed_colors]]
+color = "#282828"
+index = 235
+
+[[colors.indexed_colors]]
+color = "#32302f"
+index = 236
+
+[[colors.indexed_colors]]
+color = "#3c3836"
+index = 237
+
+[[colors.indexed_colors]]
+color = "#504945"
+index = 239
+
+[[colors.indexed_colors]]
+color = "#665c54"
+index = 241
+
+[[colors.indexed_colors]]
+color = "#7c6f64"
+index = 243
+
+[[colors.indexed_colors]]
+color = "#928374"
+index = 244
+
+[[colors.indexed_colors]]
+color = "#928374"
+index = 245
+
+[[colors.indexed_colors]]
+color = "#a89984"
+index = 246
+
+[[colors.indexed_colors]]
+color = "#bdae93"
+index = 248
+
+[[colors.indexed_colors]]
+color = "#d5c4a1"
+index = 250
+
+[colors.bright]
+black = "#928374"
+blue = "#83a598"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#ebdbb2"
+yellow = "#fabd2f"
+
+[colors.normal]
+black = "#282828"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#b16286"
+red = "#cc241d"
+white = "#a89984"
+yellow = "#d79921"
+
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+# "hard contrast" = "background = '#1d2021'"
+# "soft contrast" = "background = '#32302f'"
+
+[cursor]
+# blinking = "On"
+# shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 9
+
+[font.bold_italic]
+family = "Iosevka NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "Iosevka NF"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka NF"
+style = "Regular"
+
+[window]
+opacity = 0.9
