@@ -7,15 +7,29 @@ source $HOME/.config/vifm/favicons.vifm
 " press Enter, l or Right Arrow, set this.
 set runexec
 
+" Makes vifm perform file operations on its own for speed
+set syscalls
+" set Trash dir so files deleted can be sent to the trash
+set trash
+set trashdir="~/.local/share/vifm/Trash"
+
+set history=50
 " List of color schemes to try (picks the first one supported by the terminal)
 colorscheme gruvbox Default-256 Default
 
 " Use increment searching (search while typing)
+set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
 
 set laststatus
+set scrolloff=8
+
+" Show list of matches on tab completion and show them in as a popup
+set wildmenu
+set wildstyle=popup
+
 " Set custom status line look
 set statusline="  Hint: %z%= %A %10u:%-7g %15E %20d  "
 
@@ -48,8 +62,10 @@ mark q ~/Downloads/qobuz
 " %d the current directory name.
 " %D the other window directory name.
 " %m run the command in a menu window
+command! df command -v "duf" &> /dev/null && duf -hide special -theme dark || df -hT --sync %m
 command! ff :set noquickview | :execute 'goto' fnameescape(term('fd -H --ignore-file=${HOME}/.gitignore | fzf --height 10 2>/dev/tty'))
 command! zip zip -r %f.zip %f
+command! diff vim -d %f %F
 command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
@@ -61,13 +77,13 @@ command! link ln -s %d/%f %D
 " remove executable permission from file/directory under cursor
 command! unex chmod -R a-x+X,u-x+rwX,go-wx+rX %c
 command! send croc send %f
+command! pv sxiv -tr %d
 
 " commands related to my bashrc config aliases/functions
 " uses the custom bash `ex` function to extract files from archive
 command! ex ex "%c"
 command! arv arv %d
 command! spec spec %c &
-command! specview spec %c | sxiv "spectrogram.png" && rm "spectrogram.png"
 command! ofix ofix %a
 command! cuesplit cuesplit %c %a
 
@@ -77,8 +93,8 @@ command! drt dr14_tmeter --quiet &
 " TODO: improve this mess below and use vimscript functions to de-duplicate some things 
 command! setcover metaflac --import-picture-from=%c *.flac &
 command! getcover metaflac --export-picture-to="cover.jpg" %c &
-command! setartist metaflac --set-tag="ARTIST"=%a --set-tag="ALBUM ARTIST"=%a *.flac &
-command! setalbum metaflac --set-tag="ALBUM="%a *.flac &
+command! setartist metaflac --remove-tag="ARTIST" --remove-tag="ALBUM ARTIST" --set-tag="ARTIST"=%a --set-tag="ALBUM ARTIST"=%a *.flac &
+command! setalbum metaflac --remove-tag="ALBUM" --set-tag="ALBUM="%a *.flac &
 command! setyear metaflac --set-tag="DATE"=%a *.flac &
 command! settag metaflac --set-tag=%a *.flac &
 command! removetag metaflac --remove-tag=%a *.flac &
@@ -127,9 +143,8 @@ fileviewer *.epub
     \ vifmimg clear
 
 " Audio
-filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
-        \<audio/*>
-       \ {Play using MPlayer}
+filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},<audio/*>
+       \ {Play using mpv}
        \ mpv %c,
        \ {Play using ffplay}
        \ ffplay -nodisp -autoexit %c
@@ -138,16 +153,11 @@ fileviewer <audio/*> mediainfo %f
 " Video
 filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-          \*.as[fx]},
-         \<video/*>
+          \*.as[fx]},<video/*>
         \ {using mpv}
         \ mpv %m %f > /dev/null 2>&1,  " also suppress stdout output to terminal
         \ {View using ffplay}
         \ ffplay -fs -autoexit %f,
-        \ {View using Dragon}
-        \ dragon %f:p,
-        \ {View using mpv}
-        \ mpv %f,
 fileviewer <video/*>
     \ vifmimg video %px %py %pw %ph %c
     \ %pc
@@ -156,7 +166,7 @@ fileviewer <video/*>
 " Web
 filextype {*.html,*.htm},<text/html>
         \ {Open with firefox}
-        \ firefox %f &,
+        \ chromium %f &,
 filetype {*.html,*.htm},<text/html> links, lynx
 
 " Object
@@ -169,7 +179,7 @@ fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 " Images
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {View in sxiv}
-        \ sxiv %f
+        \ sxiv %f &
 fileviewer <image/*>
     \ vifmimg draw %px %py %pw %ph %c
     \ %pc
@@ -262,13 +272,21 @@ fileviewer {*.doc},<application/msword> catdoc %c
 fileviewer {*.docx},
           \<application/
            \vnd.openxmlformats-officedocument.wordprocessingml.document>
-         \ docx2txt.pl %f -
+         \ docx2txt %f -
 
 " Font preview
 fileviewer <font/*>
     \ vifmimg font %px %py %pw %ph %c
     \ %pc
     \ vifmimg clear
+
+" programming files
+filextype {*.py, *.c, *.rs, *.go, *.cc, *.cpp, *.R, *.r, *.yaml, *.yml, *.hs},
+        \ <text/*>
+        \ vim %f
+fileviewer {*.py, *.c, *.rs, *.go, *.cc, *.cpp, *.R, *.r, *.yaml, *.yml, *.hs},
+        \ <text/*>
+        \ vim %f
 
 " Syntax highlighting in preview
 "
@@ -314,7 +332,7 @@ set viewcolumns=-{name}..,6{}.
 
 " Filter-out build and temporary files
 "
-" filter! {*.lo,*.o,*.d,*.class,*.pyc,*.pyo,.*~}
+" filter! {*.lo,*.o,*.d,*.class,*.pyc,*.pyo}
 
 " ------------------------------------------------------------------------------
 
