@@ -73,6 +73,9 @@ set $getvolume exec --no-startup-id dunstify --replace=1 \
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute; $getvolume
 bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute; $getvolume
 bindsym XF86AudioMute exec amixer -q set Master toggle
+set $getmicstatus exec --no-startup-id dunstify --replace=1 \
+    "Mic: $(amixer sget Capture | grep -oP '(?<=\[)\w+(?=\])')"
+bindsym XF86AudioMicMute exec amixer -q set Capture toggle; $getmicstatus
 
 # start applications
 bindsym $mod+F2 exec $browser
