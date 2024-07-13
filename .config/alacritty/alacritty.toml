@@ -177,7 +177,11 @@ foreground = "#ebdbb2"
 TERM = "xterm-256color"
 
 [font]
-size = 9
+size = 9.5
+
+[font.bold]
+family = "Iosevka NF"
+style = "Bold"
 
 [font.bold_italic]
 family = "Iosevka NF"
