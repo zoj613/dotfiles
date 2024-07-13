@@ -7,7 +7,7 @@
 PDFDIR=${@:-"$HOME/Documents"}
 
 # select file to open
-choice=$(find -L "$PDFDIR" -type f -regex ".*\.\(pdf\|epub\)" | dmenu -i -l 10) || exit
+choice=$(find -L "$PDFDIR" -type f -regex ".*\.\(pdf\|epub\|djvu\)" | dmenu -i -l 10) || exit
 
 # open it using zathura
 zathura --fork "$choice"
