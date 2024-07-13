@@ -99,3 +99,8 @@ function yta_section {
 function audio_stats {
     cat /proc/asound/${1}/pcm0p/sub0/hw_params
 }
+
+
+function switch {
+    eval $(opam env --switch=${1} --set-switch)
+}
