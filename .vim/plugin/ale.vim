@@ -23,6 +23,10 @@ let g:ale_fortran_language_server_executable = 'fortls'
 let g:ale_fortran_language_server_use_global = 1
 let g:ale_tex_texlab_executable = '/usr/bin/texlab'
 let g:ale_lint_on_insert_leave = 1
+let g:ale_elixir_elixir_ls_release = '/usr/lib/elixir-ls'
+let g:ale_cpp_cc_options = '-std=c++20 -Wall'
+let g:ale_cpp_ccls_executable = 'ccls'
+
 
 " linter and fixer options
 let g:ale_linters = {
@@ -34,6 +38,7 @@ let g:ale_linters = {
 \   'fortran': ['language_server', 'gcc'],
 \   'tex': ['texlab', 'lacheck', 'chktex'],
 \   'go': ['gopls', 'gofmt', 'golint'],
+\   'elixir': ['elixir-ls', 'dialyxir'],
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -44,9 +49,12 @@ let g:ale_fixers = {
 \       'reorder-python-imports'
 \   ],
 \   'c': ['clang-format', 'clangtidy'],
+\   'cpp': ['clang-format', 'clangtidy'],
 \   'r': ['styler'],
 \   'go': ['gofmt'],
 \   'tex': ['latexindent'],
+\   'elixir': ['mix_format'],
+\   'ocaml': ['ocamlformat', 'ocp-indent'],
 \}
 let g:ale_completion_symbols = {
 \    'method': '',
