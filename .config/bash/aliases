@@ -120,3 +120,12 @@ alias tl='tmux ls'
 
 #micromamba
 alias mamba='micromamba'
+
+#wget
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+
+
+# ocaml stuff
+# ===========
+alias updateopam='bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"'
+alias switchls='opam switch list'

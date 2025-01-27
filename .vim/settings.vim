@@ -1,3 +1,4 @@
+set viminfofile=~/.vim/viminfo
 set encoding=utf-8
 set fileformat=unix
 " general spacing and indentation rules for files

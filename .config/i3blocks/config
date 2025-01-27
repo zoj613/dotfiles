@@ -34,10 +34,10 @@ interval=60
 format=json
 color=#fabd2f
 
-[redshift]
-command=./redshift_blocklet
-interval=1800
-color=#8ec07c
+#[redshift]
+#command=./redshift_blocklet
+#interval=1800
+#color=#8ec07c
 
 [newsboat]
 command=./newsboat_blocklet
@@ -46,11 +46,11 @@ interval=21600
 label=  
 color=#fb4934
 
-[email]
-label=  
-command=notmuch count search tag:unread
-interval=180
-color=#fe8019
+#[email]
+#label=  
+#command=notmuch count search tag:unread
+#interval=180
+#color=#fe8019
 
 [memory]
 label= 
@@ -58,11 +58,11 @@ command=memory/memory
 interval=5
 PERCENT=false
 
-[battery]
-command=battery/battery
-interval=30
-LABEL= 
-color=#b8bb26
+#[battery]
+#command=battery/battery
+#interval=30
+#LABEL=  
+#color=#b8bb26
 
 [cpu_usage]
 command=cpu_usage/cpu_usage

@@ -3,9 +3,11 @@
 #
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_STATE_HOME="$HOME"/.local/state
 # Config for Xorg
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-
+export HISTFILE="${XDG_STATE_HOME}/bash/history"
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 # add local binary path to $PATH
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -17,7 +19,7 @@ export EDITOR="$(command -v vim || command -v vi)"
 export VISUAL=${EDITOR}
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER="$(command -v firefox)"
+export BROWSER="$(command -v chromium)"
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 # set poetry path
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -48,5 +50,9 @@ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
 # export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 export SQLITE_HISTORY="$XDG_DATA_HOME"/sqlite_history
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+export PYTHONUSERBASE=$XDG_DATA_HOME/python
 
 export SYSTEMD_TIMEDATED_NTP_SERVICES=chronyd.service:systemd-timesyncd.service

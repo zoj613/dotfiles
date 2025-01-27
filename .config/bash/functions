@@ -26,7 +26,6 @@ function arv {
     IFS=$IFS_BAK
 }
 
-
 # sox function for displying spectrogram of a music file
 function spec { sox "$@" -n spectrogram -t "$@"; }
 
@@ -105,4 +104,14 @@ function audio_stats {
 # example: audio_snippet file.opus 00:03:00 00:05:20 flac
 function audio_snippet {
     ffmpeg -i "${1}" -ss "${2}" -to "${3}" "${1}.${4}"
+}
+
+
+function switch {
+    eval $(opam env --switch=${1} --set-switch)
+}
+
+function opus_to_mp3 {
+    sudo find . -type f -iname "*.opus" -exec \
+        bash -c 'file="$1"; ffmpeg -y -i "$file" -c:a libmp3lame -q:a 2 "${file%.aac}.mp3";' _ '{}' \;
 }

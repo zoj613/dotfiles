@@ -21,8 +21,6 @@ Plug 'dense-analysis/ale'
 " Git tooling inside vim
 Plug 'tpope/vim-fugitive'
 Plug 'lifepillar/vim-gruvbox8'
-" fold blocks of code in python
-" Plug 'tmhedberg/SimpylFold'
 " autogenerate docstrings for python functions/classes
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 Plug 'vim-python/python-syntax'
@@ -36,12 +34,9 @@ Plug 'vifm/vifm.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " syntax highlighting and filetype plugins for Markdown
 Plug 'tpope/vim-markdown'
-" code snippet engine
-" Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'kovisoft/slimv'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'neovimhaskell/haskell-vim'
+Plug 'ocaml/vim-ocaml'
 call plug#end()
 
 " make a shortcut for spawning a vertical terminal split window
@@ -94,7 +89,7 @@ let g:colorizer_colornames = 0
 
 " vim Markdown config
 " ===================
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'go', 'javascript', 'c']
+let g:markdown_fenced_languages = ['ocaml', 'html', 'python', 'bash=sh', 'go', 'javascript', 'c']
 
 " vimtex config
 " =============
@@ -112,3 +107,8 @@ let g:lisp_rainbow=1
 
 " Add requirements-dev syntnax highlighting to detectibale patterns for requirements.vim
 let g:requirements#detect_filename_pattern = 'requirements-dev.txt'
+
+" Ocaml vim plugin
+" ================
+let g:ocaml_highlight_operators = 1
+let g:ocaml_compiler_compact_messages = 0

@@ -1,6 +1,6 @@
 [user]
 	email = zolisa.bleki@gmail.com
-    name = "Zolisa Bleki"
+	name = "Zolisa Bleki"
     signingkey = 5BE745CFF85A3EB9
 
 [commit]
@@ -28,3 +28,9 @@
     branch = auto
     interactive = auto
     pager = true
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

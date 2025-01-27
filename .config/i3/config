@@ -7,7 +7,7 @@ set $terminal alacritty
 # set default editor
 set $editor vim
 # set browser
-set $browser firefox
+set $browser chromium
 
 ## Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -73,6 +73,9 @@ set $getvolume exec --no-startup-id dunstify --replace=1 \
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute; $getvolume
 bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute; $getvolume
 bindsym XF86AudioMute exec amixer -q set Master toggle
+set $getmicstatus exec --no-startup-id dunstify --replace=1 \
+    "Mic: $(amixer sget Capture | grep -oP '(?<=\[)\w+(?=\])')"
+bindsym XF86AudioMicMute exec amixer -q set Capture toggle; $getmicstatus
 
 # start applications
 bindsym $mod+F2 exec $browser
@@ -158,12 +161,12 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
-# bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-# bindsym $mod+minus scratchpad show
-# bindsym $mod+semicolon [title="scratch_term"] scratchpad show
+bindsym $mod+minus scratchpad show
+bindsym $mod+semicolon [title="scratch_term"] scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -308,7 +311,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # ======================
 
 # startup a scratchpad terminal window for quick use throughout a session
-# exec --no-startup-id $terminal --title=scratch_term
+exec --no-startup-id $terminal --title=scratch_term
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -344,7 +347,7 @@ bar {
 	i3bar_command i3bar --transparency
 	status_command i3blocks -c ~/.config/i3blocks/config
 	position top
-    font xft: Inconsolata Nerd Font Condensed Medium 10.5
+    font xft: Inconsolata Nerd Font 10.5
     height 35
 # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary

@@ -1,13 +1,22 @@
 BLOGS
-https://feeds.captivate.fm/learnbayesstats/ BLOG "~LearnBayesStats Podcast"
 https://brandonwillard.github.io/feeds/all.rss.xml BLOG "~Brandon Willard" Tech
 https://lucumr.pocoo.org/feed.atom BLOG "Armin Ronacher" Tech
 https://blog.ploeh.dk/rss.xml BLOG "Mark Seemann" Tech
-https://mbernste.github.io/feed.xml BLOG "~Matthew N. Bernstein" Stats
 https://fangpenlin.com/feed.xml BLOG "Fang-Pen" Tech
 https://sobolevn.me/feed.xml BLOG "Sobolevn" Tech
 https://blog.djy.io/rss.xml BLOG "Dave Yarwood" Tech
 https://guicommits.com/rss/ "Guilherme Latrova" Tech
+http://typeocaml.com/rss/ BLOG "Many things about OCaml" Tech
+https://linoscope.github.io/index.xml BLOG "The Linoscope Machine"
+https://mukulrathi.com/rss.xml BLOG Tech
+https://lemire.me/blog/feed/ BLOG Tech
+https://lexi-lambda.github.io/feeds/all.rss.xml BLOG Tech
+https://dotat.at/@/blog.atom BLOG Tech
+https://drup.github.io/feed.xml BLOG Tech
+https://jobjo.github.io//feed.xml BLOG Tech
+https://tarides.com/feed.xml BLOG Tech
+https://www.danielbrice.net/feed.xml BLOG Tech
+https://travisdowns.github.io/feed.xml BLOG Tech
 
 YOUTUBE
 https://yewtu.be/feed/channel/UCtUbO6rBht0daVIOGML3c8w YOUTUBE "SummoningSalt" Gaming
