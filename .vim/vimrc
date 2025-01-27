@@ -20,6 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 " Git tooling inside vim
 Plug 'tpope/vim-fugitive'
+Plug 'lifepillar/vim-gruvbox8'
 " autogenerate docstrings for python functions/classes
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 Plug 'vim-python/python-syntax'
@@ -37,7 +38,6 @@ Plug 'tpope/vim-markdown'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'neovimhaskell/haskell-vim'
 Plug 'ocaml/vim-ocaml' 
-Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 " make a shortcut for spawning a vertical terminal split window
@@ -78,12 +78,9 @@ nnoremap <Leader>gs :G<CR>
 
 " Gruvbox color scheme
 " ====================
-let g:gruvbox_material_background = 'soft'
-let g:gruvbox_material_foreground = 'material'
-let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_enable_italic = 1
-colorscheme gruvbox-material
+let g:gruvbox_filetype_hi_groups=1
+let g:gruvbox_plugin_hi_groups=1
+colorscheme gruvbox8_soft
 
 " Color Highlighter
 " =================

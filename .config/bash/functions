@@ -104,3 +104,8 @@ function audio_stats {
 function switch {
     eval $(opam env --switch=${1} --set-switch)
 }
+
+function opus_to_mp3 {
+    sudo find . -type f -iname "*.opus" -exec \
+        bash -c 'file="$1"; ffmpeg -y -i "$file" -c:a libmp3lame -q:a 2 "${file%.aac}.mp3";' _ '{}' \;
+}

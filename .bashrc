@@ -57,3 +57,5 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+export OCAMLRUNPARAM="b"
