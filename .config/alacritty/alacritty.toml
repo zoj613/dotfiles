@@ -1,4 +1,4 @@
-save_to_clipboard = true
+# save_to_clipboard = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -166,12 +166,12 @@ yellow = "#d79921"
 [colors.primary]
 background = "#282828"
 foreground = "#ebdbb2"
-"hard contrast" = "background = '#1d2021'"
-"soft contrast" = "background = '#32302f'"
+# "hard contrast" = "background = '#1d2021'"
+# "soft contrast" = "background = '#32302f'"
 
 [cursor]
-blinking = "On"
-shape = "Block"
+# blinking = "On"
+# shape = "Block"
 
 [env]
 TERM = "xterm-256color"
