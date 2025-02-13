@@ -19,15 +19,17 @@ https://www.danielbrice.net/feed.xml BLOG Tech
 https://travisdowns.github.io/feed.xml BLOG Tech
 
 YOUTUBE
-https://yewtu.be/feed/channel/UCtUbO6rBht0daVIOGML3c8w YOUTUBE "SummoningSalt" Gaming
-https://yewtu.be/feed/channel/UC9-y-6csu5WGm29I7JiwpnA YOUTUBE "Computerphile"
-https://yewtu.be/feed/channel/UCkf4VIqu3Acnfzuk3kRIFwA YOUTUBE "gotbletu" Linux
-https://yewtu.be/feed/channel/UCp4Tghm96iQs2JmYSoiS0kw YOUTUBE "BLK0314" Gaming
-https://yewtu.be/feed/channel/UCZRoNJu1OszFqABP8AuJIuw YOUTUBE "Logically Answered"
-https://yewtu.be/feed/channel/UCoOjH8D2XAgjzQlneM2W0EQ YOUTUBE "Jake Tran"
-https://yewtu.be/feed/channel/UCFU7a7OMYfcpjtIpu2j47_Q YOUTUBE "DevOnDuty"
-https://yewtu.be/feed/channel/UC4QZ_LsYcvcq7qOsOhpAX4A YOUTUBE "Cold Fusion"
-https://yewtu.be/feed/channel/UCHnyfMqiRRG1u-2MsSQLbXA YOUTUBE "Veritasium"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFU7a7OMYfcpjtIpu2j47_Q
+https://youtube.com/feeds/videos.xml?channel_id=UCtUbO6rBht0daVIOGML3c8w YOUTUBE "SummoningSalt" Gaming
+https://youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA YOUTUBE "Computerphile"
+https://youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA YOUTUBE "gotbletu" Linux
+https://youtube.com/feeds/videos.xml?channel_id=UCp4Tghm96iQs2JmYSoiS0kw YOUTUBE "BLK0314" Gaming
+https://youtube.com/feeds/videos.xml?channel_id=UCZRoNJu1OszFqABP8AuJIuw YOUTUBE "Logically Answered"
+https://youtube.com/feeds/videos.xml?channel_id=UCoOjH8D2XAgjzQlneM2W0EQ YOUTUBE "Jake Tran"
+https://youtube.com/feeds/videos.xml?channel_id=UCFU7a7OMYfcpjtIpu2j47_Q YOUTUBE "DevOnDuty"
+https://youtube.com/feeds/videos.xml?channel_id=UC4QZ_LsYcvcq7qOsOhpAX4A YOUTUBE "Cold Fusion"
+https://youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA YOUTUBE "Veritasium"
+
 
 GIT
 https://github.com/numpy/numpy/releases.atom GIT "NumPy Releases" Software
