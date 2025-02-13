@@ -36,7 +36,7 @@ visualizer_in_stereo = yes
 ## with fftw3 support.
 ## Available values: spectrum, wave, wave_filled, ellipse.
 visualizer_type = spectrum
-visualizer_fps = 144
+visualizer_fps = 60
 visualizer_autoscale = yes
 # visualizer_look = ▮▮
 visualizer_look = ⬮⬮
