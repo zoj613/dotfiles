@@ -11,7 +11,7 @@ alias yi='yay -S --needed --noconfirm --color=auto'
 
 # essential packages
 yi git xorg-xinit xorg-xrandr curl wget base-devel i3-gaps i3blocks trash-cli mlocate ufw \
-    dmenu dunst xorg-xbacklight nitrogen i3exit xterm netctl \
+    dmenu dunst xorg-xbacklight feh i3exit xterm netctl \
     xf86-input-synaptics gnupg pass pass-update pass-otp passff-host pam-gnupg ntfs-3g \
     qt5ct qt5-styleplugins picom sg3_utils chrony networkmanager-dispatcher-chrony \
     netctl-dispatcher-chrony
