@@ -8,10 +8,10 @@ wget -P ~/.config/vifm/ https://raw.githubusercontent.com/cirala/vifm_devicons/m
 # download colorscheme
  wget -P ~/.config/vifm/colors https://raw.githubusercontent.com/vifm/vifm-colors/master/gruvbox.vifm
 
- # setup ueberzug for previews of various file formats
- wget -P ~/.local/bin/ https://raw.githubusercontent.com/cirala/vifmimg/master/vifmimg
- wget -P ~/.local/bin/ https://raw.githubusercontent.com/cirala/vifmimg/master/vifmrun
- chmod +x ~/.local/bin/vifmimg ~/.local/bin/vifmrun
+# setup ueberzug for previews of various file formats
+# wget -P ~/.local/bin/ https://raw.githubusercontent.com/cirala/vifmimg/master/vifmimg
+# wget -P ~/.local/bin/ https://raw.githubusercontent.com/cirala/vifmimg/master/vifmrun
+# chmod +x ~/.local/bin/vifmimg ~/.local/bin/vifmrun
 
  # remove .vifm directory if automatically created during installation of vifm
  rm -rf $HOME/.vifm/

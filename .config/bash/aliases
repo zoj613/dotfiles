@@ -91,7 +91,7 @@ alias trl='trash-list'
 alias tre='trash-empty'
 alias rm='trash-put'
 alias zathura='zathura --fork'
-alias vifm='vifmrun'
+# alias vifm='vifmrun'
 alias deemix='deemix -p ~/Downloads/Deezer/ -b flac'
 alias cpu_watts='sudo powerstat -R -c -z 1 60'
 
